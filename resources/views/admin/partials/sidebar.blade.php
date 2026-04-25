@@ -7,7 +7,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.projects')}}">
+            <a class="nav-link" href="{{route('admin.projects.index')}}">
                 <i class="icon-contract menu-icon"></i>
                 <span class="menu-title">Projects</span>
             </a>
@@ -27,7 +27,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.settings')}}">
                 <i class="icon-bar-graph menu-icon"></i>
-                <span class="menu-title">Setting</span>
+                <span class="menu-title">Settings</span>
             </a>
         </li>
         <li class="nav-item">

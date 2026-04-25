@@ -45,6 +45,7 @@
     <script src="{{ asset('/admin/js/template.js') }}"></script>
     <script src="{{ asset('/admin/js/settings.js') }}"></script>
     <script src="{{ asset('/admin/js/todolist.js') }}"></script>
+    <script src="{{ asset('/admin/js/file-upload.js') }}"></script>
     <!-- endinject -->
 </body>
 
