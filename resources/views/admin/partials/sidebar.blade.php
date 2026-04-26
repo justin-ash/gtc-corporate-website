@@ -13,9 +13,15 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.widgets')}}">
+            <a class="nav-link" href="{{route('admin.widgets.index')}}">
                 <i class="icon-paper menu-icon"></i>
                 <span class="menu-title">Widgets</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.testimonials.index')}}">
+                <i class="icon-paper menu-icon"></i>
+                <span class="menu-title">Testimonials</span>
             </a>
         </li>
         <li class="nav-item">

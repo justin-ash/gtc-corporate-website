@@ -12950,7 +12950,7 @@ CONTACT Details
   width: 190px;
   font-size: 16px;
 }
-.testimonial-block .inner-box .image-box .star i {
+.testimonial-block .inner-box .image-box .star .active {
   color: #ff8c22;
 }
 .testimonial-block .inner-box .image-box .star::after {

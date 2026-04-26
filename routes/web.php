@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ProductsController;
 use App\Http\Controllers\Admin\ProjectsController;
 use App\Http\Controllers\Admin\ServicesController;
 use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\WidgetsController;
 use App\Http\Controllers\HomeController;
 
@@ -41,10 +42,15 @@ Route::prefix('admin')->group(function () {
         Route::resource('projects', ProjectsController::class);
         Route::post('/upload-gallery', [ProjectsController::class, 'uploadGallery']);
         Route::post('/delete-image', [ProjectsController::class, 'deleteImage']);
-        Route::get('/widgets', [WidgetsController::class, 'index'])->name('widgets');
+        // Route::get('/widgets', [WidgetsController::class, 'index'])->name('widgets');
+        Route::resource('widgets', WidgetsController::class);
         Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
+        Route::get('/contacts/{id}', [ContactsController::class, 'show']);
         Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
         Route::post('/settings', [SettingsController::class, 'update'])->name('settings.update');
         Route::get('/services', [ServicesController::class, 'index'])->name('services');
+        Route::resource('testimonials', TestimonialController::class);
+        Route::post('/upload-testimonial-image', [TestimonialController::class, 'uploadGallery']);
+        Route::post('/delete-testimonial-image', [TestimonialController::class, 'deleteImage']);
     });
 });

@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\NewsletterSubscriber;
+use App\Models\Testimonial;
 use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('home');
+        $testimonials = Testimonial::where('is_active', 1)->get();
+        return view('home', compact('testimonials'));
     }
 
     public function contact()

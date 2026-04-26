@@ -52,6 +52,7 @@ class SettingsController extends Controller
             $setting->update([
                 'value' => $value
             ]);
+            cache()->forget('settings');
         }
 
         return back()->with('success', 'Settings updated successfully');

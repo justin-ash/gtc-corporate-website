@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Intervention\Image\ImageManager;
+use Illuminate\Support\Facades\File;
 
 class ProjectsController extends Controller
 {
@@ -19,81 +21,64 @@ class ProjectsController extends Controller
         return view('admin.projects.add');
     }
 
-    // ✅ Store
+
     public function store(Request $request)
     {
         $validated = $request->validate([
             'project_name' => 'required|max:255',
-            'short_description' => 'nullable|max:255',
-            'detail_text' => 'nullable',
-            'project_location' => 'nullable|max:255',
-            'project_type' => 'nullable|max:255',
-            'established_date' => 'nullable|date',
-            'website' => 'nullable|url',
-            'gallery.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048'
+            'short_description' => 'required|max:255',
+            'detail_text' => 'required',
+            'project_location' => 'required|max:255',
+            'project_type' => 'required|max:255',
+            'established_date' => 'required|date',
+            'website' => 'required|url',
+            'gallery.*' => 'required'
         ]);
+        Project::create($validated);
 
-        // Upload gallery images
-        $gallery = [];
-        if ($request->hasFile('gallery')) {
-            foreach ($request->file('gallery') as $image) {
-                $path = $image->store('projects', 'public');
-                $gallery[] = $path;
-            }
-        }
-
-        Project::create([
-            ...$validated,
-            'gallery' => $gallery
+        return response()->json([
+            'status' => true,
+            'message' => 'Project created successfully'
         ]);
-
-        return redirect()->route('admin.projects.index')
-            ->with('success', 'Project created successfully');
     }
 
-    // ✅ Edit Form
+
     public function edit($id)
     {
         $project = Project::findOrFail($id);
         return view('admin.projects.edit', compact('project'));
     }
 
-    // ✅ Update
     public function update(Request $request, $id)
     {
         $project = Project::findOrFail($id);
 
         $validated = $request->validate([
             'project_name' => 'required|max:255',
-            'short_description' => 'nullable|max:255',
-            'detail_text' => 'nullable',
-            'project_location' => 'nullable|max:255',
-            'project_type' => 'nullable|max:255',
-            'established_date' => 'nullable|date',
-            'website' => 'nullable|url',
-            'gallery.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048'
+            'short_description' => 'required|max:255',
+            'detail_text' => 'required',
+            'project_location' => 'required|max:255',
+            'project_type' => 'required|max:255',
+            'established_date' => 'required|date',
+            'website' => 'required|url',
+            'gallery.*' => 'required'
         ]);
 
         // Handle gallery update
         $gallery = $project->gallery ?? [];
-
-        if ($request->hasFile('gallery')) {
-            foreach ($request->file('gallery') as $image) {
-                $path = $image->store('projects', 'public');
-                $gallery[] = $path;
-            }
-        }
 
         $project->update([
             ...$validated,
             'gallery' => $gallery
         ]);
 
-        return redirect()->route('admin.projects.index')
-            ->with('success', 'Project updated successfully');
+        return response()->json([
+            'status' => true,
+            'message' => 'Project updated successfully'
+        ]);
     }
 
-    // ✅ Delete
+
     public function destroy($id)
     {
         Project::findOrFail($id)->delete();
@@ -103,26 +88,61 @@ class ProjectsController extends Controller
 
     public function deleteImage(Request $request)
     {
-        if (Storage::disk('public')->exists($request->path)) {
-            Storage::disk('public')->delete($request->path);
+        $relativePath = $request->input('path');
+
+        if (!str_starts_with($relativePath, 'uploads/projects')) {
+            return response()->json(['error' => 'Invalid path'], 400);
         }
 
-        return response()->json(['status' => true]);
+        $fullPath = public_path($relativePath);
+
+        if (File::exists($fullPath)) {
+            File::delete($fullPath);
+
+            return response()->json([
+                'status' => true,
+                'path' => $relativePath
+            ]);
+        }
+
+        return response()->json([
+            'status' => false,
+            'message' => 'File not found'
+        ], 404);
     }
 
     public function uploadGallery(Request $request)
     {
         $paths = [];
+        $value = "";
+        if ($request->hasFile("image")) {
+            $file = $request->file("image");
 
-        if ($request->hasFile('images')) {
-            foreach ($request->file('images') as $image) {
-                $path = $image->store('projects', 'public');
-                $paths[] = $path;
+            $manager = new ImageManager(['driver' => 'gd']);
+
+            $image = $manager->make($file->getRealPath());
+
+            $image->resize(1000, null, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+
+            $image->encode('webp', 80);
+
+            $folderPath = public_path('uploads/projects');
+
+            if (!file_exists($folderPath)) {
+                mkdir($folderPath, 0777, true);
             }
+
+            $filename = uniqid() . '.webp';
+
+            $image->save($folderPath . '/' . $filename);
+            $value = 'uploads/projects/' . $filename;
         }
 
         return response()->json([
-            'paths' => $paths
+            'paths' => $value
         ]);
     }
 }
