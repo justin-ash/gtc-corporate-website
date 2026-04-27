@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin;
+use App\Models\Contact;
+use App\Models\Project;
+use App\Models\Testimonial;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -28,7 +31,10 @@ class AuthController extends Controller
 
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $contacts = Contact::where('is_read', '0')->count();
+        $projects = Project::count();
+        $testimonials = Testimonial::count();
+        return view('admin.dashboard', compact('contacts', 'projects', 'testimonials'));
     }
 
     public function logout()

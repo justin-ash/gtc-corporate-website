@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
                     <h3 class="font-weight-bold">Welcome {{Auth::guard('admin')->name}}</h3>
-                    <h6 class="font-weight-normal mb-0">All systems are running smoothly! You have <span class="text-primary">3 unread alerts!</span></h6>
+                    <h6 class="font-weight-normal mb-0">All systems are running smoothly! <!--You have <span class="text-primary">3 unread alerts!</span>--></h6>
                 </div>
                 <div class="col-12 col-xl-4">
                     <div class="justify-content-end d-flex">
@@ -50,9 +50,9 @@
                 <div class="col-md-6 mb-4 stretch-card transparent">
                     <div class="card card-tale">
                         <div class="card-body">
-                            <p class="mb-4">Today’s Contacts</p>
-                            <p class="fs-30 mb-2">4006</p>
-                            <p>10.00% (30 days)</p>
+                            <p class="mb-4">Unread Contacts</p>
+                            <p class="fs-30 mb-2">{{$contacts}}</p>
+                            <!-- <p>10.00% (30 days)</p> -->
                         </div>
                     </div>
                 </div>
@@ -60,8 +60,8 @@
                     <div class="card card-dark-blue">
                         <div class="card-body">
                             <p class="mb-4">Total Projects</p>
-                            <p class="fs-30 mb-2">61344</p>
-                            <p>22.00% (30 days)</p>
+                            <p class="fs-30 mb-2">{{$projects}}</p>
+                            <!-- <p>22.00% (30 days)</p> -->
                         </div>
                     </div>
                 </div>
@@ -70,9 +70,9 @@
                 <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
                     <div class="card card-light-blue">
                         <div class="card-body">
-                            <p class="mb-4">Number of Servics</p>
-                            <p class="fs-30 mb-2">34040</p>
-                            <p>2.00% (30 days)</p>
+                            <p class="mb-4">Number of Testimonials</p>
+                            <p class="fs-30 mb-2">{{$testimonials}}</p>
+                            <!-- <p>2.00% (30 days)</p> -->
                         </div>
                     </div>
                 </div>

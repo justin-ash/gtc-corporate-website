@@ -4,7 +4,7 @@
 
     <div class="footer-left">
       <div class="logo">
-        <a href="index.html"><img src="images/logo-light.png" alt="Logo"></a>
+        <a href="{{ route('home') }}"><img src="images/logo-light.png" alt="Logo"></a>
       </div>
       <button class="back-top-btn mobile-nav-toggler">
         <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,7 +43,7 @@
                   <li><i class="fa-sharp fa-solid fa-envelope"></i></li>
                   <li>
                     <span>Email Us:</span>
-                    <h5 class="title"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4f262129200f272a233f612c2022">[email&#160;protected]</a></h5>
+                    <h5 class="title"><a href="#" class="__cf_email__">{{config('settings.email')}}</a></h5>
                   </li>
                 </ul>
               </div>
@@ -85,9 +85,8 @@
                 <h4 class="widget-title">Pages</h4>
                 <div class="widget-content">
                   <ul class="user-links">
-                    <li><a href="#0">Our Blog</a></li>
-                    <li><a href="#0">Success Stories</a></li>
-                    <li><a href="#0">Customers Review</a></li>
+                    <li><a href="#0">Our Services</a></li>
+                    <li><a href="#0">Projects</a></li>
                     <li><a href="#0">Contact Us</a></li>
                     <li><a href="#0">About Us</a></li>
                   </ul>
@@ -113,10 +112,10 @@
                   <a href="#0"></a> -->
                 </div>
                 <ul class="footer-nav">
-                  <li><a href="#0"><i class="fa-brands fa-facebook-f"></i></a></li>
-                  <li><a href="#0"><i class="fa-solid fa-x"></i></a></li>
-                  <li><a href="#0"><i class="fa-brands fa-vimeo-v"></i></a></li>
-                  <li><a href="#0"><i class="fa-brands fa-pinterest-p"></i></a></li>
+                  <li><a href="{{config('settings.facebook')}}" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li><a href="{{config('settings.instagram')}}" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                  <li><a href="{{config('settings.twitter')}}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+                  <li><a href="{{config('settings.linkedin')}}" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -125,18 +124,16 @@
         </div>
 
         <div class="footer-bottom">
-          <p class="copyright-text">© Copyright 2025. All Right by <a href="#0">Kodesolution</a></p>
+          <p class="copyright-text">© Copyright 2025. All Right by <a href="https://leafcodes.in">LeafCodes.in</a></p>
         </div>
 
       </div>
       <div class="col-xl-4 right-column order-1 order-xl-2">
         <div class="inner-column">
-          <h3 class="title">Have a Project in
-            your Mind?</h3>
+          <h3 class="title">{{$widgets['FOOTER_HAVE_PROJECT']['title']}}</h3>
           <a class="circle-btn" href="{{ route('contact') }}">Contact Us <i class="fa-regular fa-arrow-up-right"></i></a>
           <div class="mt-10">
-            <h5 class="time">09 : 00 AM - 10 : 30 PM</h5>
-            <h5 class="date">Saturday - Thursday</h5>
+            {!!$widgets['CONTACT_TIMING']['description'] !!}
           </div>
         </div>
         <div class="shape">

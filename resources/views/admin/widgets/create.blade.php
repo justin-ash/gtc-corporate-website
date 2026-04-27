@@ -87,6 +87,7 @@
                     // Clear form
                     form.trigger("reset");
                     $('.preview-img').remove();
+                    $("#message").summernote('code', '');
                 }
             },
             error: function(xhr) {

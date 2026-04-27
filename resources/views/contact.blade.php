@@ -36,8 +36,7 @@
                              </svg>
                          </div>
                          <h4 class="title">address line</h4>
-                         <p class="text">Bowery St, New York, 37 USA
-                             NY 10013,USA</p>
+                         <p class="text">{{config('settings.address')}}</p>
                      </div>
                  </div>
              </div>
@@ -58,9 +57,8 @@
                              </svg>
 
                          </div>
-                         <h4 class="title">address line</h4>
-                         <p class="text">+1255 - 568 - 6523 4374-221
-                             +1255 - 568 - 6523</p>
+                         <h4 class="title">Phone Numbers</h4>
+                         <p class="text">{{config('settings.phone')}}</p>
                      </div>
                  </div>
              </div>
@@ -75,7 +73,9 @@
                              </svg>
                          </div>
                          <h4 class="title">Mail Adress</h4>
-                         <p class="text"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="23464e424a4f63465b424e534f460d404c4e">[email&#160;protected]</a> <br> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0e676068614e77617b7c6a61636f6760206d6163">[email&#160;protected]</a></p>
+                         <p class="text"><a href="/cdn-cgi/l/email-protection" class="__cf_email__">{{config('settings.email')}}</a> <br>
+                             <!-- <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0e676068614e77617b7c6a61636f6760206d6163">[email&#160;protected]</a> -->
+                         </p>
                      </div>
                  </div>
              </div>
@@ -85,21 +85,19 @@
                  <div class="col-lg-6 content-column">
                      <div class="inner-column">
                          <div class="sec-title mb-30">
-                             <h2 class="title wow splt-txt" data-splitting>Get in touch</h2>
-                             <p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Lorem ipsum dolor sit
-                                 amet consectetur adipiscing elit mattis
-                                 faucibus <br> odio feugiat arc dolor.</p>
+                             <h2 class="title wow splt-txt" data-splitting>{{$widgets['GET_IN_TOUCH']['title']}}</h2>
+                             <p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{!!$widgets['GET_IN_TOUCH']['description']!!}</p>
                          </div>
                          <div class="google-map">
-                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60838472.930255905!2d54.913433238070375!3d21.45730366517529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3663f18a24cbe857%3A0xa9416bfcd3a0f459!2sAsia!5e0!3m2!1sen!2sbd!4v1746550690065!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                             <iframe src="{{config('settings.google_map_embeded')}}" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                          </div>
                      </div>
                  </div>
                  <div class="col-lg-6 content-column">
                      <div class="inner-column right-column">
                          <div class="sec-title mb-30">
-                             <h2 class="title wow splt-txt" data-splitting>Fill Up The Form</h2>
-                             <p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Your email address will not be published. Required fields are marked *</p>
+                             <h2 class="title wow splt-txt" data-splitting>{{$widgets['CONTACT_FILL_UP_FORM']['title']}}</h2>
+                             <p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{!!$widgets['CONTACT_FILL_UP_FORM']['description']!!}</p>
                          </div>
                          <form id="contact_form" name="contact_form" action="{{ route('contact.submit') }}" method="post">
                              @csrf

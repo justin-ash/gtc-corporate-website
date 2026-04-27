@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\NewsletterSubscriber;
+use App\Models\Project;
 use App\Models\Testimonial;
+use App\Models\Widget;
 use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
@@ -13,12 +15,15 @@ class HomeController extends Controller
     public function index()
     {
         $testimonials = Testimonial::where('is_active', 1)->get();
-        return view('home', compact('testimonials'));
+        $widgets = Widget::formatWidgets(['home', 'header', 'footer', 'sidebar']);
+        return view('home', compact('testimonials', 'widgets'));
     }
 
     public function contact()
     {
-        return view('contact');
+
+        $widgets = Widget::formatWidgets(['contact', 'header', 'footer', 'sidebar']);
+        return view('contact', compact('widgets'));
     }
 
     public function submitContact(Request $request)
@@ -53,22 +58,26 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('about');
+        $widgets = Widget::formatWidgets(['about', 'header', 'footer', 'sidebar']);
+        return view('about', compact('widgets'));
     }
 
     public function services()
     {
-        return view('services');
+        $widgets = Widget::formatWidgets(['services', 'header', 'footer', 'sidebar']);
+        return view('services', compact('widgets'));
     }
 
     public function projects()
     {
-        return view('projects');
+        $widgets = Widget::formatWidgets(['projects', 'header', 'footer', 'sidebar']);
+        return view('projects', compact('widgets'));
     }
 
-    public function divisions()
+    public function project(Request $request)
     {
-        return view('divisions');
+        $widgets = Widget::formatWidgets(['project', 'header', 'footer', 'sidebar']);
+        return view('project-detail', compact('widgets'));
     }
 
     public function subscribe(Request $request)
