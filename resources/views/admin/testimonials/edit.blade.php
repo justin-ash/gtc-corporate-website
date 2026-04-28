@@ -38,7 +38,7 @@
     }
 </style>
 <div class="content-wrapper">
-    <form method="POST" action="{{ route('admin.testimonials.update', $testimonial->id) }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('admin.testimonials.update', $testimonial->id) }}" id="save_testimonial" enctype="multipart/form-data">
         @csrf @method('PUT')
         <div class="row">
             <div class="col-12 grid-margin stretch-card">
