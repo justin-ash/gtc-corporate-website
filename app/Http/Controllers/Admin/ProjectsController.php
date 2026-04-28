@@ -32,7 +32,9 @@ class ProjectsController extends Controller
             'project_type' => 'required|max:255',
             'established_date' => 'required|date',
             'website' => 'required|url',
-            'gallery.*' => 'required'
+            'gallery.*' => 'required',
+            'is_active' => 'required|boolean',
+            'slug' => 'required|unique:projects,slug'
         ]);
         Project::create($validated);
 
@@ -61,11 +63,13 @@ class ProjectsController extends Controller
             'project_type' => 'required|max:255',
             'established_date' => 'required|date',
             'website' => 'required|url',
-            'gallery.*' => 'required'
+            'gallery.*' => 'required',
+            'is_active' => 'required|boolean',
+            'slug' => 'required|unique:projects,slug,' . $project->id
         ]);
 
         // Handle gallery update
-        $gallery = $project->gallery ?? [];
+        $gallery = $validated['gallery'] ?? $project->gallery;
 
         $project->update([
             ...$validated,

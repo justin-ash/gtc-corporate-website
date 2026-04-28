@@ -52,9 +52,22 @@
                             <span class="error-text project_name_error"></span>
                         </div>
                         <div class="form-group">
+                            <label for="exampleInputUsername1">Slug</label>
+                            <input type="text" class="form-control" id="slug" placeholder="Slug" name="slug" readonly style="background-color: #ccc;">
+                            <span class="error-text slug_error"></span>
+                        </div>
+                        <div class="form-group">
                             <label for="exampleInputEmail1">Short Description</label>
                             <input type="text" class="form-control" id="short_description" placeholder="Short description" name="short_description">
                             <span class="error-text short_description_error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="is_active">Status</label>
+                            <select name="is_active" class="form-select">
+                                <option value="1">Active</option>
+                                <option value="0">Inactive</option>
+                            </select><br>
+                            <span class="error-text is_active_error"></span>
                         </div>
                     </div>
                 </div>
@@ -140,6 +153,19 @@
 </div>
 @push('scripts')
 <script>
+    $(document).ready(function() {
+        $('#details').summernote({
+            height: 200,
+            placeholder: 'Write something...',
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['insert', ['link', 'picture']],
+                ['view', ['codeview']]
+            ]
+        });
+    });
     let selectedFiles = [];
     let uploadedPaths = [];
     // Preview images
@@ -296,6 +322,16 @@
                 });
             }
         });
+    });
+    $('#project_name').on('input', function() {
+        let slug = $(this).val()
+            .toLowerCase()
+            .trim()
+            .replace(/[^a-z0-9\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-');
+
+        $('#slug').val(slug);
     });
 </script>
 @endpush

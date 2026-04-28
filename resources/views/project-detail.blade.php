@@ -2,12 +2,13 @@
 
  @section('content')
  <!-- Start main-content -->
- <section class="page-title" style="background-image: url(images/background/page-title-bg.jpg);">
+ <section class="page-title" style="background-image: url( {{asset('images/background/page-title-bg.jpg')}});">
      <div class="auto-container">
          <div class="title-outer">
              <h1 class="title">Project Details</h1>
              <ul class="page-breadcrumb">
-                 <li><a href="index.html">Home</a></li>
+                 <li><a href="{{ route('home') }}">Home</a></li>
+                 <li><a href="{{ route('projects') }}">Projects</a></li>
                  <li>Project Details</li>
              </ul>
          </div>
@@ -22,10 +23,10 @@
              <div class="col-xl-7 col-lg-8 mb-5 mb-lg-0">
                  <div class="sec-title mb-40">
                      <h6 class="sub-title wow fadeInUp bg-transparent ps-0" data-wow-delay="00ms" data-wow-duration="1500ms">About The Project</h6>
-                     <h2 class="title mb-30 wow splt-txt" data-splitting>Deeper Dive into Our Digital Product Design Masterpieces</h2>
-                     <p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Sed ut perspiciatis unde omniste natus voluptatem accusantiume rem aperia eaque ipsa quae abillo inventore veritatis quasi architecto beatae vitae dicta sunt explicabo. Nemo enim epsam voluptatem quia voluptas aspernatur odites sed quia consequunture</p>
+                     <h2 class="title mb-30 wow splt-txt" data-splitting> {{ $project->project_name }}</h2>
+                     <p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{{ $project->short_description }}</p>
                  </div>
-                 <a class="btn-two" href="page-contact.html">Visit Website <i class="fas fa-angle-right"></i></a>
+                 <a class="btn-two" href="{{ $project->website }}">Visit Website <i class="fas fa-angle-right"></i></a>
              </div>
              <div class="col-xl-3 offset-xl-1 col-lg-4">
                  <div class="project-details__content-right mt-0">
@@ -33,19 +34,19 @@
                          <ul class="list-unstyled project-details__details-list">
                              <li>
                                  <h4 class="project-details__name mb-2">Clients</h4>
-                                 <p class="project-details__client">Design Studio In USA</p>
+                                 <p class="project-details__client">{{ $project->project_location }}</p>
                              </li>
                              <li>
                                  <h4 class="project-details__name mb-2">Project Type</h4>
-                                 <p class="project-details__client">Digital Product Design</p>
+                                 <p class="project-details__client">{{ $project->project_type }}</p>
                              </li>
                              <li>
                                  <h4 class="project-details__name mb-2">Date</h4>
-                                 <p class="project-details__client">25 October 2023</p>
+                                 <p class="project-details__client">{{ date('Y-m-d', strtotime($project->established_date)) }}</p>
                              </li>
                              <li>
                                  <h4 class="project-details__name mb-2">Website</h4>
-                                 <p class="project-details__client"><a href="yourdomain.com">yourdomain.com</a></p>
+                                 <p class="project-details__client"><a href="{{ $project->website }}" target="_blank">{{ $project->website }}</a></p>
                              </li>
                          </ul>
                      </div>
@@ -55,87 +56,26 @@
          <div class="row mb-5 mb-lg-0">
              <div class="col-lg-4 col-md-6">
                  <div class="project-details__top mt-5">
-                     <div class="project-details__img"> <img class="rounded-0" src="images/resource/project-details-1.jpg" alt=""> </div>
+                     <div class="project-details__img"> <img class="rounded-0" src="{{ asset($project->gallery[0]) }}" alt="" style="max-height: 400px;"> </div>
                  </div>
              </div>
              <div class="col-lg-8 col-md-6">
                  <div class="project-details__top mt-5">
-                     <div class="project-details__img"> <img class="rounded-0" src="images/resource/project-details-2.jpg" alt=""> </div>
+                     <div class="project-details__img"> <img class="rounded-0" src="{{ asset($project->gallery[1]) }}" alt="" style="max-height: 400px;"> </div>
                  </div>
              </div>
          </div>
-         <div class="row align-items-lg-center">
-             <div class="col-lg-6">
-                 <div class="sec-title mb-40">
-                     <h2 class="title mb-30 wow splt-txt" data-splitting>Interesting facts in <br class="d-none d-lg-block"> Development</h2>
-                 </div>
-             </div>
-             <div class="col-lg-6">
-                 <div class="project-details__top mt-lg-5">
-                     <div class="text mb-40">Must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter</div>
-                     <ul class="project-list mb-5">
-                         <li class="d-flex align-items-center"><i class="icon fa-classic fa-solid fa-check fa-fw"></i> Efficient Sprint Planning</li>
-                         <li class="d-flex align-items-center"><i class="icon fa-classic fa-solid fa-check fa-fw"></i> Standups and Demos</li>
-                         <li class="d-flex align-items-center"><i class="icon fa-classic fa-solid fa-check fa-fw"></i> Iterative Delivery Approach</li>
-                         <li class="d-flex align-items-center"><i class="icon fa-classic fa-solid fa-check fa-fw"></i> Problem-solving</li>
-                     </ul>
-                 </div>
-             </div>
-         </div>
-         <hr class="mt-4 mb-5 mb-lg-0">
-         <div class="row align-items-center">
-             <div class="col-lg-6">
-                 <div class="sec-title mb-40">
-                     <h2 class="title mb-30 wow splt-txt" data-splitting>The Results of <br class="d-none d-lg-block"> Our Project</h2>
-                 </div>
-             </div>
-             <div class="col-lg-6">
-                 <div class="project-details__top mt-lg-5">
-                     <div class="text mb-40">Will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness rejects, dislikes, or avoids pleasure </div>
-                     <div class="project-list-item mb-5">
-                         <h5 class="title"><i class="icon fa-classic fa-solid fa-circle-check fa-fw mr-15"></i> Support clients</h5>
-                         <div class="text">Sed ut perspiciatis unde omnis natus voluptatem accusantium doloremque laudantium, totam rem aperiam inventore</div>
-                     </div>
-                     <div class="project-list-item">
-                         <h5 class="title"><i class="icon fa-classic fa-solid fa-circle-check fa-fw mr-15"></i> Solve problems</h5>
-                         <div class="text">Sed ut perspiciatis unde omnis natus voluptatem accusantium doloremque laudantium, totam rem aperiam inventore</div>
-                     </div>
-                 </div>
-             </div>
-         </div>
+         {!! $project->detail_text !!}
          <div class="row">
+             @foreach($project->gallery as $image)
              <div class="col-md-6">
                  <div class="project-details__top mt-5">
-                     <div class="project-details__img"> <img class="rounded-0" src="images/resource/project-details-3.jpg" alt=""> </div>
+                     <div class="project-details__img" style="max-height: 400px;"> <img class="rounded-0" src="{{ asset($image) }}" alt=""> </div>
                  </div>
              </div>
-             <div class="col-md-6">
-                 <div class="project-details__top mt-5">
-                     <div class="project-details__img"> <img class="rounded-0" src="images/resource/project-details-4.jpg" alt=""> </div>
-                 </div>
-             </div>
+             @endforeach
          </div>
-         <div class="row">
-             <div class="col-xl-12">
-                 <div class="project-details__pagination-box">
-                     <ul class="project-details__pagination list-unstyled">
-                         <li class="next text-start">
-                             <div class="content">Previous</div>
-                             <h4 class="title"> <a href="#">Business Website Design</a> </h4>
-                         </li>
-                         <li class="count"><a href="#"></a></li>
-                         <li class="count"><a href="#"></a></li>
-                         <li class="count"><a href="#"><img src="images/resource/pagination-bar.png" alt=""></a></li>
-                         <li class="count"><a href="#"></a></li>
-                         <li class="count"><a href="#"></a></li>
-                         <li class="previous text-end">
-                             <div class="content">Next</div>
-                             <h4 class="title"> <a href="#">Mobile Application Design</a> </h4>
-                         </li>
-                     </ul>
-                 </div>
-             </div>
-         </div>
+
      </div>
  </section>
  <!--Project Details End-->

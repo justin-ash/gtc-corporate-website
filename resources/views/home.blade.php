@@ -153,153 +153,26 @@
     </div>
     <div class="swiper case-slider">
       <div class="swiper-wrapper">
+        @foreach($projects as $project)
         <div class="swiper-slide">
           <div class="case-block">
             <div class="inner-box">
               <figure class="image">
-                <img src="images/case/case-image1.jpg" alt="Image">
+                <img src="{{ asset($project->gallery[0]) }}" alt="Image">
               </figure>
               <div class="content-box">
-                <span class="sub-title">Cyber Security</span>
-                <h4 class="title"><a href="page-case.html">Revolutionizing Brand Strategy</a></h4>
+                <span class="sub-title">{{ $project->project_type }}</span>
+                <h4 class="title"><a href="{{ route('projects.show', $project->slug) }}"> {{ $project->project_name }}</a></h4>
               </div>
-              <a class="arry-btn" href="page-case-details.html"><i class="fa-regular fa-arrow-up-right"></i></a>
+              <a class="arry-btn" href="{{ route('projects.show', $project->slug) }}"><i class="fa-regular fa-arrow-up-right"></i></a>
               <div class="hover-content">
-                <span class="sub-title">Cyber Security</span>
-                <h4 class="title"><a href="page-case-details.html">Revolutionizing Brand Strategy</a></h4>
+                <span class="sub-title">{{ $project->project_type }}</span>
+                <h4 class="title"><a href="{{ route('projects.show', $project->slug) }}">{{ $project->project_name }}</a></h4>
               </div>
             </div>
           </div>
         </div>
-        <div class="swiper-slide">
-          <div class="case-block">
-            <div class="inner-box">
-              <figure class="image">
-                <img src="images/case/case-image2.jpg" alt="Image">
-              </figure>
-              <div class="content-box">
-                <span class="sub-title">IT Solution</span>
-                <h4 class="title"><a href="page-case.html">Technology and artificial Maintenance</a></h4>
-              </div>
-              <a class="arry-btn" href="page-case-details.html"><i class="fa-regular fa-arrow-up-right"></i></a>
-              <div class="hover-content">
-                <span class="sub-title">IT Solution</span>
-                <h4 class="title"><a href="page-case-details.html">Technology and artificial Maintenance</a></h4>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="case-block">
-            <div class="inner-box">
-              <figure class="image">
-                <img src="images/case/case-image3.jpg" alt="Image">
-              </figure>
-              <div class="content-box">
-                <span class="sub-title">Business Consultation</span>
-                <h4 class="title"><a href="page-case.html">Business Strategy to Cut Costs by 30%</a>
-                </h4>
-              </div>
-              <a class="arry-btn" href="page-case-details.html"><i class="fa-regular fa-arrow-up-right"></i></a>
-              <div class="hover-content">
-                <span class="sub-title">Business Consultation</span>
-                <h4 class="title"><a href="page-case-details.html">Business Strategy to Cut Costs by 30%</a></h4>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="case-block">
-            <div class="inner-box">
-              <figure class="image">
-                <img src="images/case/case-image4.jpg" alt="Image">
-              </figure>
-              <div class="content-box">
-                <span class="sub-title">Digital Agency</span>
-                <h4 class="title"><a href="page-case.html">Transforming Legacy Systems</a></h4>
-              </div>
-              <a class="arry-btn" href="page-case-details.html"><i class="fa-regular fa-arrow-up-right"></i></a>
-              <div class="hover-content">
-                <span class="sub-title">Digital Agency</span>
-                <h4 class="title"><a href="page-case-details.html">Transforming Legacy Systems</a></h4>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="case-block">
-            <div class="inner-box">
-              <figure class="image">
-                <img src="images/case/case-image1.jpg" alt="Image">
-              </figure>
-              <div class="content-box">
-                <span class="sub-title">Cyber Security</span>
-                <h4 class="title"><a href="page-case.html">Revolutionizing Brand Strategy</a></h4>
-              </div>
-              <a class="arry-btn" href="page-case-details.html"><i class="fa-regular fa-arrow-up-right"></i></a>
-              <div class="hover-content">
-                <span class="sub-title">Cyber Security</span>
-                <h4 class="title"><a href="page-case-details.html">Revolutionizing Brand Strategy</a></h4>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="case-block">
-            <div class="inner-box">
-              <figure class="image">
-                <img src="images/case/case-image2.jpg" alt="Image">
-              </figure>
-              <div class="content-box">
-                <span class="sub-title">IT Solution</span>
-                <h4 class="title"><a href="page-case.html">Technology and artificial Maintenance</a></h4>
-              </div>
-              <a class="arry-btn" href="page-case-details.html"><i class="fa-regular fa-arrow-up-right"></i></a>
-              <div class="hover-content">
-                <span class="sub-title">IT Solution</span>
-                <h4 class="title"><a href="page-case-details.html">Technology and artificial Maintenance</a></h4>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="case-block">
-            <div class="inner-box">
-              <figure class="image">
-                <img src="images/case/case-image3.jpg" alt="Image">
-              </figure>
-              <div class="content-box">
-                <span class="sub-title">Business Consultation</span>
-                <h4 class="title"><a href="page-case.html">Business Strategy to Cut Costs by 30%</a>
-                </h4>
-              </div>
-              <a class="arry-btn" href="page-case-details.html"><i class="fa-regular fa-arrow-up-right"></i></a>
-              <div class="hover-content">
-                <span class="sub-title">Business Consultation</span>
-                <h4 class="title"><a href="page-case-details.html">Business Strategy to Cut Costs by 30%</a></h4>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="case-block">
-            <div class="inner-box">
-              <figure class="image">
-                <img src="images/case/case-image4.jpg" alt="Image">
-              </figure>
-              <div class="content-box">
-                <span class="sub-title">Digital Agency</span>
-                <h4 class="title"><a href="page-case.html">Transforming Legacy Systems</a></h4>
-              </div>
-              <a class="arry-btn" href="page-case-details.html"><i class="fa-regular fa-arrow-up-right"></i></a>
-              <div class="hover-content">
-                <span class="sub-title">Digital Agency</span>
-                <h4 class="title"><a href="page-case-details.html">Transforming Legacy Systems</a></h4>
-              </div>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </div>
     </div>
   </div>
@@ -314,7 +187,7 @@
         <div class="inner-column">
           <div class="sec-title mb-30">
             <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Mission & Vision</h6>
-            <h2 class="title wow splt-txt" data-splitting>we handle complexities, so you can drive growth and success.</h2>
+            <h2 class="title wow splt-txt" data-splitting>{!! $widgets['MISSION_AND_VISION']['title'] !!}</h2>
           </div>
 
           <div class="choose-tab">
@@ -332,85 +205,7 @@
           </div>
 
           <div class="tab-content mt-30" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-              <div class="content-box">
-                <p class="text"> At veroeos accusamus dignissimos ducimus blanditiis volupta delenite atque corrupti quos dolores et quas molestias excepturi sint occaecatie</p>
-                <div class="list mt-30 mb-50">
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Optimized Sprint Planning
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Continuous Improvement
-                    </li>
-                  </ul>
-
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Incremental Delivery Approach
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Delivering Innovative
-                    </li>
-                  </ul>
-
-                </div>
-                <a href="page-about.html" class="btn-two">Discover More</a>
-              </div>
-            </div>
-
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-              <div class="content-box">
-                <p class="text"> At veroeos accusamus dignissimos ducimus blanditiis volupta delenite atque corrupti quos dolores et quas molestias excepturi sint occaecatie</p>
-                <div class="list mt-30 mb-50">
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Optimized Sprint Planning
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Continuous Improvement
-                    </li>
-                  </ul>
-
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Incremental Delivery Approach
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Delivering Innovative
-                    </li>
-                  </ul>
-
-                </div>
-                <a href="page-about.html" class="btn-two">Discover More</a>
-              </div>
-            </div>
-
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-              <div class="content-box">
-                <p class="text"> At veroeos accusamus dignissimos ducimus blanditiis volupta delenite atque corrupti quos dolores et quas molestias excepturi sint occaecatie</p>
-                <div class="list mt-30 mb-50">
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Optimized Sprint Planning
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Continuous Improvement
-                    </li>
-                  </ul>
-
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Incremental Delivery Approach
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Delivering Innovative
-                    </li>
-                  </ul>
-                </div>
-                <a href="page-about.html" class="btn-two">Discover More</a>
-              </div>
-            </div>
+            {!! $widgets['MISSION_AND_VISION']['description'] !!}
           </div>
         </div>
       </div>
@@ -463,62 +258,12 @@
     <div class="sec-title pb-50 mb-50">
       <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Growth Rate</h6>
       <div class="flex-content">
-        <h2 class="title text-white wow splt-txt" data-splitting>Building Connections for grow <br> Limitless Opportunities.</h2>
+        <h2 class="title text-white wow splt-txt" data-splitting>{!!$widgets['GROWTH_RATE']['title']!!}</h2>
         <a class="btn-one-light border-0 rounded-0 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms" href="page-about.html">Discover More</a>
       </div>
     </div>
     <div class="row g-5">
-      <div class="col-md-6 col-xl-4 wow fadeInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
-        <div class="growth-block">
-          <!-- pie-graph -->
-          <div class="pie-graph">
-            <div class="graph-outer">
-              <input type="text" class="dial" data-fgColor="#C6D936" data-bgColor="#fff" data-width="120"
-                data-height="120" data-linecap="normal" value="90">
-              <div class="inner-text count-box"><span class="count-text" data-stop="90" data-speed="2000"></span>%
-              </div>
-            </div>
-          </div>
-          <div class="content-box">
-            <h4 class="title">Scalable Solutions</h4>
-            <p class="text">End to end fiber optic cable nnectivity for stable</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-xl-4 wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-        <div class="growth-block">
-          <!-- pie-graph -->
-          <div class="pie-graph">
-            <div class="graph-outer">
-              <input type="text" class="dial" data-fgColor="#C6D936" data-bgColor="#fff" data-width="120" data-height="120" data-linecap="normal" value="95">
-              <div class="inner-text count-box"><span class="count-text" data-stop="95" data-speed="2000"></span>%</div>
-            </div>
-          </div>
-          <div class="content-box">
-            <h4 class="title">Automation Features</h4>
-            <p class="text">End to end fiber optic cable nnectivity for stable</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-xl-4 wow fadeInLeft" data-wow-delay="400ms" data-wow-duration="1500ms">
-        <div class="growth-block">
-          <!-- pie-graph -->
-          <div class="pie-graph">
-            <div class="graph-outer">
-              <input type="text" class="dial" data-fgColor="#C6D936" data-bgColor="#fff" data-width="120"
-                data-height="120" data-linecap="normal" value="75">
-              <div class="inner-text count-box"><span class="count-text" data-stop="75" data-speed="2000"></span>%
-              </div>
-            </div>
-          </div>
-          <div class="content-box">
-            <h4 class="title">24/7 Support</h4>
-            <p class="text">End to end fiber optic cable nnectivity for stable</p>
-          </div>
-        </div>
-      </div>
+      {!!$widgets['GROWTH_RATE']['description']!!}
     </div>
   </div>
 </section>

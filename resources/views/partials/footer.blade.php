@@ -4,7 +4,7 @@
 
     <div class="footer-left">
       <div class="logo">
-        <a href="{{ route('home') }}"><img src="images/logo-light.png" alt="Logo"></a>
+        <a href="{{ route('home') }}"><img src="{{ asset(config('settings.logo')) }}" alt="Logo"></a>
       </div>
       <button class="back-top-btn mobile-nav-toggler">
         <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -85,10 +85,11 @@
                 <h4 class="widget-title">Pages</h4>
                 <div class="widget-content">
                   <ul class="user-links">
-                    <li><a href="#0">Our Services</a></li>
-                    <li><a href="#0">Projects</a></li>
-                    <li><a href="#0">Contact Us</a></li>
-                    <li><a href="#0">About Us</a></li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('services') }}">Our Services</a></li>
+                    <li><a href="{{ route('projects') }}">Projects</a></li>
+                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                    <li><a href="{{ route('about') }}">About Us</a></li>
                   </ul>
                 </div>
               </div>
@@ -137,7 +138,7 @@
           </div>
         </div>
         <div class="shape">
-          <img src="images/shape/footer-one-shape.png" alt="Image">
+          <img src="{{ asset('images/shape/footer-one-shape.png') }}" alt="Image">
         </div>
       </div>
     </div>

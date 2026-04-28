@@ -14,12 +14,15 @@ class Project extends Model
         'project_type',
         'established_date',
         'website',
-        'gallery'
+        'gallery',
+        'is_active',
+        'slug'
     ];
 
     // 🔥 Important: cast JSON to array
     protected $casts = [
         'gallery' => 'array',
         'established_date' => 'date',
+        'is_active' => 'boolean'
     ];
 }

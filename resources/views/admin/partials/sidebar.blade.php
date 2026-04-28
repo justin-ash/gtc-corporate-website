@@ -13,6 +13,18 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.services.index')}}">
+                <i class="icon-paper menu-icon"></i>
+                <span class="menu-title">Services</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.seo.index')}}">
+                <i class="icon-paper menu-icon"></i>
+                <span class="menu-title">SEO</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="{{route('admin.widgets.index')}}">
                 <i class="icon-paper menu-icon"></i>
                 <span class="menu-title">Widgets</span>

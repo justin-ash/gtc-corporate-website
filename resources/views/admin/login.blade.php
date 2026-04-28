@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Skydash Admin</title>
+    <title>{{config('settings.app_name')}} - Admin Panel</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('/admin/vendors/feather/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('/admin/vendors/ti-icons/css/themify-icons.css') }}">
@@ -29,7 +29,7 @@
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-left py-5 px-4 px-sm-5">
                             <div class="brand-logo">
-                                <img src="{{ asset('/admin/images/logo.svg') }}" alt="logo">
+                                <img src="{{ asset('/images/logo.png') }}" alt="logo">
                             </div>
                             <h4>Hello! let's get started</h4>
                             <h6 class="font-weight-light">Sign in to continue.</h6>
@@ -58,7 +58,7 @@
                                     @enderror
                                 </div>
                                 <div class="mt-3 d-grid gap-2">
-                                    <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN IN</button>
+                                    <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>
                                 </div>
                                 <div class="my-2 d-flex justify-content-between align-items-center">
                                     <div class="form-check">

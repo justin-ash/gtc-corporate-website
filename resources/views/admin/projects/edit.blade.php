@@ -38,8 +38,8 @@
     }
 </style>
 <div class="content-wrapper">
-    <form action="{{route('admin.projects.store')}}" id="save_project" method="POST">
-        @csrf
+    <form action="{{route('admin.projects.update', $project->id)}}" id="save_project" method="PUT">
+        @csrf @method('PUT')
         <div class="row">
             <div class="col-md-6 grid-margin stretch-card">
                 <div class="card">
@@ -52,9 +52,23 @@
                             <span class="error-text project_name_error"></span>
                         </div>
                         <div class="form-group">
+                            <label for="slug">Slug</label>
+                            <input type="text" class="form-control" id="slug" placeholder="Slug" name="slug" value="{{$project->slug}}" readonly style="background-color: #ccc;">
+                            <span class="error-text slug_error"></span>
+                        </div>
+                        <div class="form-group">
                             <label for="exampleInputEmail1">Short Description</label>
                             <input type="text" class="form-control" id="short_description" placeholder="Short description" name="short_description" value="{{$project->short_description}}">
                             <span class="error-text short_description_error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="is_active">Status</label>
+                            <select name="is_active" class="form-select">
+                                <option value="1" {{ $project->is_active == 1 ? 'selected' : '' }}>Active</option>
+                                <option value="0" {{ $project->is_active == 0 ? 'selected' : '' }}>Inactive</option>
+                            </select><br>
+                            <span class="error-text is_active_error"></span>
                         </div>
                     </div>
                 </div>
@@ -81,7 +95,7 @@
                         <div class="form-group row">
                             <label for="established_date" class="col-sm-3 col-form-label">Established Date</label>
                             <div class="col-sm-9">
-                                <input type="date" class="form-control" id="established_date" placeholder="Established Date" name="established_date" value="{{$project->established_date}}">
+                                <input type="date" class="form-control" id="established_date" placeholder="Established Date" name="established_date" value="{{ date('Y-m-d', strtotime($project->established_date)) }}">
                                 <span class="error-text established_date_error"></span>
                             </div>
                         </div>
@@ -116,7 +130,9 @@
                             </span>
                         </div>
                     </div> -->
-
+                        @php
+                        $gallery = $project->gallery;
+                        @endphp
                         <div class="form-group">
                             <label>Upload Gallery</label>
 
@@ -124,10 +140,19 @@
                             <input type="file" id="imageInput" multiple class="form-control mb-3">
 
                             <!-- Preview Area -->
-                            <div id="preview" class="row"></div>
+                            <div id="preview" class="row">
+                                @if($gallery)
+                                @foreach($gallery as $index => $img)
+                                <div class="col-md-1 preview-img" data-index="{{ $index }}">
+                                    <img src="{{ asset($img) }}" width="80">
+                                    <button class="remove-btn" onclick="removeImage({{ $index }}, '{{ $img }}')">×</button>
+                                </div>
+                                @endforeach
+                                @endif
+                            </div>
 
                             <!-- Upload Button -->
-                            <button id="uploadBtn" class="btn btn-success mt-3">Upload</button>
+                            <!-- <button id="uploadBtn" class="btn btn-success mt-3">Upload</button> -->
                         </div>
                         <div class="success-message"></div>
                         <button id="save_details" type="button" class="btn btn-primary me-2">Submit</button>
@@ -140,8 +165,21 @@
 </div>
 @push('scripts')
 <script>
-    let selectedFiles = [];
-    let uploadedPaths = [];
+    $(document).ready(function() {
+        $('#details').summernote({
+            height: 200,
+            placeholder: 'Write something...',
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['insert', ['link', 'picture']],
+                ['view', ['codeview']]
+            ]
+        });
+    });
+    let selectedFiles = @json($gallery ?? []);
+    let uploadedPaths = @json($gallery ?? []);
     // Preview images
     $('#imageInput').on('change', function(e) {
 
@@ -151,45 +189,32 @@
             let file = files[i];
             selectedFiles.push(file);
 
+            let index = selectedFiles.length - 1;
+
+            // Preview UI with progress bar
+            $('#preview').append(`
+            <div class="col-md-2 preview-img" data-index="${index}" id="img-${index}">
+                <img src="" id="preview-${index}">
+                <div class="progress">
+                    <div class="progress-bar" id="progress-${index}" style="width:0%"></div>
+                </div>
+                <button type="button" class="remove-btn" onclick="removeImage(${index})">×</button>
+            </div>
+        `);
+
             let reader = new FileReader();
 
             reader.onload = function(e) {
-                let index = selectedFiles.length - 1;
-
-                $('#preview').append(`
-                <div class="col-md-1 preview-img" data-index="${index}">
-                    <img src="${e.target.result}">
-                    <button class="remove-btn" onclick="removeImage(${index})">×</button>
-                </div>
-            `);
+                $(`#preview-${index}`).attr('src', e.target.result);
             };
 
             reader.readAsDataURL(file);
-        }
 
+            // 🔥 Upload immediately
+            uploadFile(file, index);
+        }
         updateButtons();
     });
-
-    function removeUploaded(path, element) {
-
-        $.ajax({
-            url: "/admin/delete-image",
-            type: "POST",
-            data: {
-                path: path
-            },
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-
-            success: function() {
-                uploadedPaths = uploadedPaths.filter(p => p !== path);
-                $(element).remove();
-
-                updateButtons(); // 🔥
-            }
-        });
-    }
 
     function updateButtons() {
 
@@ -211,26 +236,12 @@
         }
     }
 
-    // Remove before upload
-    function removeImage(index) {
-        selectedFiles[index] = null;
-        $(`.preview-img[data-index="${index}"]`).remove();
-        updateButtons();
-    }
-
-    // Upload API call
-    $('#uploadBtn').click(function() {
-
+    function uploadFile(file, index) {
         let formData = new FormData();
-
-        selectedFiles.forEach((file) => {
-            if (file !== null) {
-                formData.append('images[]', file);
-            }
-        });
+        formData.append('image', file);
 
         $.ajax({
-            url: "/admin/upload-gallery", // 🔥 your API
+            url: "/admin/upload-gallery",
             type: "POST",
             data: formData,
             processData: false,
@@ -239,25 +250,41 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
 
-            success: function(res) {
+            xhr: function() {
+                let xhr = new window.XMLHttpRequest();
 
-                // Save paths
-                res.paths.forEach(path => {
-                    uploadedPaths.push(path);
-                });
+                xhr.upload.addEventListener("progress", function(evt) {
+                    if (evt.lengthComputable) {
+                        let percent = Math.round((evt.loaded / evt.total) * 100);
+                        $(`#progress-${index}`).css('width', percent + '%');
+                    }
+                }, false);
+
+                return xhr;
+            },
+
+            success: function(res) {
+                // Assume API returns { path: "file.jpg" }
+                console.log("Upload Response:", res);
+                uploadedPaths[index] = res.paths;
 
                 console.log("Uploaded Paths:", uploadedPaths);
-
-                alert('Uploaded successfully!');
-                updateButtons();
             }
         });
+    }
 
-    });
+    // Remove before upload
+    function removeImage(index) {
+        removeUploaded(uploadedPaths[index])
+        uploadedPaths.splice(index, 1);
+        selectedFiles[index] = null;
+        $(`.preview-img[data-index="${index}"]`).remove();
+        updateButtons();
+    }
 
     // Remove after upload (server delete)
-    function removeUploaded(path, element) {
-
+    function removeUploaded(path) {
+        console.log(typeof path, path);
         $.ajax({
             url: "/admin/delete-image",
             type: "POST",
@@ -268,9 +295,12 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
 
-            success: function() {
+            success: function(res) {
                 uploadedPaths = uploadedPaths.filter(p => p !== path);
-                $(element).remove();
+            },
+
+            error: function(xhr) {
+                console.log(xhr);
             }
         });
     }
@@ -278,6 +308,9 @@
     $("#save_details").on("click", function() {
         let form = $("#save_project");
         let formData = form.serialize();
+        uploadedPaths.forEach(path => {
+            formData += `&gallery[]=${encodeURIComponent(path)}`;
+        });
         $('.error-text').text('');
         $('.success-message').text('');
         $.ajax({
@@ -290,6 +323,7 @@
 
                     // Clear form
                     form.trigger("reset");
+                    // $('.preview-img').remove();
                 }
             },
             error: function(xhr) {
@@ -300,6 +334,16 @@
                 });
             }
         });
+    });
+    $('#project_name').on('input', function() {
+        let slug = $(this).val()
+            .toLowerCase()
+            .trim()
+            .replace(/[^a-z0-9\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-');
+
+        $('#slug').val(slug);
     });
 </script>
 @endpush

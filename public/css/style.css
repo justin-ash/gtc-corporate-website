@@ -1,6 +1,6 @@
-/* Consultez | Business Consulting HTML Template
+/* GCT | Business Consulting HTML Template
 
-Template Name: Consultez
+Template Name: GCT
 Version: 1.0.0
 License: copyright commercial
 
@@ -407,7 +407,7 @@ textarea.form-control {
   background-color: var(--theme-color-dark);
 }
 .dark-layout .preloader:after {
-  background-image: url(../images/logo.png);
+  background-image: url(../uploads/settings/logo.png);
 }
 .dark-layout .sticky-header {
   background-color: var(--theme-color-dark);
@@ -23010,4 +23010,10 @@ $grid-breakpoints: (
 }
 .contact-info-box h5 {
   color:#fff
+}
+.inner-box .icon i{
+  font-size:3em
+}
+.inner-box .icon i:hover{
+  color:white
 }

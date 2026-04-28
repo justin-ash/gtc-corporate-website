@@ -12,14 +12,14 @@
                 <div class="col-12 col-xl-4">
                     <div class="justify-content-end d-flex">
                         <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
-                            <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button" id="dropdownMenuDate2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                <i class="mdi mdi-calendar"></i> Today (10 Jan 2021) </button>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDate2">
+                            <span class="btn btn-sm btn-light bg-white ">
+                                <!-- <i class="mdi mdi-calendar"></i>  -->Today ({{ date('d M Y') }}) </span>
+                            <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDate2">
                                 <a class="dropdown-item" href="#">January - March</a>
                                 <a class="dropdown-item" href="#">March - June</a>
                                 <a class="dropdown-item" href="#">June - August</a>
                                 <a class="dropdown-item" href="#">August - November</a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -33,13 +33,13 @@
                     <img src="{{asset('/admin/images/dashboard/people.svg') }}" alt="people">
                     <div class="weather-info">
                         <div class="d-flex">
-                            <div>
+                            <!-- <div>
                                 <h2 class="mb-0 font-weight-normal"><i class="icon-sun me-2"></i>31<sup>C</sup></h2>
                             </div>
                             <div class="ms-2">
                                 <h4 class="location font-weight-normal">Chicago</h4>
                                 <h6 class="font-weight-normal">Illinois</h6>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -79,9 +79,9 @@
                 <div class="col-md-6 stretch-card transparent">
                     <div class="card card-light-danger">
                         <div class="card-body">
-                            <p class="mb-4">Number of Clients</p>
-                            <p class="fs-30 mb-2">47033</p>
-                            <p>0.22% (30 days)</p>
+                            <p class="mb-4">Number of Services</p>
+                            <p class="fs-30 mb-2">{{$services}}</p>
+                            <!-- <p>0.22% (30 days)</p> -->
                         </div>
                     </div>
                 </div>

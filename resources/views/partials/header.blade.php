@@ -36,7 +36,7 @@
   <!-- Main box -->
   <div class="main-box">
     <div class="logo-box">
-      <div class="logo"><a href="{{ route('home') }}"><img src="{{ asset('images/logo.png') }}" alt="" title="Consultez"></a></div>
+      <div class="logo"><a href="{{ route('home') }}"><img src="{{asset(config('settings.logo'))}}" alt="" title="{{config('settings.app_name')}}"></a></div>
     </div>
     <!--Nav Box-->
     <div class="nav-outer">

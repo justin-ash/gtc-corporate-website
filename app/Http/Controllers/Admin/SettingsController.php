@@ -43,10 +43,10 @@ class SettingsController extends Controller
                     mkdir($folderPath, 0777, true);
                 }
 
-                $filename = uniqid() . '.webp';
+                // $filename = uniqid() . '.webp';
 
-                $image->save($folderPath . '/' . $filename);
-                $value = 'uploads/settings/' . $filename;
+                $image->save($folderPath . '/' . 'logo.png');
+                $value = 'uploads/settings/' . 'logo.png';
             }
 
             $setting->update([

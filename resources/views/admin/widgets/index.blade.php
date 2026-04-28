@@ -8,7 +8,6 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <h4 class="card-title mb-0">Widgets</h4>
-
                         <a href="{{ route('admin.widgets.create') }}" class="btn btn-primary mb-3">Add</a>
                     </div>
                     <p class="card-description">Add widgets here</p>
@@ -28,7 +27,7 @@
                                 @foreach($widgets as $w)
                                 <tr>
                                     <td>{{ $w->widget_code }}</td>
-                                    <td>{{ $w->title }}</td>
+                                    <td>{{ \Illuminate\Support\Str::limit($w->title, 50) }}</td>
                                     <td>{{ $w->is_active ? 'Active' : 'Inactive'}}</td>
                                     <td><a class="btn btn-outline-primary" href="{{route('admin.widgets.edit', $w->id)}}">Edit</a>
                                         <form action="{{ route('admin.widgets.destroy', $w->id) }}" method="POST" style="display:inline;">
@@ -40,8 +39,8 @@
                                             </button>
                                         </form>
                                     </td>
-                                <tr>
-                                    @endforeach
+                                </tr>
+                                @endforeach
 
                             </tbody>
                         </table>

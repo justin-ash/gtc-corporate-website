@@ -19,6 +19,7 @@
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="{{ asset('/admin/css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset('/admin/images/favicon.png') }}" />
 </head>
@@ -51,6 +52,9 @@
     <script src="{{ asset('/admin/js/file-upload.js') }}"></script>
     <script src="{{ asset('/admin/js/file-upload.js') }}"></script>
     <script src="{{ asset('/admin/js/summernote-lite.min.js') }}"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <!-- Bootstrap 5 integration -->
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
     @stack('scripts')
     <!-- endinject -->
 </body>

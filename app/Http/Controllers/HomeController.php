@@ -9,21 +9,26 @@ use App\Models\Project;
 use App\Models\Testimonial;
 use App\Models\Widget;
 use Illuminate\Support\Facades\Mail;
+use App\Models\SeoPage;
+use App\Models\Service;
 
 class HomeController extends Controller
 {
     public function index()
     {
         $testimonials = Testimonial::where('is_active', 1)->get();
-        $widgets = Widget::formatWidgets(['home', 'header', 'footer', 'sidebar']);
-        return view('home', compact('testimonials', 'widgets'));
+        $widgets = Widget::formatWidgets(['home', 'about', 'header', 'footer', 'sidebar']);
+        $seo = SeoPage::seoByPage('home');
+        $projects = Project::where('is_active', 1)->get();
+        return view('home', compact('testimonials', 'widgets', 'seo', 'projects'));
     }
 
     public function contact()
     {
 
         $widgets = Widget::formatWidgets(['contact', 'header', 'footer', 'sidebar']);
-        return view('contact', compact('widgets'));
+        $seo = SeoPage::seoByPage('contact');
+        return view('contact', compact('widgets', 'seo'));
     }
 
     public function submitContact(Request $request)
@@ -59,25 +64,32 @@ class HomeController extends Controller
     public function about()
     {
         $widgets = Widget::formatWidgets(['about', 'header', 'footer', 'sidebar']);
-        return view('about', compact('widgets'));
+        $seo = SeoPage::seoByPage('about');
+        return view('about', compact('widgets', 'seo'));
     }
 
     public function services()
     {
         $widgets = Widget::formatWidgets(['services', 'header', 'footer', 'sidebar']);
-        return view('services', compact('widgets'));
+        $seo = SeoPage::seoByPage('services');
+        $services = Service::where('is_active', 1)->get();
+        return view('services', compact('widgets', 'seo', 'services'));
     }
 
     public function projects()
     {
         $widgets = Widget::formatWidgets(['projects', 'header', 'footer', 'sidebar']);
-        return view('projects', compact('widgets'));
+        $seo = SeoPage::seoByPage('projects');
+        $projects = Project::where('is_active', 1)->get();
+        return view('projects', compact('widgets', 'seo', 'projects'));
     }
 
-    public function project(Request $request)
+    public function projectBySlug(Request $request, $slug)
     {
         $widgets = Widget::formatWidgets(['project', 'header', 'footer', 'sidebar']);
-        return view('project-detail', compact('widgets'));
+        $seo = SeoPage::seoByPage($slug);
+        $project = Project::where('is_active', 1)->where('slug', $slug)->first();
+        return view('project-detail', compact('widgets', 'seo', 'project'));
     }
 
     public function subscribe(Request $request)
