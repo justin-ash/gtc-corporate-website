@@ -276,7 +276,7 @@
 
                     // Clear form
                     form.trigger("reset");
-                    $('.preview-img').remove();
+                    // $('.preview-img').remove();
                 }
             },
             error: function(xhr) {
