@@ -67,14 +67,12 @@
           <div class="row g-4">
             <div class="col-lg-4 footer-column">
               <div class="footer-widget links-widget">
-                <h4 class="widget-title">Services</h4>
+                <h4 class="widget-title">Certifications</h4>
                 <div class="widget-content">
                   <ul class="user-links">
-                    <li><a href="#0">Digital Marketing</a></li>
-                    <li><a href="#0">Innovation Space</a></li>
-                    <li><a href="#0">Competitive Analysis</a></li>
-                    <li><a href="#0">Market Research</a></li>
-                    <li><a href="#0">HR Management</a></li>
+                    <li><a href="#0">ISO 9001:2015</a></li>
+                    <li><a href="#0">ISO 14001:2015</a></li>
+                    <li><a href="#0">ISO 45001:2018</a></li>
                   </ul>
                 </div>
               </div>
@@ -86,10 +84,10 @@
                 <div class="widget-content">
                   <ul class="user-links">
                     <li><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="{{ route('services') }}">Our Services</a></li>
-                    <li><a href="{{ route('projects') }}">Projects</a></li>
-                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
-                    <li><a href="{{ route('about') }}">About Us</a></li>
+                    <li><a href="{{ route('about') }}">About GTC</a></li>
+                    <li><a href="{{ route('services') }}">Services</a></li>
+                    <li><a href="{{ route('contact') }}">Contact</a></li>
+
                   </ul>
                 </div>
               </div>
@@ -125,7 +123,7 @@
         </div>
 
         <div class="footer-bottom">
-          <p class="copyright-text">© Copyright 2025. All Right by <a href="https://leafcodes.in">LeafCodes.in</a></p>
+          <p class="copyright-text">© 2026 Green Top Contracting Co. Ltd. All Rights Reserved</a></p>
         </div>
 
       </div>

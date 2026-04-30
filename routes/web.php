@@ -24,7 +24,7 @@ Route::post('/newsletter-subscribe', [HomeController::class, 'subscribe'])
 
 Route::prefix('admin')->group(function () {
     // When typing /admin
-    Route::get('/', function () {
+    Route::get('/admin', function () {
         if (Auth::guard('admin')->check()) {
             return redirect('/admin/dashboard');
         }
