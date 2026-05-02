@@ -6,7 +6,7 @@
      <div class="auto-container">
          <div class="title-outer">
              <ul class="page-breadcrumb">
-                 <li><a href="index.html">Home</a></li>
+                 <li><a href="{{ route('home') }}">Home</a></li>
                  <li>Contact Us</li>
              </ul>
              <h1 class="title">Contact Us</h1>

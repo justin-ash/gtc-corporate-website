@@ -6,27 +6,6 @@ var THEMEMASCOT = {};
 	/* --------------------------- Start Demo Switcher  --------------------- */
 	/* ---------------------------------------------------------------------- */
 
-	// var showSwitcher = true;
-	// var $style_switcher = $("#style-switcher");
-	// if (!$style_switcher.length && showSwitcher) {
-	// 	$.ajax({
-	// 		url: "color-switcher/style-switcher.html",
-	// 		dataType: "html",
-	// 		success: function (data) {
-	// 			try {
-	// 			const $parsed = $("<div>").html(data).contents();
-	// 			$("body").append($parsed);
-	// 			} catch (e) {
-	// 			console.error("Append failed:", e.message);
-	// 			console.warn("Response was:", data);
-	// 			}
-	// 		},
-	// 		error: function (xhr, status, error) {
-	// 			console.error("AJAX load failed:", status, error);
-	// 		}
-	// 	});
-	// }
-
 	/* ---------------------------------------------------------------------- */
 	/* ----------------------------- En Demo Switcher  ---------------------- */
 	/* ---------------------------------------------------------------------- */

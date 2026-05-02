@@ -93,9 +93,9 @@
           <div data-depth="0.01" class="image1 overlay-anim">
             <img src="images/about/about-image1.jpg" alt="Image">
           </div>
-          <div class="info animation__arryLeftRight">
+          <!-- <div class="info animation__arryLeftRight">
             <img src="images/about/about-info.png" alt="Image">
-          </div>
+          </div> -->
           <div class="image2 overlay-anim" data-depth="0.05">
             <img src="images/about/about-image2.jpg" alt="Image">
           </div>
@@ -259,7 +259,7 @@
       <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Growth Rate</h6>
       <div class="flex-content">
         <h2 class="title text-white wow splt-txt" data-splitting>{!!$widgets['GROWTH_RATE']['title']!!}</h2>
-        <a class="btn-one-light border-0 rounded-0 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms" href="page-about.html">Discover More</a>
+        <a class="btn-one-light border-0 rounded-0 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms" href="{{route('about')}}">Discover More</a>
       </div>
     </div>
     <div class="row g-5">

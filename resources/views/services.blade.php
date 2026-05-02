@@ -7,7 +7,7 @@
          <div class="title-outer">
              <h1 class="title">Service Grid</h1>
              <ul class="page-breadcrumb">
-                 <li><a href="index.html">Home</a></li>
+                 <li><a href="{{ route('home') }}">Home</a></li>
                  <li>Service Grid</li>
              </ul>
          </div>
@@ -29,7 +29,6 @@
                          <div class="content-box">
                              <h4 class="title">{{$service->title}}</h4>
                              <p class="text">{!! $service->description !!}</p>
-                             <!-- <a class="btn-two-rounded" href="page-service-details.html">learn more</a> -->
                          </div>
                          <div class="block-bg">
                              <img src="images/shape/service-block-shape.png" alt="Image">
