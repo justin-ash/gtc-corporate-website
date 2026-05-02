@@ -578,7 +578,7 @@ figure.image {
   background-repeat: no-repeat;
   -webkit-animation: pulse 1s infinite linear;
           animation: pulse 1s infinite linear;
-  background-image: url(../images/favicon.png);
+  background-image: url(../images/logo1.png);
   content: "";
 }
 .preloader:before {

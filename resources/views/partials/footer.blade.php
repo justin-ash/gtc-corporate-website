@@ -32,7 +32,7 @@
                   <li><i class="fa-sharp fa-solid fa-phone"></i></li>
                   <li>
                     <span>Call Us:</span>
-                    <h5 class="title">+1-2345-2345-54</h5>
+                    <h5 class="title">{{config('settings.phone')}}</h5>
                   </li>
                 </ul>
               </div>
@@ -54,7 +54,7 @@
                   <li><i class="fa-sharp fa-solid fa-location-dot"></i></li>
                   <li>
                     <span>Hours:</span>
-                    <h5 class="title">Daily: 8 AM to 5 PM</h5>
+                    <h5 class="title">Saturday - Thursday 8AM-5PM</h5>
                   </li>
                 </ul>
               </div>

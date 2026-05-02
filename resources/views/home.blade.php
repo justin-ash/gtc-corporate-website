@@ -58,7 +58,7 @@
         </div>
       </div>
       <div class="swiper-slide">
-        <div class="slide-bg" data-background="images/banner/banner-image3.jpg"></div>
+        <div class="slide-bg" data-background="images/banner/banner-image3.jfif"></div>
         <div class="container">
           <div class="outer-box">
             <div class="row g-0 align-items-end">
@@ -212,7 +212,7 @@
       <div class="col-xl-6 image-column">
         <div class="inner-column">
           <figure class="image">
-            <img class="wow imageUpToDown" src="images/choose/choose-image1.jpg" alt="Image">
+            <img class="wow imageUpToDown" src="images/choose/choose-image1.png" alt="Image">
             <div class="outer-box">
               <div class="choose-block">
                 <!-- pie-graph -->
