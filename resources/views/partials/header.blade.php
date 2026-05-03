@@ -4,11 +4,10 @@
 <!-- Main Header-->
 <header class="main-header header-style-one">
   <!-- Header Top -->
-  <div class="header-top">
+  <!-- <div class="header-top">
     <div class="auto-container">
 
       <div class="top-left">
-        <!-- Info List -->
         <ul class="info-list">
           <li><i class="fa-solid fa-envelope"></i> <a href="#"><span class="__cf_email__">{{config('settings.email')}}</span></a>
           </li>
@@ -30,7 +29,7 @@
         </ul>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- Header Top -->
 
   <!-- Main box -->
@@ -74,7 +73,7 @@
       <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
       <nav class="menu-box">
         <div class="upper-box">
-          <div class="nav-logo"><a href="{{ route('home') }}"><img src="{{config('settings.logo')}}" alt=""></a></div>
+          <div class="nav-logo"><a href="{{ route('home') }}"><img src="{{ asset(config('settings.logo'))}}" alt=""></a></div>
           <div class="close-btn"><i class="icon fa fa-times"></i></div>
         </div>
         <ul class="navigation clearfix d-block d-lg-none">
