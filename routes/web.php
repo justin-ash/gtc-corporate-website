@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\ContactsController;
 use App\Http\Controllers\Admin\ProjectsController;
 use App\Http\Controllers\Admin\SeoPageController;
@@ -53,5 +54,8 @@ Route::prefix('admin')->group(function () {
         Route::post('/upload-testimonial-image', [TestimonialController::class, 'uploadGallery']);
         Route::post('/delete-testimonial-image', [TestimonialController::class, 'deleteImage']);
         Route::resource('seo', SeoPageController::class);
+        Route::resource('banners', BannerController::class);
+        Route::post('/upload-banner-image', [BannerController::class, 'uploadGallery']);
+        Route::post('/delete-banner-image', [BannerController::class, 'deleteImage']);
     });
 });

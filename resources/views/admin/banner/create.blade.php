@@ -2,31 +2,6 @@
 
 @section('content')
 <style>
-    .preview-img {
-        position: relative;
-        margin: 10px;
-    }
-
-    .preview-img img {
-        width: 120px;
-        height: 100px;
-        object-fit: cover;
-        border-radius: 6px;
-    }
-
-    .remove-btn {
-        position: absolute;
-        top: 5px;
-        right: 0px;
-        background: red;
-        color: #fff;
-        border: none;
-        border-radius: 50%;
-        width: 22px;
-        height: 22px;
-        font-size: 12px;
-    }
-
     .error-text {
         color: red;
         font-size: 13px;
@@ -38,44 +13,38 @@
     }
 </style>
 <div class="content-wrapper">
-    <form method="POST" action="{{ route('admin.testimonials.update', $testimonial->id) }}" id="save_testimonial" enctype="multipart/form-data">
-        @csrf @method('PUT')
+    <form method="POST" id="save_banner" enctype="multipart/form-data" action="{{ isset($banner) ? route('admin.banners.update',$banner) : route('admin.banners.store') }}" enctype="multipart/form-data">
+        @csrf
+        @if(isset($banner)) @method('PUT') @endif
         <div class="row">
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title">Testimonials</h4>
-                        <p class="card-description"> Testimonial details </p>
+                        <h4 class="card-title">Banners</h4>
+                        <p class="card-description"> Banner details </p>
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Name" name="name" value="{{ $testimonial->name }}">
-                            <span class="error-text name_error"></span>
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" id="title" placeholder="Title" name="title">
+                            <span class="error-text title_error"></span>
                         </div>
                         <div class="form-group">
-                            <label for="role">Role</label>
-                            <input type="text" class="form-control" id="role" placeholder="Role" name="role" value="{{ $testimonial->role }}">
-                            <span class="error-text role_error"></span>
+                            <label for="main_title">Main Title</label>
+                            <input type="text" class="form-control" id="main_title" placeholder="Main Title" name="main_title">
+                            <span class="error-text main_title_error"></span>
                         </div>
+
                         <div class="form-group">
-                            <label for="rating">Rating</label>
-                            <select name="rating" class="form-select">
-                                @for($i=1; $i<=5; $i++)
-                                    <option value="{{ $i }}" {{ $testimonial->rating == $i ? 'selected' : '' }}>
-                                    {{ $i }}
-                                    </option>
-                                    @endfor
-                            </select><br>
-                            <span class="error-text rating_error"></span>
+                            <label for="button_link">Button Link</label>
+                            <input type="text" class="form-control" id="button_link" placeholder="Button Link" name="button_link">
+                            <span class="error-text button_link_error"></span>
                         </div>
+
                         <div class="form-group">
-                            <label for="message">Testimonial Message</label>
-                            <textarea type="text" class="form-control" id="message" placeholder="Testimonial Message" name="message">{{ $testimonial->message }}</textarea>
-                            <span class="error-text message_error"></span>
+                            <label for="message">Banner Description</label>
+                            <textarea type="text" class="form-control" id="message" placeholder="Banner Description" name="description"></textarea>
+                            <span class="error-text description_error"></span>
                         </div>
-                        @php
-                        $gallery = $testimonial->gallery;
-                        @endphp
                         <div class="form-group">
                             <label>Upload File</label>
 
@@ -83,17 +52,7 @@
                             <input type="file" id="imageInput" name="image[]" multiple class="form-control mb-3">
 
                             <!-- Preview Area -->
-                            <div id="preview" class="row">
-                                @if($testimonial->image)
-                                <div class="col-md-2 preview-img" data-index="0" id="img-0">
-                                    <img src="{{ asset($testimonial->image) }}" id="preview-0">
-                                    <div class="progress">
-                                        <div class="progress-bar" id="progress-0" style="width:0%"></div>
-                                    </div>
-                                    <button type="button" class="remove-btn" onclick="removeImage(0)">×</button>
-                                </div>
-                                @endif
-                            </div>
+                            <div id="preview" class="row"></div>
 
                             <!-- Upload Button -->
                             <!-- <button id="uploadBtn" class="btn btn-success mt-3">Upload</button> -->
@@ -101,8 +60,8 @@
                         <div class="form-group">
                             <label for="is_active">Status</label>
                             <select name="is_active" class="form-select">
-                                <option value="1" {{ $testimonial->is_active == 1 ? 'selected' : '' }}>Active</option>
-                                <option value="0" {{ $testimonial->is_active == 0 ? 'selected' : '' }}>Inactive</option>
+                                <option value="1">Active</option>
+                                <option value="0">Inactive</option>
                             </select><br>
                             <span class="error-text is_active_error"></span>
                         </div>
@@ -135,8 +94,8 @@
 @endpush
 @push('scripts')
 <script>
-    let selectedFiles = @json($gallery ?? []);
-    let uploadedPaths = @json($gallery ?? []);
+    let selectedFiles = [];
+    let uploadedPaths = [];
     // Preview images
     $('#imageInput').on('change', function(e) {
 
@@ -197,7 +156,7 @@
         formData.append('image', file);
 
         $.ajax({
-            url: "/admin/upload-testimonial-image",
+            url: "/admin/upload-banner-image",
             type: "POST",
             data: formData,
             processData: false,
@@ -241,7 +200,7 @@
     // Remove after upload (server delete)
     function removeUploaded(path) {
         $.ajax({
-            url: "/admin/delete-testimonial-image",
+            url: "/admin/delete-banner-image",
             type: "POST",
             data: {
                 path: path
@@ -261,19 +220,15 @@
     }
 
     $("#save_details").on("click", function() {
-        let form = $("#save_testimonial");
+        let form = $("#save_banner");
         let formData = form.serialize();
-        if (uploadedPaths.length > 0) {
-            uploadedPaths.forEach(path => {
-                formData += `&image[]=${encodeURIComponent(path)}`;
-            });
-        } else {
-            formData += `&image[]=${encodeURIComponent('')}`;
-        }
+        uploadedPaths.forEach(path => {
+            formData += `&image[]=${encodeURIComponent(path)}`;
+        });
         $('.error-text').text('');
         $('.success-message').text('');
         $.ajax({
-            url: $("#save_testimonial").attr('action'),
+            url: $("#save_banner").attr('action'),
             type: "POST",
             data: formData,
             success: function(response) {
@@ -282,7 +237,7 @@
 
                     // Clear form
                     form.trigger("reset");
-                    // $('.preview-img').remove();
+                    $('.preview-img').remove();
                 }
             },
             error: function(xhr) {

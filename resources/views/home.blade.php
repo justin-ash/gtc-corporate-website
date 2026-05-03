@@ -13,72 +13,30 @@
 
   <div class="swiper banner-slider">
     <div class="swiper-wrapper">
+      @foreach($banners as $banner)
       <div class="swiper-slide">
-        <div class="slide-bg" data-background="images/banner/banner-image1.jpg"></div>
+        <div class="slide-bg" data-background="{{ asset($banner->image) }}"></div>
         <div class="container">
           <div class="outer-box">
             <div class="row g-0 align-items-end">
               <div class="col-lg-8 content-column">
                 <div class="inner-column">
-                  <h6 class="sub-title" data-animation="fadeInUp" data-delay=".3s">{{$widgets['BANNER_TEXT']['title']}}</h6>
+                  <h6 class="sub-title" data-animation="fadeInUp" data-delay=".3s">{{ $banner->title}}</h6>
                   </h6>
-                  <h1 class="title" data-animation="fadeInUp" data-delay=".5s">{!! $widgets['BANNER_TEXT']['description'] !!}
+                  <h1 class="title" data-animation="fadeInUp" data-delay=".5s">{{ $banner->main_title }}
                   </h1>
-                  <a class="btn-one" data-animation="fadeInUp" data-delay=".8s" href="{{ route('contact') }}">free consultation</a>
+                  <a class="btn-one" data-animation="fadeInUp" data-delay=".8s" href="{{ $banner->button_link }}">free consultation</a>
                 </div>
               </div>
 
               <div class="col-lg-4">
-                <p class="text" data-animation="fadeInUp" data-delay=".9s">{!! $widgets['BANNER_RIGHT']['title'] !!}</p>
+                <p class="text" data-animation="fadeInUp" data-delay=".9s">{!! $banner->description !!}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="swiper-slide">
-        <div class="slide-bg" data-background="images/banner/banner-image2.jpg"></div>
-        <div class="container">
-          <div class="outer-box">
-            <div class="row g-0 align-items-end">
-              <div class="col-lg-8 content-column">
-                <div class="inner-column">
-                  <h6 class="sub-title" data-animation="fadeInUp" data-delay=".3s">{{$widgets['BANNER_TEXT']['title']}}
-                  </h6>
-                  <h1 class="title" data-animation="fadeInUp" data-delay=".5s">{!! $widgets['BANNER_TEXT']['description'] !!}
-                  </h1>
-                  <a class="btn-one" data-animation="fadeInUp" data-delay=".8s" href="{{ route('contact') }}">free consultation</a>
-                </div>
-              </div>
-
-              <div class="col-lg-4">
-                <p class="text" data-animation="fadeInUp" data-delay=".9s">{!! $widgets['BANNER_RIGHT']['title'] !!}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="slide-bg" data-background="images/banner/banner-image3.jfif"></div>
-        <div class="container">
-          <div class="outer-box">
-            <div class="row g-0 align-items-end">
-              <div class="col-lg-8 content-column">
-                <div class="inner-column">
-                  <h6 class="sub-title" data-animation="fadeInUp" data-delay=".3s">{{$widgets['BANNER_TEXT']['title']}}
-                  </h6>
-                  <h1 class="title" data-animation="fadeInUp" data-delay=".5s">{!! $widgets['BANNER_TEXT']['description'] !!}
-                  </h1>
-                  <a class="btn-one" data-animation="fadeInUp" data-delay=".8s" href="{{ route('contact') }}">free consultation</a>
-                </div>
-              </div>
-
-              <div class="col-lg-4">
-                <p class="text" data-animation="fadeInUp" data-delay=".9s">{!! $widgets['BANNER_RIGHT']['title'] !!}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      @endforeach
     </div>
   </div>
 </section>

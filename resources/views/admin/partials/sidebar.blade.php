@@ -14,19 +14,25 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.services.index')}}">
-                <i class="icon-paper menu-icon"></i>
+                <i class="icon-loader menu-icon"></i>
                 <span class="menu-title">Services</span>
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.banners.index')}}">
+                <i class="icon-image menu-icon"></i>
+                <span class="menu-title">Banners</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="{{route('admin.seo.index')}}">
-                <i class="icon-paper menu-icon"></i>
+                <i class="icon-contract menu-icon"></i>
                 <span class="menu-title">SEO</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.widgets.index')}}">
-                <i class="icon-paper menu-icon"></i>
+                <i class="icon-book menu-icon"></i>
                 <span class="menu-title">Widgets</span>
             </a>
         </li>

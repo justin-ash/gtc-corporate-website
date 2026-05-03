@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\NewsletterSubscriber;
@@ -20,7 +21,8 @@ class HomeController extends Controller
         $widgets = Widget::formatWidgets(['home', 'about', 'header', 'footer', 'sidebar']);
         $seo = SeoPage::seoByPage('home');
         $projects = Project::where('is_active', 1)->get();
-        return view('home', compact('testimonials', 'widgets', 'seo', 'projects'));
+        $banners = Banner::where('is_active', 1)->get();
+        return view('home', compact('testimonials', 'widgets', 'seo', 'projects', 'banners'));
     }
 
     public function contact()

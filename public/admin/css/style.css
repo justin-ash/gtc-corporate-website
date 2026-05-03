@@ -25693,3 +25693,6 @@ table.dataTable tbody td.select-checkbox:after {
   }
 }
 /*# sourceMappingURL=maps/style.css.map */
+#preview img{
+  width:250px;
+}
