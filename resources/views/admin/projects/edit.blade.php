@@ -122,7 +122,7 @@
 
                         <!-- <div class="form-group">
                         <label>File upload</label>
-                        <input type="file" name="img[]" class="file-upload-default">
+                        <input type="file" name="img[]" class="file-upload-default" accept=".jpg,.jpeg,.png">
                         <div class="input-group col-xs-12 d-flex align-items-center">
                             <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
                             <span class="input-group-append ms-2">
@@ -137,7 +137,7 @@
                             <label>Upload Gallery</label>
 
                             <!-- File Input -->
-                            <input type="file" id="imageInput" multiple class="form-control mb-3">
+                            <input type="file" id="imageInput" multiple class="form-control mb-3" accept=".jpg,.jpeg,.png">
 
                             <!-- Preview Area -->
                             <div id="preview" class="row">

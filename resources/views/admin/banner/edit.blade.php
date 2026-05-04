@@ -49,7 +49,7 @@
                             <label>Upload File</label>
 
                             <!-- File Input -->
-                            <input type="file" id="imageInput" name="image[]" multiple class="form-control mb-3">
+                            <input type="file" id="imageInput" name="image[]" multiple class="form-control mb-3" accept=".jpg,.jpeg,.png">
                             @php
                             $gallery = $banner->gallery;
                             @endphp
