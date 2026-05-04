@@ -19,7 +19,6 @@
                                     <th>ID</th>
                                     <th>Title</th>
                                     <th>Main Title</th>
-                                    <th>Image</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -31,11 +30,7 @@
                                     <td>{{ $banner->id }}</td>
                                     <td>{{ $banner->title }}</td>
                                     <td>{{ $banner->main_title }}</td>
-                                    <td>
-                                        @if($banner->image)
-                                        <img src="{{ asset($banner->image) }}" width="100">
-                                        @endif
-                                    </td>
+
                                     <td>{{ $banner->is_active ? 'Active' : 'Inactive' }}</td>
                                     <td>
                                         <a class="btn btn-outline-primary" href="{{ route('admin.banners.edit', $banner) }}">Edit</a>

@@ -32,10 +32,13 @@ class BannerController extends Controller
             'is_active' => 'required|boolean',
         ]);
 
-        if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('banners', 'public');
-        }
-        $data['image'] = $request->image ? $request->image[0] : null;
+        // print_r($data);
+        // exit;
+
+        // if ($request->hasFile('image')) {
+        //     $data['image'] = $request->file('image')->store('banners', 'public');
+        // }
+        $data['image'] = $request->image ? json_encode($request->image) : [];
         Banner::create($data);
 
         return response()->json([
@@ -60,10 +63,10 @@ class BannerController extends Controller
             'is_active' => 'required|boolean',
         ]);
 
-        if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('banners', 'public');
-        }
-        $data['image'] = $request->image ? $request->image[0] : null;
+        // if ($request->hasFile('image')) {
+        //     $data['image'] = $request->file('image')->store('banners', 'public');
+        // }
+        // $data['image'] = $request->image ? $request->image[0] : null;
         $banner->update($data);
 
         return response()->json([

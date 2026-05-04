@@ -31,7 +31,7 @@ class TestimonialController extends Controller
             'image' => 'nullable',
             'is_active' => 'required'
         ]);
-        $data['image'] = $request->image ? $request->image[0] : null;
+        // $data['image'] = $request->image ? $request->image[0] : null;
         Testimonial::create($data);
 
         return response()->json([
@@ -58,7 +58,7 @@ class TestimonialController extends Controller
             'image' => 'nullable',
             'is_active' => 'required'
         ]);
-        $data['image'] = $request->image ? $request->image[0] : $testimonial->image;
+        // $data['image'] = $request->image ? $request->image[0] : $testimonial->image;
         $testimonial->update($data);
 
         return response()->json([

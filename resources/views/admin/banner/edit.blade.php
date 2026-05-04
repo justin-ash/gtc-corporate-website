@@ -35,7 +35,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="button_link">Button Link</label>
+                            <label for="button_link">Button Text</label>
                             <input type="text" class="form-control" id="button_link" placeholder="Button Link" name="button_link" value="{{ $banner->button_link ?? '' }}">
                             <span class="error-text button_link_error"></span>
                         </div>
@@ -51,13 +51,13 @@
                             <!-- File Input -->
                             <input type="file" id="imageInput" name="image[]" multiple class="form-control mb-3" accept=".jpg,.jpeg,.png">
                             @php
-                            $gallery = $banner->gallery;
+                            $gallery = json_decode($banner->image);
                             @endphp
                             <!-- Preview Area -->
                             <div id="preview" class="row">
-                                @if($banner->image)
+                                @if($gallery)
                                 <div class="col-md-2 preview-img" data-index="0" id="img-0">
-                                    <img src="{{ asset($banner->image) }}" id="preview-0">
+                                    <img src="{{ asset($gallery[0]) }}" id="preview-0">
                                     <div class="progress">
                                         <div class="progress-bar" id="progress-0" style="width:0%"></div>
                                     </div>

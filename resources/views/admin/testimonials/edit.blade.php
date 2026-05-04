@@ -74,7 +74,7 @@
                             <span class="error-text message_error"></span>
                         </div>
                         @php
-                        $gallery = $testimonial->gallery;
+                        $gallery = json_decode($testimonial->image);
                         @endphp
                         <div class="form-group">
                             <label>Upload File</label>
@@ -84,9 +84,9 @@
 
                             <!-- Preview Area -->
                             <div id="preview" class="row">
-                                @if($testimonial->image)
+                                @if($gallery)
                                 <div class="col-md-2 preview-img" data-index="0" id="img-0">
-                                    <img src="{{ asset($testimonial->image) }}" id="preview-0">
+                                    <img src="{{ asset($gallery[0]) }}" id="preview-0">
                                     <div class="progress">
                                         <div class="progress-bar" id="progress-0" style="width:0%"></div>
                                     </div>

@@ -35,7 +35,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="button_link">Button Link</label>
+                            <label for="button_link">Button Text</label>
                             <input type="text" class="form-control" id="button_link" placeholder="Button Link" name="button_link">
                             <span class="error-text button_link_error"></span>
                         </div>
