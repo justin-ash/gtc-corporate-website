@@ -143,7 +143,7 @@
                             <div id="preview" class="row">
                                 @if($gallery)
                                 @foreach($gallery as $index => $img)
-                                <div class="col-md-1 preview-img" data-index="{{ $index }}">
+                                <div class="col-md-2 preview-img" data-index="{{ $index }}">
                                     <img src="{{ asset($img) }}" width="80">
                                     <button class="remove-btn" onclick="removeImage({{ $index }}, '{{ $img }}')">×</button>
                                 </div>
