@@ -308,9 +308,13 @@
     $("#save_details").on("click", function() {
         let form = $("#save_project");
         let formData = form.serialize();
-        uploadedPaths.forEach(path => {
-            formData += `&gallery[]=${encodeURIComponent(path)}`;
-        });
+        if (uploadedPaths.length > 0) {
+            uploadedPaths.forEach(path => {
+                formData += `&image[]=${encodeURIComponent(path)}`;
+            });
+        } else {
+            formData += `&image[]=${encodeURIComponent('')}`;
+        }
         $('.error-text').text('');
         $('.success-message').text('');
         $.ajax({
