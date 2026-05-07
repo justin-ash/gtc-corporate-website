@@ -3,7 +3,7 @@
 @section('content')
 <!-- Banner area start here -->
 <section class="banner-section">
-  <div class="arry"><img class="animation__arryLeftRight" src="images/shape/banner-arry.png" alt="Image"></div>
+  <!-- <div class="arry"><img class="animation__arryLeftRight" src="images/shape/banner-arry.png" alt="Image"></div> -->
   <div class="sec-shape"><img src="images/shape/banner-shape.png" alt="Image"></div>
   <button class="goBottom-btn">
     <svg class="animation__arryUpDown" width="16" height="36" viewBox="0 0 16 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,18 +23,22 @@
         <div class="container">
           <div class="outer-box">
             <div class="row g-0 align-items-end">
-              <div class="col-lg-8 content-column">
+              <div class="col-lg-9 content-column">
                 <div class="inner-column">
-                  <h6 class="sub-title" data-animation="fadeInUp" data-delay=".3s">{{ $banner->title}}</h6>
-
-                  <h1 class="title" data-animation="fadeInUp" data-delay=".5s">{{ $banner->main_title }}
-                  </h1>
+                  <h1 class="title" data-animation="fadeInUp" data-delay=".5s">{{ $banner->main_title }}</h1><br>
+                  <h6 class="sub-title" data-animation="fadeInUp" data-delay=".3s">{{ $banner->title}}</h6><br><br>
+                  <p class="sub-title1" data-animation="fadeInUp" data-delay=".9s">{!! $banner->description !!}</p><br><br>
                   <a class="btn-one" data-animation="fadeInUp" data-delay=".8s" href="{{ route('contact') }}">{{ $banner->button_link }}</a>
                 </div>
               </div>
 
-              <div class="col-lg-4">
-                <p class="text" data-animation="fadeInUp" data-delay=".9s">{!! $banner->description !!}</p>
+              <div class="col-lg-3">
+                <div class="text" data-animation="fadeInUp" data-delay=".9s">
+                  <div class="banner-right-text "><img src="{{ asset('images/icons/handshake.png') }}" alt="Handshake"><span class="count-text">50 years of Excellence</span></div>
+                  <div class="banner-right-text "><img src="{{ asset('images/icons/handshake.png') }}" alt="Trusted"><span class="count-text">Trusted by global Industries</span></div>
+                  <div class="banner-right-text "><img src="{{ asset('images/icons/handshake.png') }}" alt="Sustainable"><span class="count-text">Sustainable Solutions</span></div>
+                  <div class="banner-right-text "><img src="{{ asset('images/icons/handshake.png') }}" alt="Delivery"><span class="count-text">End to end project delivery</span></div>
+                </div>
               </div>
             </div>
           </div>
@@ -49,22 +53,8 @@
 <!-- About area start here -->
 <section class="about-section pt-120 pb-120 paralax__animation">
   <div class="container">
-    <div class="row g-5">
-      <div class="col-lg-6 image-column wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
-        <div class="inner-column">
-          <div data-depth="0.01" class="image1 overlay-anim">
-            <img src="images/about/about-image1.jpg" alt="Image">
-          </div>
-          <!-- <div class="info animation__arryLeftRight">
-            <img src="images/about/about-info.png" alt="Image">
-          </div> -->
-          <div class="image2 overlay-anim" data-depth="0.05">
-            <img src="images/about/about-image2.jpg" alt="Image">
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-6 content-column">
+    <div class="row">
+      <div class="col-lg-5 content-column">
         <div class="inner-column">
           <div class="content-box">
             <div class="sec-title">
@@ -72,6 +62,27 @@
               <h2 class="title wow splt-txt" data-splitting> {{$widgets['HOME_ABOUT_US_TITLE']['title']}}</h2>
               <p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{{$widgets['HOME_ABOUT_US_TITLE']['description']}}</p>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 image-column wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+        <div class="inner-column">
+          <div data-depth="0.01" class="image1 overlay-anim">
+            <img src="images/about/about-image2.jpg" alt="Image">
+          </div>
+          <!-- <div class="info animation__arryLeftRight">
+            <img src="images/about/about-info.png" alt="Image">
+          </div> -->
+          <!-- <div class="image2 overlay-anim" data-depth="0.05">
+            <img src="images/about/about-image2.jpg" alt="Image">
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="col-lg-4 content-column">
+        <div class="inner-column">
+          <div class="content-box">
             {!! $widgets['HOME_ABOUT_DETAIL']['description'] !!}
           </div>
 
@@ -85,20 +96,6 @@
               </div>
             </div>
           </div>
-
-          <!-- <div class="info mt-50">
-            <a href="{{ route('projects') }}" class="btn-two">Find projects</a>
-            <div class="user">
-              <div class="image">
-                <img src="images/about/about-user.png" alt="Image">
-              </div>
-              <div>
-                <img src="images/about/signature.png" alt="Image">
-                <p class="sub-title">Founder</p>
-              </div>
-            </div>
-          </div> -->
-
         </div>
       </div>
     </div>
@@ -124,12 +121,16 @@
               </figure>
               <div class="content-box">
                 <span class="sub-title">{{ $project->project_type }}</span>
-                <h4 class="title"><a href="{{ route('projects.show', $project->slug) }}"> {{ $project->project_name }}</a></h4>
+                <h4 class="title"><a href="{{ route('projects.show', $project->slug) }}"> {{ $project->project_name }}</a></h4><br>
+                <p>{{$project->short_description }}</p>
+                <a href="{{ route('projects.show', $project->slug) }}">Learn More <i class="fa-solid fa-arrow-right"></i></a>
               </div>
               <a class="arry-btn" href="{{ route('projects.show', $project->slug) }}"><i class="fa-regular fa-arrow-up-right"></i></a>
               <div class="hover-content">
                 <span class="sub-title">{{ $project->project_type }}</span>
-                <h4 class="title"><a href="{{ route('projects.show', $project->slug) }}">{{ $project->project_name }}</a></h4>
+                <h4 class="title"><a href="{{ route('projects.show', $project->slug) }}">{{ $project->project_name }}</a></h4><br>
+                <p style="color: #fff;">{{$project->short_description }}</p>
+                <a style="color: #fff;" href="{{ route('projects.show', $project->slug) }}">Learn More <i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
           </div>
@@ -142,13 +143,13 @@
 <!-- Case area end here -->
 
 <!-- Choose area start here -->
-<section class="choose-section pt-120 pb-120">
+<section class="choose-section pt-70 pb-70">
   <div class="container">
     <div class="row g-4">
       <div class="col-xl-6 content-column">
         <div class="inner-column">
           <div class="sec-title mb-30">
-            <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Mission & Vision</h6>
+            <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Why Choose Us</h6>
             <h2 class="title wow splt-txt" data-splitting>{!! $widgets['MISSION_AND_VISION']['title'] !!}</h2>
           </div>
 
@@ -218,10 +219,11 @@
   </div>
   <div class="container">
     <div class="sec-title pb-50 mb-50">
-      <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Growth Rate</h6>
-      <div class="flex-content">
+      <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Our Approch</h6>
+      <div class="flex-content" style="display: block;">
         <h2 class="title text-white wow splt-txt" data-splitting>{!!$widgets['GROWTH_RATE']['title']!!}</h2>
-        <a class="btn-one-light border-0 rounded-0 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms" href="{{route('about')}}">Discover More</a>
+        <p class="text">Colloborative solutions designed to drive business growth and community impact.</p><br>
+        <a class="btn-one-light border-0 rounded-0 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms" href="{{route('about')}}">Work With Us</a>
       </div>
     </div>
     <div class="row g-5">
@@ -232,7 +234,7 @@
 <!-- Growth area end here -->
 
 <!-- Processing area start here -->
-<section class="processing-section pt-120 pb-120">
+<section class="processing-section pt-70 pb-70">
   <div class="shape">
     <img class="animation__rotate" src="images/shape/dual-circle.png" alt="Image">
   </div>
@@ -244,7 +246,26 @@
     </div>
 
     <div class="outer-box">
-      <div class="row g-0">
+      <div class="logo-slider">
+        <div class="logo-slide-track">
+
+          <!-- LOGOS (duplicate for infinite effect) -->
+          <div class="logo-slide"><img src="{{asset('images/logos/a.jpeg')}}"></div>
+          <div class="logo-slide"><img src="{{asset('images/logos/b.jpeg')}}"></div>
+          <div class="logo-slide"><img src="{{asset('images/logos/c.jpeg')}}"></div>
+          <div class="logo-slide"><img src="{{asset('images/logos/d.jpeg')}}"></div>
+          <div class="logo-slide"><img src="{{asset('images/logos/e.jpeg')}}"></div>
+
+          <div class="logo-slide"><img src="{{asset('images/logos/a.jpeg')}}"></div>
+          <div class="logo-slide"><img src="{{asset('images/logos/b.jpeg')}}"></div>
+          <div class="logo-slide"><img src="{{asset('images/logos/c.jpeg')}}"></div>
+          <div class="logo-slide"><img src="{{asset('images/logos/d.jpeg')}}"></div>
+          <div class="logo-slide"><img src="{{asset('images/logos/e.jpeg')}}"></div>
+
+
+        </div>
+      </div>
+      <!-- <div class="row g-0">
         <div class="col-sm-6 col-xl-3 wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
           <div class="processing-block">
             <div class="inner-box">
@@ -281,9 +302,8 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
-    <h5 class="sec-text mt-50 wow fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">{!! $widgets['HOW_IT_WORKS_CONTACT_LINK']['description']!!}</h5>
   </div>
 </section>
 <!-- Processing area end here -->
@@ -292,9 +312,9 @@
 <!-- Testimonial area start here -->
 <section class="testimonial-section">
   <div class="outer-box">
-    <figure class="shape">
+    <!-- <figure class="shape">
       <img src="images/shape/testimonial-shape.png" alt="Image">
-    </figure>
+    </figure> -->
     <div class="swiper testimonial-slider">
       <div class="swiper-wrapper">
         @foreach($testimonials as $t)
