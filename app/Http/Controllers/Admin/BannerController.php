@@ -26,7 +26,7 @@ class BannerController extends Controller
         $data = $request->validate([
             'title' => 'required|string',
             'main_title' => 'required|string',
-            'description' => 'required|string',
+            // 'description' => 'required|string',
             'button_link' => 'required|string',
             'image.*' => 'required',
             'is_active' => 'required|boolean',
@@ -57,7 +57,7 @@ class BannerController extends Controller
         $data = $request->validate([
             'title' => 'required|string',
             'main_title' => 'required|string',
-            'description' => 'required|string',
+            // 'description' => 'required|string',
             'button_link' => 'required|string',
             'image.*' => 'required',
             'is_active' => 'required|boolean',

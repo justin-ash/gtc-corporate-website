@@ -119,17 +119,23 @@
                             <textarea type="text" class="form-control" id="details" placeholder="Details" name="detail_text">{{$project->detail_text}}</textarea>
                             <span class="error-text detail_text_error"></span>
                         </div>
-
-                        <!-- <div class="form-group">
-                        <label>File upload</label>
-                        <input type="file" name="img[]" class="file-upload-default" accept=".jpg,.jpeg,.png">
-                        <div class="input-group col-xs-12 d-flex align-items-center">
-                            <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
-                            <span class="input-group-append ms-2">
-                                <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                            </span>
+                        <div class="form-group">
+                            <label>Thumbnail</label>
+                            <input type="file" name="thumbnail" id="thumbnail-img" class="file-upload-default">
+                            <input type="hidden" name="thumbnail_path" id="thumbnail_path">
+                            <div class="input-group col-xs-12 d-flex align-items-center">
+                                <input type="text" name="thumbnail" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                                <span class="input-group-append ms-2">
+                                    <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                                </span>
+                            </div>
                         </div>
-                    </div> -->
+                        <div class="form-group">
+                            <label>Thumbnail Preview</label>
+                            <div class="input-group col-xs-12 d-flex align-items-center">
+                                <img id="thumbnail_preview" src="{{ asset($project->thumbnail) }}" width="80" style="display: {{ $project->thumbnail ? 'block' : 'none' }};">
+                            </div>
+                        </div>
                         @php
                         $gallery = $project->gallery;
                         @endphp
@@ -165,6 +171,46 @@
 </div>
 @push('scripts')
 <script>
+    $('#thumbnail-img').on('change', function(e) {
+        let file = this.files[0];
+        if (!file) {
+            return;
+        }
+        // preview image
+        let reader = new FileReader();
+
+        reader.onload = function(e) {
+            $("#preview")
+                .attr("src", e.target.result)
+                .show();
+        };
+
+        reader.readAsDataURL(file);
+
+        // upload image
+        let formData = new FormData();
+        formData.append("thumbnail", file);
+        formData.append("path", "/uploads/projects/thumbnails");
+
+        $.ajax({
+            url: "/admin/upload-image",
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function(response) {
+                console.log(response);
+                // returned uploaded file path
+                $("#thumbnail_path").val(response.path);
+            },
+            error: function(xhr) {
+                console.log(xhr.responseText);
+            }
+        });
+    });
     $(document).ready(function() {
         $('#details').summernote({
             height: 200,
@@ -209,8 +255,6 @@
             };
 
             reader.readAsDataURL(file);
-
-            // 🔥 Upload immediately
             uploadFile(file, index);
         }
         updateButtons();
@@ -239,7 +283,6 @@
     function uploadFile(file, index) {
         let formData = new FormData();
         formData.append('image', file);
-
         $.ajax({
             url: "/admin/upload-gallery",
             type: "POST",
@@ -315,6 +358,7 @@
         } else {
             formData += `&image[]=${encodeURIComponent('')}`;
         }
+
         $('.error-text').text('');
         $('.success-message').text('');
         $.ajax({

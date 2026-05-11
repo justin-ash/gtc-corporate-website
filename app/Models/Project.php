@@ -16,7 +16,8 @@ class Project extends Model
         'website',
         'gallery',
         'is_active',
-        'slug'
+        'slug',
+        'thumbnail'
     ];
 
     // 🔥 Important: cast JSON to array

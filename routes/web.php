@@ -41,6 +41,7 @@ Route::prefix('admin')->group(function () {
         // Route::get('/projects', [ProjectsController::class, 'index']);
         Route::resource('projects', ProjectsController::class);
         Route::post('/upload-gallery', [ProjectsController::class, 'uploadGallery']);
+        Route::post('/upload-image', [ProjectsController::class, 'uploadImage']);
         Route::post('/delete-image', [ProjectsController::class, 'deleteImage']);
         // Route::get('/widgets', [WidgetsController::class, 'index'])->name('widgets');
         Route::resource('widgets', WidgetsController::class);

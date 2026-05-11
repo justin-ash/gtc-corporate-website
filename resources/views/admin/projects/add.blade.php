@@ -118,7 +118,16 @@
                             <textarea type="text" class="form-control" id="details" placeholder="Details" name="detail_text"></textarea>
                             <span class="error-text detail_text_error"></span>
                         </div>
-
+                        <div class="form-group">
+                            <label>Thumbnail</label>
+                            <input type="file" name="thumbnail" class="file-upload-default">
+                            <div class="input-group col-xs-12 d-flex align-items-center">
+                                <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                                <span class="input-group-append ms-2">
+                                    <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                                </span>
+                            </div>
+                        </div>
                         <!-- <div class="form-group">
                         <label>File upload</label>
                         <input type="file" name="img[]" class="file-upload-default" accept=".jpg,.jpeg,.png">

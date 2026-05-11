@@ -27,8 +27,9 @@
                 <div class="inner-column">
                   <h1 class="title" data-animation="fadeInUp" data-delay=".5s">{{ $banner->main_title }}</h1><br>
                   <h6 class="sub-title" data-animation="fadeInUp" data-delay=".3s">{{ $banner->title}}</h6><br><br>
-                  <p class="sub-title1" data-animation="fadeInUp" data-delay=".9s">{!! $banner->description !!}</p><br><br>
-                  <a class="btn-one" data-animation="fadeInUp" data-delay=".8s" href="{{ route('contact') }}">{{ $banner->button_link }}</a>
+                  <!-- <p class="sub-title1" data-animation="fadeInUp" data-delay=".9s">{!! $banner->description !!}</p><br><br> -->
+                  <a class="btn-one" data-animation="fadeInUp" data-delay=".8s" href="{{ route('services') }}">{{ $banner->button_link }}</a>
+                  <a class="btn-one" data-animation="fadeInUp" data-delay=".8s" href="{{ route('contact') }}">Contact ></a>
                 </div>
               </div>
 
@@ -45,6 +46,36 @@
         </div>
       </div>
       @endforeach
+    </div>
+  </div>
+</section>
+
+<section class="processing-section pt-70 pb-70">
+  <div class="shape">
+    <img class="animation__rotate" src="images/shape/dual-circle.png" alt="Image">
+  </div>
+  <div class="container">
+    <div class="outer-box">
+      <div class="logo-slider">
+        <div class="logo-slide-track">
+
+          <!-- LOGOS (duplicate for infinite effect) -->
+          <div class="logo-slide"><img src="{{asset('images/logos/a.jpeg')}}"></div>
+          <div class="logo-slide"><img src="{{asset('images/logos/b.jpeg')}}"></div>
+          <div class="logo-slide"><img src="{{asset('images/logos/c.jpeg')}}"></div>
+          <div class="logo-slide"><img src="{{asset('images/logos/d.jpeg')}}"></div>
+          <div class="logo-slide"><img src="{{asset('images/logos/e.jpeg')}}"></div>
+
+          <div class="logo-slide"><img src="{{asset('images/logos/a.jpeg')}}"></div>
+          <div class="logo-slide"><img src="{{asset('images/logos/b.jpeg')}}"></div>
+          <div class="logo-slide"><img src="{{asset('images/logos/c.jpeg')}}"></div>
+          <div class="logo-slide"><img src="{{asset('images/logos/d.jpeg')}}"></div>
+          <div class="logo-slide"><img src="{{asset('images/logos/e.jpeg')}}"></div>
+
+
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -117,7 +148,7 @@
           <div class="case-block">
             <div class="inner-box">
               <figure class="image">
-                <img src="{{ asset($project->gallery[0]) }}" alt="Image">
+                <img src="{{ asset($project->thumbnail) }}" alt="Image">
               </figure>
               <div class="content-box">
                 <span class="sub-title">{{ $project->project_type }}</span>
@@ -186,8 +217,8 @@
                   <i class="fa-solid icon fa-arrow-up-right"></i>
                 </div>
                 <div class="content-box">
-                  <div class="inner-text count-box"><span class="count-text" data-stop="95" data-speed="2000"></span>%</div>
-                  <h5 class="title">Project Done</h5>
+                  <div class="inner-text count-box"><span class="count-text" data-stop="50" data-speed="2000"></span></div>
+                  <h5 class="title">Years of Experience</h5>
                 </div>
               </div>
               <div class="choose-block">
@@ -200,8 +231,8 @@
                   <i class="fa-solid icon fa-arrow-up-right"></i>
                 </div>
                 <div class="content-box">
-                  <div class="inner-text count-box"><span class="count-text" data-stop="50" data-speed="2000"></span>% </div>
-                  <h5 class="title">Complete Project</h5>
+                  <div class="inner-text count-box"><span class="count-text" data-stop="100" data-speed="2000"></span>+ </div>
+                  <h5 class="title">Completed Project</h5>
                 </div>
               </div>
             </div>

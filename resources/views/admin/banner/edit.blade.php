@@ -40,11 +40,11 @@
                             <span class="error-text button_link_error"></span>
                         </div>
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="message">Banner Description</label>
                             <textarea type="text" class="form-control" id="message" placeholder="Banner Description" name="description">{{ $banner->description ?? '' }}</textarea>
                             <span class="error-text description_error"></span>
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label>Upload File</label>
 
