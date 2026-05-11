@@ -50,7 +50,7 @@
   </div>
 </section>
 
-<section class="processing-section pt-70 pb-70">
+<!-- <section class="processing-section pt-70 pb-70">
   <div class="shape">
     <img class="animation__rotate" src="images/shape/dual-circle.png" alt="Image">
   </div>
@@ -59,26 +59,25 @@
       <div class="logo-slider">
         <div class="logo-slide-track">
 
-          <!-- LOGOS (duplicate for infinite effect) -->
-          <div class="logo-slide"><img src="{{asset('images/logos/a.jpeg')}}"></div>
-          <div class="logo-slide"><img src="{{asset('images/logos/b.jpeg')}}"></div>
-          <div class="logo-slide"><img src="{{asset('images/logos/c.jpeg')}}"></div>
-          <div class="logo-slide"><img src="{{asset('images/logos/d.jpeg')}}"></div>
-          <div class="logo-slide"><img src="{{asset('images/logos/e.jpeg')}}"></div>
+<div class="logo-slide"><img src="{{asset('images/logos/a.jpeg')}}"></div>
+<div class="logo-slide"><img src="{{asset('images/logos/b.jpeg')}}"></div>
+<div class="logo-slide"><img src="{{asset('images/logos/c.jpeg')}}"></div>
+<div class="logo-slide"><img src="{{asset('images/logos/d.jpeg')}}"></div>
+<div class="logo-slide"><img src="{{asset('images/logos/e.jpeg')}}"></div>
 
-          <div class="logo-slide"><img src="{{asset('images/logos/a.jpeg')}}"></div>
-          <div class="logo-slide"><img src="{{asset('images/logos/b.jpeg')}}"></div>
-          <div class="logo-slide"><img src="{{asset('images/logos/c.jpeg')}}"></div>
-          <div class="logo-slide"><img src="{{asset('images/logos/d.jpeg')}}"></div>
-          <div class="logo-slide"><img src="{{asset('images/logos/e.jpeg')}}"></div>
+<div class="logo-slide"><img src="{{asset('images/logos/a.jpeg')}}"></div>
+<div class="logo-slide"><img src="{{asset('images/logos/b.jpeg')}}"></div>
+<div class="logo-slide"><img src="{{asset('images/logos/c.jpeg')}}"></div>
+<div class="logo-slide"><img src="{{asset('images/logos/d.jpeg')}}"></div>
+<div class="logo-slide"><img src="{{asset('images/logos/e.jpeg')}}"></div>
 
 
-        </div>
-      </div>
+</div>
+</div>
 
-    </div>
-  </div>
-</section>
+</div>
+</div>
+</section> -->
 <!-- Banner area end here -->
 
 <!-- About area start here -->
