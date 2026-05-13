@@ -122,7 +122,7 @@
                         <div class="form-group">
                             <label>Thumbnail</label>
                             <input type="file" name="thumbnail" id="thumbnail-img" class="file-upload-default">
-                            <input type="hidden" name="thumbnail_path" id="thumbnail_path">
+                            <input type="hidden" name="thumbnail_path" id="thumbnail_path" value="{{$project->thumbnail}}">
                             <div class="input-group col-xs-12 d-flex align-items-center">
                                 <input type="text" name="thumbnail" class="form-control file-upload-info" disabled placeholder="Upload Image">
                                 <span class="input-group-append ms-2">
