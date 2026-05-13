@@ -26,16 +26,20 @@
                          <div class="case-block">
                              <div class="inner-box">
                                  <figure class="image">
-                                     <img src="{{ asset($project->gallery[0]) }}" alt="Image">
+                                     <img src="{{ asset($project->thumbnail) }}" alt="Image">
                                  </figure>
                                  <div class="content-box">
                                      <span class="sub-title">{{ $project->project_type }}</span>
-                                     <h4 class="title"><a href="{{ route('projects.show', $project->slug) }}"> {{ $project->project_name }}</a></h4>
+                                     <h4 class="title"><a href="{{ route('projects.show', $project->slug) }}"> {{ $project->project_name }}</a></h4><br>
+                                     <p>{{$project->short_description }}</p>
+                                     <a href="{{ route('projects.show', $project->slug) }}">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                                  </div>
                                  <a class="arry-btn" href="{{ route('projects.show', $project->slug) }}"><i class="fa-regular fa-arrow-up-right"></i></a>
                                  <div class="hover-content">
                                      <span class="sub-title">{{ $project->project_type }}</span>
-                                     <h4 class="title"><a href="{{ route('projects.show', $project->slug) }}">{{ $project->project_name }}</a></h4>
+                                     <h4 class="title"><a href="{{ route('projects.show', $project->slug) }}">{{ $project->project_name }}</a></h4><br>
+                                     <p style="color: #fff;">{{$project->short_description }}</p>
+                                     <a style="color: #fff;" href="{{ route('projects.show', $project->slug) }}">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                                  </div>
                              </div>
                          </div>
