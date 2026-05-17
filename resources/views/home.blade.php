@@ -49,35 +49,6 @@
     </div>
   </div>
 </section>
-
-<!-- <section class="processing-section pt-70 pb-70">
-  <div class="shape">
-    <img class="animation__rotate" src="images/shape/dual-circle.png" alt="Image">
-  </div>
-  <div class="container">
-    <div class="outer-box">
-      <div class="logo-slider">
-        <div class="logo-slide-track">
-
-<div class="logo-slide"><img src="{{asset('images/logos/a.jpeg')}}"></div>
-<div class="logo-slide"><img src="{{asset('images/logos/b.jpeg')}}"></div>
-<div class="logo-slide"><img src="{{asset('images/logos/c.jpeg')}}"></div>
-<div class="logo-slide"><img src="{{asset('images/logos/d.jpeg')}}"></div>
-<div class="logo-slide"><img src="{{asset('images/logos/e.jpeg')}}"></div>
-
-<div class="logo-slide"><img src="{{asset('images/logos/a.jpeg')}}"></div>
-<div class="logo-slide"><img src="{{asset('images/logos/b.jpeg')}}"></div>
-<div class="logo-slide"><img src="{{asset('images/logos/c.jpeg')}}"></div>
-<div class="logo-slide"><img src="{{asset('images/logos/d.jpeg')}}"></div>
-<div class="logo-slide"><img src="{{asset('images/logos/e.jpeg')}}"></div>
-
-
-</div>
-</div>
-
-</div>
-</div>
-</section> -->
 <!-- Banner area end here -->
 
 <!-- About area start here -->
@@ -265,9 +236,7 @@
 
 <!-- Processing area start here -->
 <section class="processing-section pt-70 pb-70">
-  <div class="shape">
-    <img class="animation__rotate" src="images/shape/dual-circle.png" alt="Image">
-  </div>
+
   <div class="container">
     <div class="sec-title center mb-50">
       <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">{!! $widgets['HOW_IT_WORKS_TITLE']['title']!!}</h6>
