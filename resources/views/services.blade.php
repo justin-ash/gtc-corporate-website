@@ -133,10 +133,10 @@
  <section class="page-title" style="background-image: url(images/background/page-title-bg.jpg);">
      <div class="auto-container">
          <div class="title-outer">
-             <h1 class="title">Service Grid</h1>
+             <h1 class="title">Service</h1>
              <ul class="page-breadcrumb">
                  <li><a href="{{ route('home') }}">Home</a></li>
-                 <li>Service Grid</li>
+                 <li>Service </li>
              </ul>
          </div>
      </div>
