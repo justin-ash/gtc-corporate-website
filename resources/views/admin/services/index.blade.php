@@ -17,7 +17,6 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Icon</th>
                                     <th>Title</th>
                                     <th>Status</th>
                                     <th>Action</th>
@@ -27,7 +26,6 @@
 
                                 @foreach($services as $service)
 
-                                <td><i class="fa {{ $service->icon }}"></i></td>
                                 <td>{{ $service->title }}</td>
                                 <td>{{ $service->is_active ? 'Active' : 'Inactive' }}</td>
                                 <td><a class="btn btn-outline-primary" href="{{route('admin.services.edit', $service->id)}}">Edit</a></td>

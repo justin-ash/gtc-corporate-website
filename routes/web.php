@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\ContactsController;
+use App\Http\Controllers\Admin\MilestoneController;
 use App\Http\Controllers\Admin\ProjectsController;
 use App\Http\Controllers\Admin\SeoPageController;
 use App\Http\Controllers\Admin\ServicesController;
@@ -58,5 +59,6 @@ Route::prefix('admin')->group(function () {
         Route::resource('banners', BannerController::class);
         Route::post('/upload-banner-image', [BannerController::class, 'uploadGallery']);
         Route::post('/delete-banner-image', [BannerController::class, 'deleteImage']);
+        Route::resource('milestones', MilestoneController::class);
     });
 });

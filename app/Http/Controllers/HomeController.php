@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Banner;
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Models\Milestone;
 use App\Models\NewsletterSubscriber;
 use App\Models\Project;
 use App\Models\Testimonial;
@@ -67,7 +68,8 @@ class HomeController extends Controller
     {
         $widgets = Widget::formatWidgets(['about', 'header', 'footer', 'sidebar']);
         $seo = SeoPage::seoByPage('about');
-        return view('about', compact('widgets', 'seo'));
+        $milestones = Milestone::orderBy('year', 'asc')->get();
+        return view('about', compact('widgets', 'seo', 'milestones'));
     }
 
     public function services()
@@ -75,6 +77,7 @@ class HomeController extends Controller
         $widgets = Widget::formatWidgets(['services', 'header', 'footer', 'sidebar']);
         $seo = SeoPage::seoByPage('services');
         $services = Service::where('is_active', 1)->get();
+
         return view('services', compact('widgets', 'seo', 'services'));
     }
 

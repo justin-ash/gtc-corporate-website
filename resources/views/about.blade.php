@@ -154,93 +154,19 @@
              <div class="timeline">
 
                  <!-- Item -->
-                 <div class="timeline-item left">
+                 @foreach($milestones as $key => $milestone)
+                 <div class="timeline-item {{ $key %2 == 0 ? 'right' : 'left' }}">
                      <div class="timeline-dot"></div>
 
                      <div class="timeline-content">
-                         <div class="year">1977</div>
-                         <h3 class="milestone-title">Where It All Began</h3>
+                         <div class="year">{{ $milestone->year }}</div>
+                         <h3 class="milestone-title">{{ $milestone->title }}</h3>
                          <p class="milestone-desc">
-                             Green Top Contracting Co. was established and registered with the Ministry of Commerce, KSA.
+                             {{ $milestone->description }}
                          </p>
                      </div>
                  </div>
-
-                 <!-- Item -->
-                 <div class="timeline-item right">
-                     <div class="timeline-dot"></div>
-
-                     <div class="timeline-content">
-                         <div class="year">1988</div>
-                         <h3 class="milestone-title">SEC Registration</h3>
-                         <p class="milestone-desc">
-                             Achieved Saudi Electricity Company registration for the electrical division.
-                         </p>
-                     </div>
-                 </div>
-
-                 <!-- Item -->
-                 <div class="timeline-item left">
-                     <div class="timeline-dot"></div>
-
-                     <div class="timeline-content">
-                         <div class="year">1998</div>
-                         <h3 class="milestone-title">Saudi Aramco Approved</h3>
-                         <p class="milestone-desc">
-                             Earned Aramco vendor registration across the group — a landmark achievement.
-                         </p>
-                     </div>
-                 </div>
-
-                 <!-- Item -->
-                 <div class="timeline-item right">
-                     <div class="timeline-dot"></div>
-
-                     <div class="timeline-content">
-                         <div class="year">2008</div>
-                         <h3 class="milestone-title">Kingdom-Wide Expansion</h3>
-                         <p class="milestone-desc">
-                             Delivering civil, electro-mechanical, and IT services across all of Saudi Arabia.
-                         </p>
-                     </div>
-                 </div>
-
-                 <!-- Item -->
-                 <div class="timeline-item left">
-                     <div class="timeline-dot"></div>
-
-                     <div class="timeline-content">
-                         <div class="year">2020</div>
-                         <h3 class="milestone-title">Saudization & Pest Control Launch</h3>
-                         <p class="milestone-desc">
-                             Achieved full Saudization compliance and launched dedicated pest control services.
-                         </p>
-                     </div>
-                 </div>
-
-                 <!-- Item -->
-                 <div class="timeline-item right">
-                     <div class="timeline-dot"></div>
-
-                     <div class="timeline-content">
-                         <div class="year">2023</div>
-                         <h3 class="milestone-title">Most Ethical Company Award</h3>
-                         <p class="milestone-desc">
-                             Recognized for operational excellence, ethics, and long-term contribution to the industry.
-                         </p>
-                     </div>
-                 </div>
-                 <div class="timeline-item left">
-                     <div class="timeline-dot"></div>
-
-                     <div class="timeline-content">
-                         <div class="year">2025</div>
-                         <h3 class="milestone-title">Expanding into Healthcare</h3>
-                         <p class="milestone-desc">
-                             Extended our expertise to the healthcare sector, bringing the same standard of excellence to a new industry.
-                         </p>
-                     </div>
-                 </div>
+                 @endforeach
 
              </div>
 

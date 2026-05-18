@@ -37,6 +37,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.milestones.index')}}">
+                <i class="icon-paper menu-icon"></i>
+                <span class="menu-title">Milestones</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="{{route('admin.testimonials.index')}}">
                 <i class="icon-paper menu-icon"></i>
                 <span class="menu-title">Testimonials</span>

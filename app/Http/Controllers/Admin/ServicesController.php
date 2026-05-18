@@ -25,6 +25,7 @@ class ServicesController extends Controller
             'icon' => 'required',
             'title' => 'required',
             'description' => 'required',
+            'link' => 'required|url',
         ]);
 
         $data['is_active'] = $request->has('is_active');
@@ -51,6 +52,7 @@ class ServicesController extends Controller
             'icon' => 'required',
             'title' => 'required',
             'description' => 'required',
+            'link' => 'required|url',
         ]);
 
         $data['is_active'] = $request->has('is_active');

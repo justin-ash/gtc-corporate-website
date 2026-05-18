@@ -22,11 +22,7 @@
 
                         <h4 class="card-title">Services</h4>
                         <p class="card-description"> Service details </p>
-                        <div class="form-group">
-                            <label for="icon">Icon</label>
-                            <input type="text" name="icon" class="form-control" placeholder="Icon class (fa-solid fa-star)"><br>
-                            <span class="error-text icon_error"></span>
-                        </div>
+
                         <div class="form-group">
                             <label for="title">Title</label>
                             <input type="text" class="form-control" name="title" placeholder="Title"><br>
@@ -37,6 +33,16 @@
                             <label for="description">Description</label>
                             <textarea class="form-control" id="description" placeholder="Description" name="description"></textarea>
                             <span class="error-text description_error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="icon">Key Areas</label>
+                            <input type="text" name="icon" class="form-control" placeholder="Key areas"><br>
+                            <span class="error-text icon_error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="link">Link</label>
+                            <input type="text" name="link" class="form-control" placeholder="http://domain.com/link"><br>
+                            <span class="error-text link_error"></span>
                         </div>
                         <div class="form-group">
                             <label for="is_active">Status</label>
