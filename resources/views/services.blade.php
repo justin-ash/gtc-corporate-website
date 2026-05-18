@@ -15,13 +15,11 @@
      .section-heading h2 {
          font-size: 52px;
          font-weight: 700;
-         color: #001734;
          margin-bottom: 20px;
      }
 
      .section-heading p {
          max-width: 900px;
-         color: #444;
          line-height: 1.5;
      }
 
@@ -45,7 +43,6 @@
      .division-body p {
          font-size: 18px;
          line-height: 1.6;
-         color: #444;
          margin-bottom: 15px;
      }
 
@@ -146,7 +143,9 @@
      <div class="container">
          <div class="row g-5 g-xxl-0">
              <div class="container" style="position:relative;z-index:2;">
-                 <p class="hero-eyebrow">COMPANY OVERVIEW</p>
+                 <div class="sec-title">
+                     <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">COMPANY OVERVIEW</h6>
+                 </div>
                  <h2>Trusted Excellence Since 1977</h2>
                  <p class="hero-lead">Established in 1977 ,Green Top Contracting (GTC) Group is a leading multi-disciplinary contractor
                      in the Kingdom of Saudi Arabia. We deliver high-performance solutions for the Kingdom's most
@@ -205,8 +204,9 @@
      <div class="container">
 
          <div class="section-heading mb-5">
-             <span class="sub-title center">OUR DIVISIONS</span>
-
+             <div class="sec-title">
+                 <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">OUR DIVISIONS</h6>
+             </div>
              <h2>Five Disciplines. One Group.</h2>
 
              <p>
