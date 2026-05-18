@@ -23306,7 +23306,7 @@ background: #e8f5ee;
     }
 
   .clients-wrapper { margin-top:36px; }
-  .clients-label { font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--warm-gray); margin-bottom:16px; }
+  .clients-label { font-size:14px; letter-spacing:0.15em; text-transform:uppercase; color:var(--warm-gray); margin-bottom:16px; }
   .clients-grid { display:flex; flex-wrap:wrap; gap:10px; }
   .client-pill { background:white; border:1px solid var(--border); border-radius:2px; padding:8px 16px; font-size:13px; font-weight:500; color:var(--green-dark); }
   .saftey {
