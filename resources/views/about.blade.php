@@ -187,30 +187,51 @@
          <p class="section-body">Registered vendors with the Kingdom's most prestigious organizations — proof of our quality and technical capability.</p>
          <div class="clients-wrapper">
              <p class="clients-label" style="margin-top:28px;">Vendor Registrations</p>
-             <div class="clients-grid">
-                 <span class="client-pill">Saudi Aramco</span>
-                 <span class="client-pill">Saudi Electricity Company</span>
-                 <span class="client-pill">SABIC</span>
-                 <span class="client-pill">Petrokemya</span>
-                 <span class="client-pill">MAADEN</span>
-                 <span class="client-pill">NESMA</span>
-                 <span class="client-pill">El-Seif</span>
-                 <span class="client-pill">KBR</span>
-                 <span class="client-pill">L&amp;T Energy Hydrocarbon</span>
-                 <span class="client-pill">DANWAY</span>
-                 <span class="client-pill">LINXON</span>
-                 <span class="client-pill">SOGEC</span>
-                 <span class="client-pill">SICIM</span>
-                 <span class="client-pill">NSH</span>
-                 <span class="client-pill">SISCO</span>
-                 <span class="client-pill">Royal Commission Jubail &amp; Yanbu</span>
-                 <span class="client-pill">National Water Company</span>
-                 <span class="client-pill">SIPCHEM</span>
-                 <span class="client-pill">MARAFIQ</span>
-                 <span class="client-pill">Gulf Chemicals</span>
+             <div class="row">
+                 <div class="col-md-3">
+                     <div class="clients-grid">
+                         <span class="client-pill">Saudi Aramco</span>
+                         <span class="client-pill">Saudi Electricity Company</span>
+                         <span class="client-pill">SABIC</span>
+                         <span class="client-pill">Petrokemya</span>
+                         <span class="client-pill">MAADEN</span>
+                     </div>
+                 </div>
+                 <div class="col-md-3">
+                     <div class="clients-grid">
+
+                         <span class="client-pill">NESMA</span>
+                         <span class="client-pill">El-Seif</span>
+                         <span class="client-pill">KBR</span>
+                         <span class="client-pill">L&amp;T Energy Hydrocarbon</span>
+                         <span class="client-pill">DANWAY</span>
+                     </div>
+                 </div>
+                 <div class="col-md-3">
+                     <div class="clients-grid">
+                         <span class="client-pill">LINXON</span>
+                         <span class="client-pill">SOGEC</span>
+                         <span class="client-pill">SICIM</span>
+                         <span class="client-pill">NSH</span>
+                         <span class="client-pill">SISCO</span>
+                     </div>
+                 </div>
+                 <div class="col-md-3">
+                     <div class="clients-grid">
+                         <span class="client-pill">Royal Commission Jubail &amp; Yanbu</span>
+                         <span class="client-pill">National Water Company</span>
+                         <span class="client-pill">SIPCHEM</span>
+                         <span class="client-pill">MARAFIQ</span>
+                         <span class="client-pill">Gulf Chemicals</span>
+                     </div>
+                 </div>
+                 <div class="clients-grid">
+
+
+
+                 </div>
              </div>
          </div>
-     </div>
  </section>
  <section class="process-section-four pt-120 pb-120 timeline-section">
      <div class="container">

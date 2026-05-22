@@ -65,15 +65,14 @@ class ProjectsController extends Controller
             'project_type' => 'required|max:255',
             'established_date' => 'required|date',
             'website' => 'required|url',
-            'gallery.*' => 'required',
+            'image.*' => 'required',
             'thumbnail_path' => 'required',
             'is_active' => 'required|boolean',
             'slug' => 'required|unique:projects,slug,' . $project->id
         ]);
         $validated['thumbnail'] = $validated['thumbnail_path'];
         // Handle gallery update    
-        $gallery = $validated['gallery'] ?? $project->gallery;
-
+        $gallery = $validated['image'] ?? $project->gallery;
         $project->update([
             ...$validated,
             'gallery' => $gallery

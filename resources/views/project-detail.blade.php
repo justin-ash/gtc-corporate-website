@@ -70,7 +70,7 @@
              @foreach($project->gallery as $image)
              <div class="col-md-6">
                  <div class="project-details__top mt-5">
-                     <div class="project-details__img" style="max-height: 400px;"> <img class="rounded-0" src="{{ asset($image) }}" alt=""> </div>
+                     <div class="project-details__img" style="max-height: 400px; overflow:hidden"> <img class="rounded-0" src="{{ asset($image) }}" alt=""> </div>
                  </div>
              </div>
              @endforeach
