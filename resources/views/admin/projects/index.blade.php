@@ -7,20 +7,20 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-2">
-                        <h4 class="card-title mb-0">Projects</h4>
+                        <h4 class="card-title mb-0">Portfolios</h4>
 
                         <a type="button" class="btn btn-primary" href="{{ route('admin.projects.create') }}">
-                            Add Project
+                            Add Portfolio
                         </a>
                     </div>
-                    <p class="card-description">Add edit projects/portfolio</p>
+                    <p class="card-description">Add edit portfolios</p>
 
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Project Name</th>
-                                    <th>Project Location</th>
+                                    <th>Portfolio Name</th>
+                                    <th>Portfolio Location</th>
                                     <th>Website</th>
                                     <th>Established On</th>
                                     <th>Action</th>
@@ -38,7 +38,7 @@
                                             @csrf
                                             @method('DELETE')
 
-                                            <button type="submit" class="btn btn-outline-primary" onclick="return confirm('Are you sure you want to delete this project?')">
+                                            <button type="submit" class="btn btn-outline-primary" onclick="return confirm('Are you sure you want to delete this portfolio?')">
                                                 Delete
                                             </button>
                                         </form>

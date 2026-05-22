@@ -5,10 +5,10 @@
  <section class="page-title" style="background-image: url({{ asset('images/background/page-title-bg.jpg') }});">
      <div class="auto-container">
          <div class="title-outer">
-             <h1 class="title">Case Study</h1>
+             <h1 class="title">Portfolio</h1>
              <ul class="page-breadcrumb">
                  <li><a href="{{ route('home') }}">Home</a></li>
-                 <li>Case Study</li>
+                 <li>Portfolio</li>
              </ul>
          </div>
      </div>

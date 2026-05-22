@@ -17,7 +17,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/services', [HomeController::class, 'services'])->name('services');
-Route::get('/projects', [HomeController::class, 'projects'])->name('projects');
+Route::get('/portfolio', [HomeController::class, 'projects'])->name('portfolio');
 Route::get('/project/{slug}', [HomeController::class, 'projectBySlug'])->name('projects.show');
 Route::get('/divisions', [HomeController::class, 'divisions'])->name('divisions');
 Route::post('/contact', [HomeController::class, 'submitContact'])->name('contact.submit');
