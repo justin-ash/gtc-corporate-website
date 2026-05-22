@@ -11,7 +11,8 @@ class Service extends Model
         'title',
         'description',
         'is_active',
-        'link'
+        'link',
+        'thumbnail_path'
     ];
 
     // Scope for active services

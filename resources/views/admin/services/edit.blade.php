@@ -46,6 +46,17 @@
                             <span class="error-text link_error"></span>
                         </div>
                         <div class="form-group">
+                            <label>Thumbnail</label>
+                            <input type="file" name="thumbnail" id="thumbnail-img" class="file-upload-default">
+                            <input type="hidden" name="thumbnail_path" id="thumbnail_path" value="{{$service->thumbnail_path}}">
+                            <div class="input-group col-xs-12 d-flex align-items-center">
+                                <input type="text" name="thumbnail" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                                <span class="input-group-append ms-2">
+                                    <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="is_active">Status</label>
                             <select name="is_active" class="form-select">
                                 <option value="1" {{ $service->is_active == 1 ? 'selected' : '' }}>Active</option>
@@ -66,6 +77,46 @@
 </div>
 @push('scripts')
 <script>
+    $('#thumbnail-img').on('change', function(e) {
+        let file = this.files[0];
+        if (!file) {
+            return;
+        }
+        // preview image
+        let reader = new FileReader();
+
+        reader.onload = function(e) {
+            $("#preview")
+                .attr("src", e.target.result)
+                .show();
+        };
+
+        reader.readAsDataURL(file);
+
+        // upload image
+        let formData = new FormData();
+        formData.append("thumbnail", file);
+        formData.append("path", "/uploads/services");
+
+        $.ajax({
+            url: "/admin/upload-image",
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function(response) {
+                console.log(response);
+                // returned uploaded file path
+                $("#thumbnail_path").val(response.path);
+            },
+            error: function(xhr) {
+                console.log(xhr.responseText);
+            }
+        });
+    });
     $(document).ready(function() {
         $('#message').summernote({
             height: 200,

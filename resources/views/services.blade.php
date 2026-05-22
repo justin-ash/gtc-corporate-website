@@ -125,6 +125,157 @@
      .growth-block1 tr {
          border: none;
      }
+
+     .services-section {
+         padding: 80px 0;
+     }
+
+     .section-subtitle {
+         color: #01874a;
+         font-weight: 700;
+         text-transform: uppercase;
+         letter-spacing: 1px;
+         margin-bottom: 10px;
+     }
+
+     .section-title {
+         font-size: 52px;
+         font-weight: 800;
+         color: #111827;
+         margin-bottom: 20px;
+     }
+
+     .section-description {
+         color: #6b7280;
+         max-width: 700px;
+         margin: auto;
+         line-height: 1.8;
+         font-size: 18px;
+     }
+
+     .service-card {
+         background: #fff;
+         border-radius: 18px;
+         overflow: hidden;
+         margin-top: 40px;
+         transition: 0.3s;
+         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+     }
+
+     .service-card:hover {
+         transform: translateY(-5px);
+     }
+
+     .service-image {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         max-height: 350px;
+         min-height: 350px;
+         overflow: hidden;
+     }
+     }
+
+     .service-content {
+         padding: 60px;
+     }
+
+     .service-number {
+         color: #01874a;
+         font-size: 32px;
+         font-weight: 800;
+         margin-bottom: 15px;
+     }
+
+     .service-title {
+         font-size: 42px;
+         font-weight: 800;
+         color: #111827;
+         margin-bottom: 20px;
+     }
+
+     .service-line {
+         width: 70px;
+         height: 4px;
+         background: #01874a;
+         border-radius: 10px;
+         margin-bottom: 25px;
+     }
+
+     .service-description {
+         color: #6b7280;
+         line-height: 1.9;
+         font-size: 18px;
+         margin-bottom: 30px;
+     }
+
+     .service-btn {
+         background: #01874a;
+         color: #fff;
+         border: none;
+         padding: 14px 28px;
+         border-radius: 10px;
+         text-decoration: none;
+         display: inline-flex;
+         align-items: center;
+         gap: 10px;
+         font-weight: 600;
+         transition: 0.3s;
+     }
+
+     .service-btn:hover {
+         background: #01874a;
+         color: #fff;
+         transform: translateY(-2px);
+     }
+
+     @media(max-width:991px) {
+
+         .service-content {
+             padding: 35px;
+         }
+
+         .service-title {
+             font-size: 32px;
+         }
+
+         .section-title {
+             font-size: 38px;
+         }
+
+     }
+
+     @media(max-width:767px) {
+
+         .service-image {
+             min-height: 250px;
+         }
+
+         .service-content {
+             padding: 30px 25px;
+         }
+
+         .service-title {
+             font-size: 28px;
+         }
+
+         .section-title {
+             font-size: 32px;
+         }
+
+     }
+
+     /* .service-content .service-number,
+     .service-content .service-title,
+     .service-content .service-line,
+     .service-content .service-description,
+     .service-content .service-btn {
+         padding-left: 10em;
+
+     } */
+     .service-content {
+         padding: 50px
+     }
  </style>
  <!-- Start main-content -->
  <section class="page-title" style="background-image: url(images/background/page-title-bg.jpg);">
@@ -138,6 +289,7 @@
          </div>
      </div>
  </section>
+
  <!-- end main-content -->
  <section class="about-section-three pt-120 pb-120 ">
      <div class="container">
@@ -200,7 +352,74 @@
          </div>
      </div>
  </section>
- <section class="division-section py-5">
+ <section class="services-section">
+
+     <div class="container">
+         <div class="section-heading mb-5">
+             <div class="sec-title">
+                 <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">OUR DIVISIONS</h6>
+             </div>
+             <h2>Five Disciplines. One Group.</h2>
+
+             <p>
+                 Each GTC division operates with dedicated expertise,
+                 specialized equipment, and fully qualified teams —
+                 delivering end-to-end project excellence across every sector.
+             </p>
+         </div>
+         @foreach($services as $key=> $service)
+
+         <div class="service-card">
+
+             <div class="row g-0 align-items-center flex-lg-row-reverse">
+                 @if($key % 2 == 0)
+                 <div class="col-lg-4">
+                     <img src="{{ asset($service->thumbnail_path) }}" alt="Service Image"
+                         class="service-image">
+                 </div>
+                 @endif
+
+                 <div class="col-lg-8">
+
+                     <div class="service-content">
+
+                         <div class="service-number">0{{$key+1}}</div>
+
+                         <h3 class="service-title">
+                             {{ $service->title }}
+                         </h3>
+
+                         <div class="service-line"></div>
+
+                         <p class="service-description">
+                             {!! $service->description !!}
+                         </p>
+
+                         <a href="{{ $service->link }}" class="service-btn">
+                             Learn More
+                             <i class="bi bi-arrow-right"></i>
+                         </a>
+
+                     </div>
+
+
+                 </div>
+                 @if($key % 2 == 1)
+                 <div class="col-lg-4">
+                     <img src="{{ asset($service->thumbnail_path) }}" alt="Service Image"
+                         class="service-image">
+                 </div>
+                 @endif
+
+             </div>
+
+         </div>
+
+         @endforeach
+     </div>
+
+ </section>
+ <!-- <section class="division-section py-5">
      <div class="container">
 
          <div class="section-heading mb-5">
@@ -216,32 +435,31 @@
              </p>
          </div>
 
-         <!-- Division Item -->
-         @foreach($services as $key=> $service)
-         <div class="division-card mb-4">
+ @foreach($services as $key=> $service)
+ <div class="division-card mb-4">
 
-             <div class="division-title">
-                 {{$key+1}}. {{ $service->title }}
-             </div>
-
-             <div class="division-body">
-
-                 <p>
-                     {!! $service->description !!}
-                 </p>
-
-                 <div class="key-areas">
-                     <strong>Key Areas:</strong>
-                     {{ $service->icon }}
-                 </div>
-                 <a href="{{ $service->link }}" target="_blank">
-                     {{ $service->link }}
-                 </a>
-             </div>
-
-
-         </div>
-         @endforeach
+     <div class="division-title">
+         {{$key+1}}. {{ $service->title }}
      </div>
- </section>
+
+     <div class="division-body">
+
+         <p>
+             {!! $service->description !!}
+         </p>
+
+         <div class="key-areas">
+             <strong>Key Areas:</strong>
+             {{ $service->icon }}
+         </div>
+         <a href="{{ $service->link }}" target="_blank">
+             {{ $service->link }}
+         </a>
+     </div>
+
+
+ </div>
+ @endforeach
+ </div>
+ </section> -->
  @endsection
