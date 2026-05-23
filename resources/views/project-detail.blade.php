@@ -142,6 +142,11 @@
              <div class="col-xl-3 offset-xl-1 col-lg-4">
                  <div class="project-details__content-right mt-0">
                      <div class="project-details__details-box rounded-0">
+                         @if(Request::segment(2) == 'green-top-pest-control-cleaning')
+                         <img src="{{ asset('images/service/bpca.jpeg') }}" alt="Project Image" class="mb-4 rounded-0" style="max-width: 100%; height: auto;">
+                         <img src="{{ asset('images/service/npma.jpeg') }}" alt="Project Image" class="mb-4 rounded-0" style="max-width: 100%; height: auto;">
+
+                         @else
                          <ul class="list-unstyled project-details__details-list">
                              <li>
                                  <h4 class="project-details__name mb-2">Clients</h4>
@@ -160,6 +165,8 @@
                                  <p class="project-details__client"><a href="{{ $project->website }}" target="_blank">{{ $project->website }}</a></p>
                              </li>
                          </ul>
+                         @endif
+
                      </div>
                  </div>
              </div>
