@@ -26,7 +26,7 @@
               <div class="widget-content">
                 <ul class="user-links">
                   <li><a href="{{ route('home') }}">Home</a></li>
-                  <li><a href="{{ route('about') }}">About GTC</a></li>
+                  <li><a href="{{ route('about') }}">About GTG</a></li>
                   <li><a href="{{ route('services') }}">Services</a></li>
                   <li><a href="{{ route('contact') }}">Contact</a></li>
 

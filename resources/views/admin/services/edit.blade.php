@@ -55,6 +55,8 @@
                                     <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
                                 </span>
                             </div>
+                            <span class="error-text upload_error"></span>
+
                         </div>
                         <div class="form-group">
                             <label for="is_active">Status</label>
@@ -113,7 +115,19 @@
                 $("#thumbnail_path").val(response.path);
             },
             error: function(xhr) {
-                console.log(xhr.responseText);
+
+                console.log(xhr);
+
+                let upload_error = 'Something went wrong';
+
+                if (xhr.responseJSON &&
+                    xhr.responseJSON.errors &&
+                    xhr.responseJSON.errors.thumbnail) {
+
+                    upload_error = xhr.responseJSON.errors.thumbnail[0];
+                }
+
+                $('.upload_error').html(upload_error);
             }
         });
     });

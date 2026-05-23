@@ -109,7 +109,7 @@
   <div class="outer-box">
     <div class="sec-title center mb-50">
       <!-- <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Portfolio</h6> -->
-      <h1 class="title wow splt-txt" data-splitting style="color: white;">One Vision. Multiple Ventures</h1>
+      <h1 class="title wow splt-txt" data-splitting style="color: white;">One Vision Multiple Ventures</h1>
     </div>
     <div class="swiper case-slider">
       <div class="swiper-wrapper">
