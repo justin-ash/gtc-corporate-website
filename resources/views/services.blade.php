@@ -278,7 +278,7 @@
      }
  </style>
  <!-- Start main-content -->
- <section class="page-title" style="background-image: url(images/background/page-title-bg.jpg);">
+ <section class="page-title" style="background-image: url(images/background/service-details.jpg);">
      <div class="auto-container">
          <div class="title-outer">
              <h1 class="title">Service</h1>

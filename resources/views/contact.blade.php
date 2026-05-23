@@ -2,7 +2,7 @@
 
  @section('content')
  <!-- Start main-content -->
- <section class="page-title" style="background-image: url(images/bg/page-title-bg.jpg);">
+ <section class="page-title" style="background-image: url(images/background/banner-image3.jpg);">
      <div class="auto-container">
          <div class="title-outer">
              <ul class="page-breadcrumb">
