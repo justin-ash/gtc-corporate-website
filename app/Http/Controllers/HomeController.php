@@ -85,7 +85,7 @@ class HomeController extends Controller
     public function projects()
     {
         $widgets = Widget::formatWidgets(['projects', 'header', 'footer', 'sidebar']);
-        $seo = SeoPage::seoByPage('projects');
+        $seo = SeoPage::seoByPage('portfolio');
         $projects = Project::where('is_active', 1)->get();
         return view('projects', compact('widgets', 'seo', 'projects'));
     }
