@@ -138,6 +138,9 @@
          let formData = form.serialize();
          $('.error-text').text('');
          $('.success-message').text('');
+         $('#contact_submit')
+             .prop('disabled', true)
+             .text('Sending...');
          $.ajax({
              url: $("#contact_form").attr('action'),
              type: "POST",
@@ -145,7 +148,9 @@
              success: function(response) {
                  if (response.status) {
                      $('.success-message').text(response.message);
-
+                     if (response.csrf_token) {
+                         $('meta[name="csrf-token"]').attr('content', response.csrf_token);
+                     }
                      // Clear form
                      form.trigger("reset");
                  }
@@ -156,6 +161,13 @@
                  $.each(errors, function(key, value) {
                      $('.' + key + '_error').text(value[0]);
                  });
+             },
+             complete: function() {
+
+                 // enable button again
+                 $('#contact_submit')
+                     .prop('disabled', false)
+                     .html('<i class="fa-light fa-paper-plane"></i> Get In Touch');
              }
          });
      });

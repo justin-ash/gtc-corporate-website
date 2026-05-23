@@ -60,7 +60,8 @@ class HomeController extends Controller
 
         return response()->json([
             'status' => true,
-            'message' => 'Message sent successfully!'
+            'message' => 'Message sent successfully!',
+            'csrf_token' => csrf_token()
         ]);
     }
 
