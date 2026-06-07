@@ -6,7 +6,7 @@
 
         <div class="row">
           <div class="col-md-3 footer-column">
-            <div class="footer-widget links-widget">
+            <div class="footer-widget links-widget footer-box">
               <a href="{{ route('home') }}"><img src="{{ asset(config('settings.logo')) }}" alt="Logo"></a>
 
               <div class="widget-content">
@@ -49,37 +49,32 @@
 
           <div class="col-md-2 footer-column">
             <div class="footer-widget links-widget">
-              <h4 class="widget-title">Contact Info</h4>
+              <h4 class="widget-title">Services</h4>
               <div class="widget-content">
                 <div class="info-item">
-                  <ul>
-                    <li><i class="fa-sharp fa-solid fa-phone"></i><span> {{config('settings.phone')}}</span></li>
-                    <li><i class="fa-sharp fa-solid fa-envelope"></i><span> {{config('settings.email')}}</span></li>
-                    <li><i class="fa-sharp fa-solid fa-location-dot"></i><span> {{config('settings.address')}}</span></li>
+                  <ul class="user-links">
+                    <li>Construction</li>
+                    <li>Cathodic Protection</li>
+                    <li>Pest Control & Cleaning</li>
+                    <li>Information Technology</li>
+                    <li>Institute of Medical Science</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-3 footer-column">
+          <div class="col-md-2 footer-column">
             <div class="footer-widget links-widget">
-              <h4 class="widget-title">Signup Newsletter</h4>
-              <p class="text">Stay updated with our latest news and insights.</p>
-              <div class="input-feild">
-                <form id="newsletter_form" action="{{ route('newsletter.subscribe') }}" method="POST">
-                  @csrf
-
-                  <input type="email" name="email" placeholder="Enter your email">
-                  <span class="error-text email_error"></span>
-
-                  <button class="btn-one-rounded" id="newsletter_button" type="button">Sign up now <i class="fa-regular fa-angle-right"></i></button>
-
-                  <div class="success-message"></div>
-                </form>
-                <!-- <input type="text" placeholder="Email Address">
-                  <a href="#0"></a> -->
+              <h4 class="widget-title">Contact Info</h4>
+              <div class="widget-content">
+                <div class="info-item">
+                  <ul>
+                    <li><i class="fa-sharp fa-solid fa-location-dot"></i><span> {{config('settings.address')}}</span></li>
+                    <li><i class="fa-sharp fa-solid fa-phone"></i><span> {{config('settings.phone')}}</span></li>
+                    <li><i class="fa-sharp fa-solid fa-envelope"></i><span> {{config('settings.email')}}</span></li>
+                  </ul>
+                </div>
               </div>
-
             </div>
           </div>
         </div>

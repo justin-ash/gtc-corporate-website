@@ -1,9 +1,9 @@
 @extends('layout.app')
 
 @section('content')
+
 <!-- Banner area start here -->
-<section class="banner-section">
-  <!-- <div class="arry"><img class="animation__arryLeftRight" src="images/shape/banner-arry.png" alt="Image"></div> -->
+<!-- <section class="banner-section">
   <div class="sec-shape"><img src="images/shape/banner-shape.png" alt="Image"></div>
   <button class="goBottom-btn">
     <svg class="animation__arryUpDown" width="16" height="36" viewBox="0 0 16 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,7 +27,6 @@
                 <div class="inner-column">
                   <h1 class="title" data-animation="fadeInUp" data-delay=".5s">{{ $banner->main_title }}</h1><br>
                   <h6 class="sub-title" data-animation="fadeInUp" data-delay=".3s">{{ $banner->title}}</h6><br><br>
-                  <!-- <p class="sub-title1" data-animation="fadeInUp" data-delay=".9s">{!! $banner->description !!}</p><br><br> -->
                   <a class="btn-one" data-animation="fadeInUp" data-delay=".8s" href="{{ route('services') }}">{{ $banner->button_link }}</a>
                   <a class="btn-one" data-animation="fadeInUp" data-delay=".8s" href="{{ route('contact') }}">Contact ></a>
                 </div>
@@ -48,25 +47,123 @@
       @endforeach
     </div>
   </div>
-</section>
+</section> -->
 <!-- Banner area end here -->
+<section class="hero-section position-relative">
+  <div class="container-fluid px-lg-5">
+    <div class="row align-items-center">
+
+      <!-- Left Content -->
+      <div class="col-lg-5 mb-5 mb-lg-0">
+        <div class="hero-content ps-lg-5">
+          <h1 class="fw-bold display-4 mb-4">
+            Green Top
+            <span class="text-success d-block">
+              Construction
+            </span>
+          </h1>
+
+          <p class="lead text-muted mb-4">
+            Quality • Reliability • Excellence
+          </p>
+
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#" class="btn btn-success btn-lg px-4">
+              Explore Our Solutions
+              <i class="fa-solid fa-arrow-right ms-2"></i>
+            </a>
+
+            <a href="#" class="btn btn-outline-success btn-lg px-4">
+              About Us
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="col-lg-7">
+        <div class="hero-image-wrapper">
+          <img src="uploads\banner\69f89ea2bb24f.jpg"
+            alt="Hero Image"
+            class="img-fluid hero-image">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stats Box -->
+    <div class="stats-card shadow-lg">
+
+      <div class="row g-0">
+
+        <div class="col-md-3 col-6">
+          <div class="stat-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+              <h3>50+</h3>
+              <p>Years of Experience</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+          <div class="stat-item">
+            <i class="fa-solid fa-briefcase"></i>
+            <div>
+              <h3>100+</h3>
+              <p>Completed Projects</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+          <div class="stat-item">
+            <i class="fa-solid fa-globe"></i>
+            <div>
+              <h3>6</h3>
+              <p>Countries Served</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+          <div class="stat-item border-end-0">
+            <i class="fa-solid fa-users"></i>
+            <div>
+              <h3>100%</h3>
+              <p>Client Commitment</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 <!-- About area start here -->
 <section class="about-section pt-120 pb-120 paralax__animation">
   <div class="container">
     <div class="row">
-      <div class="col-lg-5 content-column">
+      <div class="col-lg-4 content-column">
         <div class="inner-column">
           <div class="content-box">
             <div class="sec-title">
-              <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">ABOUT US</h6>
+              <div class="section-tag">
+                ABOUT US
+              </div>
               <h2 class="title wow splt-txt" data-splitting> {{$widgets['HOME_ABOUT_US_TITLE']['title']}}</h2>
               <p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{{$widgets['HOME_ABOUT_US_TITLE']['description']}}</p>
+              <div class="pt-20">
+                <a class="btn-common" data-animation="fadeInUp" data-delay=".8s" href="{{ route('about') }}">Learn More about Us<i class="fa-solid fa-arrow-right"></i></a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-3 image-column wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+      <div class="col-lg-4 image-column wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
         <div class="inner-column">
           <div data-depth="0.01" class="image1 overlay-anim">
             <img src="images/about/about-image2.jpg" alt="Image">
@@ -105,52 +202,255 @@
 <!-- About area end here -->
 
 <!-- Case area start here -->
-<section class="case-section have-combine pt-120 pb-120" style="background-color: #1A4137;">
-  <div class="outer-box">
-    <div class="sec-title center mb-50">
-      <!-- <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Portfolio</h6> -->
-      <h1 class="title wow splt-txt" data-splitting style="color: white;">One Vision Multiple Ventures</h1>
-    </div>
-    <div class="swiper case-slider">
-      <div class="swiper-wrapper">
-        @foreach($projects as $project)
-        <div class="swiper-slide">
-          <div class="case-block">
-            <div class="inner-box">
-              <figure class="image">
-                <img src="{{ asset($project->thumbnail) }}" alt="Image">
-              </figure>
-              <div class="content-box">
-                <span class="sub-title">{{ $project->project_type }}</span>
-                <h4 class="title"><a href="{{ route('projects.show', $project->slug) }}"> {{ $project->project_name }}</a></h4><br>
-                <p>{{$project->short_description }}</p>
-                <a href="{{ route('projects.show', $project->slug) }}">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-              <a class="arry-btn" href="{{ route('projects.show', $project->slug) }}"><i class="fa-regular fa-arrow-up-right"></i></a>
-              <div class="hover-content">
-                <span class="sub-title">{{ $project->project_type }}</span>
-                <h4 class="title"><a href="{{ route('projects.show', $project->slug) }}">{{ $project->project_name }}</a></h4><br>
-                <p style="color: #fff;">{{$project->short_description }}</p>
-                <a style="color: #fff;" href="{{ route('projects.show', $project->slug) }}">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
+<section class="solutions-section">
+  <div class="container">
+
+    <div class="section-header">
+
+      <div>
+        <div class="section-tag">
+          OUR SOLUTIONS
         </div>
-        @endforeach
+
+        <h2 class="section-title">
+          End-to-End Solutions for Every Challenge
+        </h2>
+      </div>
+
+      <!-- <a href="#" class="view-all-btn">
+        View All Services
+        <i class="fa-solid fa-arrow-right"></i>
+      </a> -->
+
+    </div>
+
+    <div class="row row-cols-5 g-4">
+
+      <!-- Card 1 -->
+      <div class="col">
+        <div class="solution-card">
+          <div class="solution-icon">
+            <i class="fa-solid fa-building"></i>
+          </div>
+
+          <h4>Green Top Construction</h4>
+
+          <p>
+            Civil and MEP contracting for industrial and infrastructure sectors, delivering precision-built facilities and turnkey solutions for Saudi Arabia's most demanding clients.
+          </p>
+
+          <a href="#" class="card-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col">
+        <div class="solution-card">
+          <div class="solution-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+
+          <h4>Green Top Cathodic Protection</h4>
+
+          <p>
+            Advanced corrosion engineering and asset integrity services, protecting infrastructure and extending asset life across Saudi Arabia.
+          </p>
+
+          <a href="#" class="card-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col">
+        <div class="solution-card">
+          <div class="solution-icon">
+            <i class="fa-solid fa-bug"></i>
+          </div>
+
+          <h4>Green Top Pest Control & Cleaning</h4>
+
+          <p>
+            Municipality-approved pest management and disinfection services, ensuring safe and compliant environments across Saudi Arabia.
+          </p>
+
+          <a href="#" class="card-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col">
+        <div class="solution-card">
+          <div class="solution-icon">
+            <i class="fa-solid fa-desktop"></i>
+          </div>
+
+          <h4>Green Top Institute of Medical Science</h4>
+
+          <p>
+            Enterprise IT infrastructure and networking solutions, delivering secure connectivity and smart systems across Saudi Arabia.
+          </p>
+
+          <a href="#" class="card-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col">
+        <div class="solution-card">
+          <div class="solution-icon">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+
+          <h4>Green Top Institute of Medical Science</h4>
+
+          <p>
+            Medical education and healthcare development programs, strengthening professional skills and regional healthcare capacity.
+          </p>
+
+          <a href="#" class="card-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
       </div>
     </div>
+
   </div>
 </section>
 <!-- Case area end here -->
+<section class="featured-projects py-5">
+  <div class="container">
 
-<!-- Choose area start here -->
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+
+      <div>
+        <div class="section-tag">
+          FEATURED PROJECTS
+        </div>
+
+        <h2 class="section-title">
+          One Vision Multiple Ventures
+        </h2>
+      </div>
+
+      <a href="{{ route('portfolio') }}" class="view-projects">
+        View All Projects
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Card 1 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="project-card">
+
+          <img src="http://localhost:8000/uploads/projects/thumbnails/6a01e1705a40b.webp" alt="Project">
+
+          <div class="project-content">
+
+            <div class="project-icon">
+              <i class="fa-solid fa-building"></i>
+            </div>
+
+            <div>
+              <h5>Green Top Construction</h5>
+              <span>Jubail, Saudi Arabia</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="project-card">
+
+          <img src="http://localhost:8000/uploads/projects/thumbnails/6a01dd8409ab1.webp" alt="Project">
+
+          <div class="project-content">
+
+            <div class="project-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <div>
+              <h5>Green Top Cathodic Protection</h5>
+              <span>Yanbu, Saudi Arabia</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="project-card">
+
+          <img src="http://localhost:8000/uploads/projects/thumbnails/6a01dc1f4c07f.webp" alt="Project">
+
+          <div class="project-content">
+
+            <div class="project-icon">
+              <i class="fa-solid fa-bug"></i>
+            </div>
+
+            <div>
+              <h5>Green Top Pest Control &amp; Cleaning</h5>
+              <span>Riyadh, Saudi Arabia</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="project-card">
+
+          <img src="http://localhost:8000/uploads/projects/thumbnails/6a01dd714d6f5.webp" alt="Project">
+
+          <div class="project-content">
+
+            <div class="project-icon">
+              <i class="fa-solid fa-server"></i>
+            </div>
+
+            <div>
+              <h5>Green Top Information Technology</h5>
+              <span>Dammam, Saudi Arabia</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- Choose area start here .choose-block .pie-graph .icon-->
 <section class="choose-section pt-70 pb-70">
   <div class="container">
     <div class="row g-4">
-      <div class="col-xl-6 content-column">
+      <div class="col-xl-4 content-column">
         <div class="inner-column">
           <div class="sec-title mb-30">
-            <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Why Choose Us</h6>
+            <div class="section-tag">
+              WHY CHOOSE US
+            </div>
             <h2 class="title wow splt-txt" data-splitting>{!! $widgets['MISSION_AND_VISION']['title'] !!}</h2>
           </div>
 
@@ -173,194 +473,141 @@
           </div>
         </div>
       </div>
-      <div class="col-xl-6 image-column">
-        <div class="inner-column">
-          <figure class="image">
-            <img class="wow imageUpToDown" src="images/choose/choose-image1.png" alt="Image">
-            <div class="outer-box">
-              <div class="choose-block">
-                <!-- pie-graph -->
-                <div class="pie-graph">
-                  <div class="graph-outer">
-                    <input type="text" class="dial" data-fgColor="#000" data-bgColor="#FFFFFF33" data-width="70" data-height="70" data-linecap="normal" value="90">
-                  </div>
-                  <i class="fa-solid icon fa-arrow-up-right"></i>
+      <div class="col-xl-1">
+      </div>
+      <div class="col-xl-7 image-column">
+        <div class="experience-card">
+
+          <div class="experience-left">
+
+            <div class="stat-block">
+              <div class="pie-graph">
+                <div class="graph-outer">
+                  <input type="text" class="dial" data-fgColor="#000" data-bgColor="#FFFFFF33" data-width="70"
+                    data-height="70" data-linecap="normal" value="70">
                 </div>
-                <div class="content-box">
-                  <div class="inner-text count-box"><span class="count-text" data-stop="50" data-speed="2000"></span></div>
-                  <h5 class="title">Years of Experience</h5>
-                </div>
+                <i class="fa-solid icon fa-arrow-up-right"></i>
               </div>
-              <div class="choose-block">
-                <!-- pie-graph -->
-                <div class="pie-graph">
-                  <div class="graph-outer">
-                    <input type="text" class="dial" data-fgColor="#000" data-bgColor="#FFFFFF33" data-width="70"
-                      data-height="70" data-linecap="normal" value="70">
-                  </div>
-                  <i class="fa-solid icon fa-arrow-up-right"></i>
-                </div>
-                <div class="content-box">
-                  <div class="inner-text count-box"><span class="count-text" data-stop="100" data-speed="2000"></span>+ </div>
-                  <h5 class="title">Completed Project</h5>
-                </div>
+
+              <div>
+                <h3>50+</h3>
+                <p>Years of Experience</p>
               </div>
             </div>
-          </figure>
+
+            <div class="divider"></div>
+
+            <div class="stat-block">
+              <div class="pie-graph">
+                <div class="graph-outer">
+                  <input type="text" class="dial" data-fgColor="#000" data-bgColor="#FFFFFF33" data-width="70" data-height="70" data-linecap="normal" value="90">
+                </div>
+                <i class="fa-solid icon fa-arrow-up-right"></i>
+              </div>
+
+              <div>
+                <h3>100+</h3>
+                <p>Completed Projects</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="experience-right">
+            <img src="images/choose/choose-image1.png" alt="Construction">
+          </div>
+
         </div>
+
       </div>
     </div>
   </div>
 </section>
-<!-- Choose area end here -->
-<!-- Growth area start here -->
-<section class="growth-section pt-120 pb-120" data-background="images/bg/growth-bg.jpg">
-  <div class="sec-shape">
-    <img class="sway_Y__animation" src="images/shape/growth-shape.png" alt="Image">
-  </div>
-  <div class="container">
-    <div class="sec-title pb-50 mb-50">
-      <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Our Approch</h6>
-      <div class="flex-content" style="display: block;">
-        <h2 class="title text-white wow splt-txt" data-splitting>{!!$widgets['GROWTH_RATE']['title']!!}</h2>
-        <p class="text">Colloborative solutions designed to drive business growth and community impact.</p><br>
-        <a class="btn-one-light border-0 rounded-0 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms" href="{{route('about')}}">Work With Us</a>
-      </div>
-    </div>
-    <div class="row g-5">
-      {!!$widgets['GROWTH_RATE']['description']!!}
-    </div>
-  </div>
-</section>
-<!-- Growth area end here -->
 
-<!-- Processing area start here -->
-<section class="processing-section pt-70 pb-70">
-
-  <div class="container">
-    <div class="sec-title center mb-50">
-      <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">{!! $widgets['HOW_IT_WORKS_TITLE']['title']!!}</h6>
-      <h2 class="title wow splt-txt" data-splitting>{!! $widgets['HOW_IT_WORKS_TITLE']['description']!!}
-      </h2>
-    </div>
-
-    <div class="outer-box">
-      <div class="logo-slider">
-        <div class="logo-slide-track">
-
-          <!-- LOGOS (duplicate for infinite effect) -->
-          <div class="logo-slide"><img src="{{asset('images/logos/a.jpeg')}}"></div>
-          <div class="logo-slide"><img src="{{asset('images/logos/b.jpeg')}}"></div>
-          <div class="logo-slide"><img src="{{asset('images/logos/c.jpeg')}}"></div>
-          <div class="logo-slide"><img src="{{asset('images/logos/d.jpeg')}}"></div>
-          <div class="logo-slide"><img src="{{asset('images/logos/e.jpeg')}}"></div>
-
-          <div class="logo-slide"><img src="{{asset('images/logos/a.jpeg')}}"></div>
-          <div class="logo-slide"><img src="{{asset('images/logos/b.jpeg')}}"></div>
-          <div class="logo-slide"><img src="{{asset('images/logos/c.jpeg')}}"></div>
-          <div class="logo-slide"><img src="{{asset('images/logos/d.jpeg')}}"></div>
-          <div class="logo-slide"><img src="{{asset('images/logos/e.jpeg')}}"></div>
-
-
-        </div>
-      </div>
-      <!-- <div class="row g-0">
-        <div class="col-sm-6 col-xl-3 wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-          <div class="processing-block">
-            <div class="inner-box">
-              <h3 class="number">01</h3>
-              <h4 class="title">{!! $widgets['HOME_HOW_IT_WORKS_1']['title'] !!}</h4>
-              <p class="text">{!! $widgets['HOME_HOW_IT_WORKS_1']['description'] !!}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-xl-3 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-          <div class="processing-block">
-            <div class="inner-box">
-              <h3 class="number">02</h3>
-              <h4 class="title">{!! $widgets['HOME_HOW_IT_WORKS_2']['title'] !!}</h4>
-              <p class="text">{!! $widgets['HOME_HOW_IT_WORKS_2']['description'] !!}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-xl-3 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
-          <div class="processing-block">
-            <div class="inner-box">
-              <h3 class="number">03</h3>
-              <h4 class="title">{!! $widgets['HOME_HOW_IT_WORKS_3']['title'] !!}</h4>
-              <p class="text">{!! $widgets['HOME_HOW_IT_WORKS_3']['description'] !!}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-xl-3 wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
-          <div class="processing-block">
-            <div class="inner-box last-block">
-              <h3 class="number">04</h3>
-              <h4 class="title">{!! $widgets['HOME_HOW_IT_WORKS_4']['title'] !!}</h4>
-              <p class="text">{!! $widgets['HOME_HOW_IT_WORKS_4']['description'] !!}</p>
-            </div>
-          </div>
-        </div>
-      </div> -->
-    </div>
-  </div>
-</section>
-<!-- Processing area end here -->
-
-
-<!-- Testimonial area start here -->
-<section class="testimonial-section">
-  <div class="outer-box">
-    <!-- <figure class="shape">
-      <img src="images/shape/testimonial-shape.png" alt="Image">
-    </figure> -->
-    <div class="swiper testimonial-slider">
-      <div class="swiper-wrapper">
-        @foreach($testimonials as $t)
-        <div class="swiper-slide">
-          <div class="testimonial-block">
-            <div class="inner-box">
-              <div class="image-box">
-                <div class="quate">
-                  <svg width="33" height="26" viewBox="0 0 33 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M29.1965 2.87439C30.9987 4.85084 32.0801 7.00696 32.0801 10.6005C32.0801 16.8892 27.5745 22.4592 21.2666 25.334L19.6446 22.9982C25.592 19.764 26.8536 15.6314 27.214 12.9363C26.3129 13.4753 25.0513 13.655 23.7897 13.4753C20.5457 13.116 18.0225 10.6005 18.0225 7.18663C18.0225 5.56954 18.7434 3.95245 19.8248 2.69472C21.0864 1.43698 22.5282 0.897949 24.3304 0.897949C26.3129 0.897949 28.1151 1.79633 29.1965 2.87439ZM11.174 2.87439C12.9763 4.85084 14.0576 7.00696 14.0576 10.6005C14.0576 16.8892 9.55198 22.4592 3.24412 25.334L1.6221 22.9982C7.56951 19.764 8.83109 15.6314 9.19153 12.9363C8.29041 13.4753 7.02884 13.655 5.76727 13.4753C2.52322 13.116 7.62939e-05 10.6005 7.62939e-05 7.18663C7.62939e-05 5.56954 0.720974 3.95245 1.80232 2.69472C2.88367 1.43698 4.50569 0.897949 6.30794 0.897949C8.29041 0.897949 10.0927 1.79633 11.174 2.87439Z"
-                      fill="#163839" />
-                  </svg>
-                </div>
-                <figure class="image">
-                  @php
-                  $image =json_decode($t->image);
-                  @endphp
-                  @if($image[0] ?? false)
-                  <img src="{{ asset($image[0]) }}" alt="Image">
-                  @else
-                  <img src="{{ asset('images/shape/user.png') }}" alt="Image">
-                  @endif
-                </figure>
-                <div class="star">
-                  @for ($i = 1; $i <= 5; $i++)
-                    <i class="fa-solid fa-star {{ $i <= $t->rating ? 'active' : '' }}"></i>
-                    @endfor
-                </div>
-              </div>
-              <div class="content-box">
-                <h3 class="text">{!!$t->message !!}</h3>
-                <h4 class="title">{{ $t->name}} / <span>{{ $t->role}}</span></h4>
-              </div>
-            </div>
-          </div>
-        </div>
-        @endforeach
-      </div>
-
-      <div class="swiper-arry">
-        <button class="testimonial-prev"><i class="fa-solid fa-arrow-left"></i></button>
-        <button class="testimonial-next"><i class="fa-solid fa-arrow-right"></i></button>
-      </div>
-    </div>
-  </div>
-</section>
 <!-- Testimonial area end here -->
+<section class="processing-section pt-20 pb-20">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4 right-bar">
+        <div class="process-block">
+          <div class="sec-title mb-10">
+            OUR APPROCH
+          </div>
+          <h3>Delivering Connections.<br>Delivering Confidance.</h3>
+          <p>Collaboration, solutions, and integrity at the core of every successful partnership</p>
+          <a class="btn btn-one" href="">Work With us <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-2 right-bar">
+        <div class="process-block ">
+          <div class="inner-box">
+            <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h4 class="title">Reliable solution</h4>
+            <p>Delivering safe, innovative and effective solutions.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 right-bar">
+        <div class="process-block ">
+          <div class="inner-box">
+            <div class="icon"><i class="fa-solid fa-award"></i></div>
+            <h4 class="title">Expertise you can trust</h4>
+            <p>Delivering safe, innovative and effective solutions.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 fade-image-box">
+        <img class="img-fluid" src="https://gtc.leafcodes.in/images/bg/growth-bg.jpg" alt="Team Meeting">
+        <div class="process-block content-box1">
+
+          <div class="inner-box">
+            <div class="icon"><i class="fa-solid fa-leaf"></i></div>
+            <h4 class="title">Sustainable solutions</h4>
+            <p>Delivering safe, innovative and effective solutions.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</section>
+<!-- Processing area start here -->
+<section class="choose-section pt-20 pb-20">
+
+  <div class="container">
+    <div class="sec-title center mb-30">
+      <!-- <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">{!! $widgets['HOW_IT_WORKS_TITLE']['title']!!}</h6>
+      <h2 class="title wow splt-txt" data-splitting>{!! $widgets['HOW_IT_WORKS_TITLE']['description']!!}
+      </h2> -->
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <p>TRUSTED BY <br> LEADING ORGANIZATIONS</p>
+      </div>
+      <div class="col-md-10">
+        <div class="outer-box">
+          <div class="logo-slider">
+            <div class="logo-slide-track">
+
+              <div class="logo-slide"><img src="{{asset('images/logos/a.jpeg')}}"></div>
+              <div class="logo-slide"><img src="{{asset('images/logos/b.jpeg')}}"></div>
+              <div class="logo-slide"><img src="{{asset('images/logos/c.jpeg')}}"></div>
+              <div class="logo-slide"><img src="{{asset('images/logos/d.jpeg')}}"></div>
+              <div class="logo-slide"><img src="{{asset('images/logos/e.jpeg')}}"></div>
+
+              <div class="logo-slide"><img src="{{asset('images/logos/a.jpeg')}}"></div>
+              <div class="logo-slide"><img src="{{asset('images/logos/b.jpeg')}}"></div>
+              <div class="logo-slide"><img src="{{asset('images/logos/c.jpeg')}}"></div>
+              <div class="logo-slide"><img src="{{asset('images/logos/d.jpeg')}}"></div>
+              <div class="logo-slide"><img src="{{asset('images/logos/e.jpeg')}}"></div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 @endsection
