@@ -144,7 +144,7 @@
 </section>
 
 <!-- About area start here -->
-<section class="about-section pt-120 pb-120 paralax__animation">
+<section class="about-section pt-80 pb-80 paralax__animation">
   <div class="container">
     <div class="row">
       <div class="col-lg-4 content-column">
@@ -442,7 +442,7 @@
   </div>
 </section>
 <!-- Choose area start here .choose-block .pie-graph .icon-->
-<section class="choose-section pt-70 pb-70">
+<section class="choose-section pt-40 pb-70">
   <div class="container">
     <div class="row g-4">
       <div class="col-xl-4 content-column">

@@ -27347,11 +27347,6 @@ $grid-breakpoints: (
     }
 }
 
-.solutions-section {
-    padding: 100px 0;
-    background: #fff;
-}
-
 .section-header {
     display: flex;
     justify-content: space-between;
