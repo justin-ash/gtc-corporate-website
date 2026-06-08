@@ -3308,7 +3308,6 @@ section {
 .accordion-area .accordion .accordion-button::before {
     position: absolute;
     content: "\f105";
-    font-family: "Font Awesome 6 Pro";
     font-weight: 700;
     top: 30px;
     right: 30px;
@@ -23643,7 +23642,6 @@ CONTACT Details
     font-size: 18px;
     color: #707070;
     font-style: italic;
-    font-family: "Jost", sans-serif;
     margin-bottom: 5px;
 }
 
@@ -23856,7 +23854,6 @@ table.tbl-shopping-cart>tfoot>tr>th {
 .shop-sidebar .category-widget .category-list li a:before {
     position: absolute;
     content: "\f0da";
-    font-family: "Font Awesome 6 Pro";
     left: 0px;
     top: 0px;
     font-size: 16px;
@@ -26829,7 +26826,6 @@ $grid-breakpoints: (
 }
 
 .section-title {
-    font-family: 'Cormorant Garamond', serif;
     font-size: 72px;
     line-height: 1;
     font-weight: 700;
@@ -26892,7 +26888,6 @@ $grid-breakpoints: (
 }
 
 .year {
-    font-family: 'Cormorant Garamond', serif;
     font-size: 30px;
     line-height: 1;
     font-weight: 700;
