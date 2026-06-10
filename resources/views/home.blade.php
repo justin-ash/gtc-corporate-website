@@ -339,28 +339,24 @@
 
     </div>
 
-    <div class="row row-cols-5 g-4">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
       @foreach($services as $service)
-      <!-- Card 1 -->
       <div class="col">
         <div class="solution-card">
           <div class="solution-icon">
             <i class="fa-solid {{ $service->icon }}"></i>
           </div>
 
-          <h4>{{$service->title}}</h4>
+          <h4>{{ $service->title }}</h4>
 
-          <p>
-            {{$service->short_description}}
-          </p>
+          <p>{{ $service->short_description }}</p>
 
-          <a href="{{$service->link}}" class="card-arrow">
+          <a href="{{ $service->link }}" class="card-arrow">
             <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
       </div>
       @endforeach
-      <!-- fa-solid ,fa-solid , fa-solid fa-, fa-solid  -->
     </div>
 
   </div>
