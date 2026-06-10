@@ -345,7 +345,7 @@
       <div class="col">
         <div class="solution-card">
           <div class="solution-icon">
-            <i class="fa-solid fa-building"></i>
+            <i class="fa-solid {{ $service->icon }}"></i>
           </div>
 
           <h4>{{$service->title}}</h4>
