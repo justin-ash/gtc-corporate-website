@@ -354,8 +354,8 @@
             {{$service->short_description}}
           </p>
 
-          <a href="#" class="card-arrow">
-            <i class="bi bi-arrow-right"></i>
+          <a href="{{$service->link}}" class="card-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
       </div>
