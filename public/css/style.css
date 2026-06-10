@@ -26826,7 +26826,7 @@ $grid-breakpoints: (
 }
 
 .section-title {
-    font-size: 72px;
+    /* font-size: 72px; */
     line-height: 1;
     font-weight: 700;
     color: #042d2d;
@@ -27246,7 +27246,7 @@ $grid-breakpoints: (
 }
 
 .section-title {
-    font-size: 48px;
+    /* font-size: 48px; */
     font-weight: 700;
     color: #111827;
     max-width: 800px;
@@ -27422,7 +27422,7 @@ $grid-breakpoints: (
 }
 
 .solution-card h4 {
-    font-size: 30px;
+    /* font-size: 30px; */
     font-weight: 600;
     line-height: 1.3;
     color: #101828;

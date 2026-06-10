@@ -269,7 +269,7 @@
               <div class="section-tag">
                 ABOUT US
               </div>
-              <h2 class="title wow splt-txt" data-splitting> {{$widgets['HOME_ABOUT_US_TITLE']['title']}}</h2>
+              <h3 class="title wow splt-txt" data-splitting> {{$widgets['HOME_ABOUT_US_TITLE']['title']}}</h3>
               <p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{{$widgets['HOME_ABOUT_US_TITLE']['description']}}</p>
               <div class="pt-20">
                 <a class="btn-common" data-animation="fadeInUp" data-delay=".8s" href="{{ route('about') }}">Learn More about Us<i class="fa-solid fa-arrow-right"></i></a>
@@ -327,9 +327,9 @@
           OUR SOLUTIONS
         </div>
 
-        <h2 class="section-title">
+        <h3 class="section-title">
           End-to-End Solutions for Every Challenge
-        </h2>
+        </h3>
       </div>
 
       <!-- <a href="#" class="view-all-btn">
@@ -372,9 +372,9 @@
           FEATURED PROJECTS
         </div>
 
-        <h2 class="section-title">
+        <h3 class="section-title">
           One Vision Multiple Ventures
-        </h2>
+        </h3>
       </div>
 
       <a href="{{ route('portfolio') }}" class="view-projects">
@@ -422,7 +422,7 @@
             <div class="section-tag">
               WHY CHOOSE US
             </div>
-            <h2 class="title wow splt-txt" data-splitting>{!! $widgets['MISSION_AND_VISION']['title'] !!}</h2>
+            <h3 class="title wow splt-txt" data-splitting>{!! $widgets['MISSION_AND_VISION']['title'] !!}</h3>
           </div>
 
           <div class="choose-tab">
