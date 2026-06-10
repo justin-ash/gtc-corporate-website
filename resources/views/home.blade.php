@@ -48,12 +48,129 @@
     </div>
   </div>
 </section> -->
-<!-- Banner area end here -->
 <section class="hero-section position-relative">
+
+  <div id="heroBannerSlider" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      @foreach($banners as $key => $banner)
+      <button type="button" data-bs-target="#heroBannerSlider" data-bs-slide-to="{{ $key }}" class="{{ $key === 0 ? 'active' : '' }}"></button>
+      @endforeach
+    </div>
+
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      @foreach($banners as $banner)
+      @php
+      $gallery = json_decode($banner->image);
+      $img = ($gallery[0]) ?? 'images/banner/banner-image1.jpg';
+      @endphp
+      <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+        <div class="container-fluid px-lg-5">
+          <div class="row align-items-center">
+
+            <div class="col-lg-5 mb-5 mb-lg-0">
+              <div class="hero-content ps-lg-5">
+                <h1 class="fw-bold display-4 mb-4">
+                  {{ $banner->main_title }}
+                </h1>
+
+                <p class="lead text-muted mb-4">
+                  {{ $banner->title}}
+                </p>
+
+                <div class="d-flex flex-wrap gap-3">
+                  <a href="{{ route('services') }}" class="btn btn-success btn-lg px-4">
+                    {{ $banner->button_link }}
+                  </a>
+
+                  <a href="{{ route('contact') }}" class="btn btn-outline-success btn-lg px-4">
+                    Contact Us
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <div class="hero-image-wrapper">
+                <img src="{{ asset($img) }}"
+                  class="img-fluid hero-image"
+                  alt="Banner 1">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      @endforeach
+    </div>
+
+    <!-- Navigation -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroBannerSlider" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#heroBannerSlider" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+  </div>
+
+  <!-- Stats Box -->
+  <div class="stats-card shadow-lg">
+    <div class="row g-0">
+
+      <div class="col-md-3 col-6">
+        <div class="stat-item">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div>
+            <h3>50+</h3>
+            <p>Years of Experience</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+        <div class="stat-item">
+          <i class="fa-solid fa-briefcase"></i>
+          <div>
+            <h3>100+</h3>
+            <p>Completed Projects</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+        <div class="stat-item">
+          <i class="fa-solid fa-globe"></i>
+          <div>
+            <h3>6</h3>
+            <p>Countries Served</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+        <div class="stat-item border-end-0">
+          <i class="fa-solid fa-users"></i>
+          <div>
+            <h3>100%</h3>
+            <p>Client Commitment</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+<!-- Banner area end here -->
+<!-- <section class="hero-section position-relative">
   <div class="container-fluid px-lg-5">
     <div class="row align-items-center">
 
-      <!-- Left Content -->
       <div class="col-lg-5 mb-5 mb-lg-0">
         <div class="hero-content ps-lg-5">
           <h1 class="fw-bold display-4 mb-4">
@@ -80,7 +197,6 @@
         </div>
       </div>
 
-      <!-- Right Image -->
       <div class="col-lg-7">
         <div class="hero-image-wrapper">
           <img src="uploads\banner\69f89ea2bb24f.jpg"
@@ -91,7 +207,6 @@
 
     </div>
 
-    <!-- Stats Box -->
     <div class="stats-card shadow-lg">
 
       <div class="row g-0">
@@ -141,7 +256,7 @@
     </div>
 
   </div>
-</section>
+</section> -->
 
 <!-- About area start here -->
 <section class="about-section pt-80 pb-80 paralax__animation">
@@ -225,7 +340,7 @@
     </div>
 
     <div class="row row-cols-5 g-4">
-
+      @foreach($services as $service)
       <!-- Card 1 -->
       <div class="col">
         <div class="solution-card">
@@ -233,10 +348,10 @@
             <i class="fa-solid fa-building"></i>
           </div>
 
-          <h4>Green Top Construction</h4>
+          <h4>{{$service->title}}</h4>
 
           <p>
-            Civil and MEP contracting for industrial and infrastructure sectors, delivering precision-built facilities and turnkey solutions for Saudi Arabia's most demanding clients.
+            {{$service->short_description}}
           </p>
 
           <a href="#" class="card-arrow">
@@ -244,82 +359,8 @@
           </a>
         </div>
       </div>
-
-      <!-- Card 2 -->
-      <div class="col">
-        <div class="solution-card">
-          <div class="solution-icon">
-            <i class="fa-solid fa-shield-halved"></i>
-          </div>
-
-          <h4>Green Top Cathodic Protection</h4>
-
-          <p>
-            Advanced corrosion engineering and asset integrity services, protecting infrastructure and extending asset life across Saudi Arabia.
-          </p>
-
-          <a href="#" class="card-arrow">
-            <i class="bi bi-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="col">
-        <div class="solution-card">
-          <div class="solution-icon">
-            <i class="fa-solid fa-bug"></i>
-          </div>
-
-          <h4>Green Top Pest Control & Cleaning</h4>
-
-          <p>
-            Municipality-approved pest management and disinfection services, ensuring safe and compliant environments across Saudi Arabia.
-          </p>
-
-          <a href="#" class="card-arrow">
-            <i class="bi bi-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="col">
-        <div class="solution-card">
-          <div class="solution-icon">
-            <i class="fa-solid fa-desktop"></i>
-          </div>
-
-          <h4>Green Top Institute of Medical Science</h4>
-
-          <p>
-            Enterprise IT infrastructure and networking solutions, delivering secure connectivity and smart systems across Saudi Arabia.
-          </p>
-
-          <a href="#" class="card-arrow">
-            <i class="bi bi-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="col">
-        <div class="solution-card">
-          <div class="solution-icon">
-            <i class="fa-solid fa-microchip"></i>
-          </div>
-
-          <h4>Green Top Institute of Medical Science</h4>
-
-          <p>
-            Medical education and healthcare development programs, strengthening professional skills and regional healthcare capacity.
-          </p>
-
-          <a href="#" class="card-arrow">
-            <i class="bi bi-arrow-right"></i>
-          </a>
-        </div>
-      </div>
+      @endforeach
+      <!-- fa-solid ,fa-solid , fa-solid fa-, fa-solid  -->
     </div>
 
   </div>
@@ -348,95 +389,29 @@
     </div>
 
     <div class="row g-4">
-
+      @foreach($projects as $project)
       <!-- Card 1 -->
       <div class="col-lg-3 col-md-6">
         <div class="project-card">
 
-          <img src="http://localhost:8000/uploads/projects/thumbnails/6a01e1705a40b.webp" alt="Project">
+          <img src="{{ asset($project->gallery[0]) }}" alt="Project">
 
           <div class="project-content">
 
             <div class="project-icon">
-              <i class="fa-solid fa-building"></i>
+              <i class="fa-solid {{$project->icon}}"></i>
             </div>
 
             <div>
-              <h5>Green Top Construction</h5>
-              <span>Jubail, Saudi Arabia</span>
+              <h5>{{ $project->project_name }}</h5>
+              <span>{{ $project->project_type }}</span>
             </div>
 
           </div>
 
         </div>
       </div>
-
-      <!-- Card 2 -->
-      <div class="col-lg-3 col-md-6">
-        <div class="project-card">
-
-          <img src="http://localhost:8000/uploads/projects/thumbnails/6a01dd8409ab1.webp" alt="Project">
-
-          <div class="project-content">
-
-            <div class="project-icon">
-              <i class="fa-solid fa-shield-halved"></i>
-            </div>
-
-            <div>
-              <h5>Green Top Cathodic Protection</h5>
-              <span>Yanbu, Saudi Arabia</span>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="col-lg-3 col-md-6">
-        <div class="project-card">
-
-          <img src="http://localhost:8000/uploads/projects/thumbnails/6a01dc1f4c07f.webp" alt="Project">
-
-          <div class="project-content">
-
-            <div class="project-icon">
-              <i class="fa-solid fa-bug"></i>
-            </div>
-
-            <div>
-              <h5>Green Top Pest Control &amp; Cleaning</h5>
-              <span>Riyadh, Saudi Arabia</span>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="col-lg-3 col-md-6">
-        <div class="project-card">
-
-          <img src="http://localhost:8000/uploads/projects/thumbnails/6a01dd714d6f5.webp" alt="Project">
-
-          <div class="project-content">
-
-            <div class="project-icon">
-              <i class="fa-solid fa-server"></i>
-            </div>
-
-            <div>
-              <h5>Green Top Information Technology</h5>
-              <span>Dammam, Saudi Arabia</span>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-
+      @endforeach
     </div>
 
   </div>
@@ -609,5 +584,16 @@
 
   </div>
 </section>
+@push('scripts')
+<script>
+  const heroSlider = document.querySelector('#heroBannerSlider');
 
+  new bootstrap.Carousel(heroSlider, {
+    interval: 3000,
+    ride: 'carousel',
+    pause: false,
+    wrap: true
+  });
+</script>
+@endpush
 @endsection

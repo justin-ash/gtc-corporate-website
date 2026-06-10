@@ -21,9 +21,10 @@ class HomeController extends Controller
         $testimonials = Testimonial::where('is_active', 1)->get();
         $widgets = Widget::formatWidgets(['home', 'about', 'header', 'footer', 'sidebar']);
         $seo = SeoPage::seoByPage('home');
-        $projects = Project::where('is_active', 1)->orderBy('id', 'asc')->get();
+        $projects = Project::where('is_active', 1)->orderBy('id', 'asc')->limit(4)->get();
         $banners = Banner::where('is_active', 1)->orderBy('id', 'asc')->get();
-        return view('home', compact('testimonials', 'widgets', 'seo', 'projects', 'banners'));
+        $services = Service::where('is_active', 1)->get();
+        return view('home', compact('testimonials', 'widgets', 'seo', 'projects', 'banners', 'services'));
     }
 
     public function contact()

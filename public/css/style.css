@@ -27370,7 +27370,6 @@ $grid-breakpoints: (
 }
 
 .section-title {
-    font-size: 52px;
     font-weight: 700;
     color: #101828;
     line-height: 1.2;
@@ -27510,6 +27509,32 @@ $grid-breakpoints: (
     background: #f8f9fa;
     overflow: hidden;
     padding-bottom: 120px;
+}
+
+.carousel-item {
+    /* padding: 50px 0 120px; */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.carousel-indicators {
+    bottom: 120px;
+}
+
+.carousel-indicators button {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50%;
 }
 
 .hero-content {
