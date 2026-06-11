@@ -298,7 +298,7 @@
                  <div class="sec-title">
                      <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">COMPANY OVERVIEW</h6>
                  </div>
-                 <h2>Trusted Excellence Since 1977</h2>
+                 <h3>Trusted Excellence Since 1977</h3>
                  <p class="hero-lead">Established in 1977 ,Green Top Global (GTG) Group is a leading multi-disciplinary contractor
                      in the Kingdom of Saudi Arabia. We deliver high-performance solutions for the Kingdom's most
                      demanding industries by combining decades of local expertise with international technical
@@ -315,7 +315,7 @@
          <div class="sec-title pb-50 mb-50">
              <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Accreditations and Approvals</h6>
              <div class="flex-content">
-                 <h2 class="title text-white wow splt-txt" data-splitting>Certifications</h2>
+                 <h3 class="title text-white wow splt-txt" data-splitting>Certifications</h3>
              </div>
          </div>
          <div class="row g-5">
@@ -359,7 +359,7 @@
              <div class="sec-title">
                  <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">OUR DIVISIONS</h6>
              </div>
-             <h2>Five Disciplines. One Group.</h2>
+             <h3>Five Disciplines. One Group.</h3>
 
              <p>
                  Each GTC division operates with dedicated expertise,
@@ -385,9 +385,9 @@
 
                          <div class="service-number">0{{$key+1}}</div>
 
-                         <h3 class="service-title">
+                         <h4 class="service-title">
                              {{ $service->title }}
-                         </h3>
+                         </h4>
 
                          <div class="service-line"></div>
 

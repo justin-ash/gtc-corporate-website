@@ -19,7 +19,7 @@
          <div class="row g-5 g-xxl-0">
              <div class="container" style="position:relative;z-index:2;">
                  <p class="hero-eyebrow">Green Top Contracting Co. Ltd. — Al Khobar, KSA</p>
-                 <h2>Building the <em>backbone</em> of the Kingdom since 1977</h2>
+                 <h3>Building the <em>backbone</em> of the Kingdom since 1977</h3>
                  <p class="hero-lead">ISO-certified industrial contractors delivering civil, electrical, mechanical, piping, cathodic protection, and IT services across Saudi Arabia and the GCC.</p>
                  <div class="hero-stats">
                      <div class="stat">
@@ -54,7 +54,7 @@
                  <div class="inner-column">
                      <div class="sec-title">
                          <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Who we are</h6>
-                         <h2 class="title wow splt-txt" data-splitting>{!!$widgets['ABOUT_AREA']['title']!!}</h2>
+                         <h3 class="title wow splt-txt" data-splitting>{!!$widgets['ABOUT_AREA']['title']!!}</h3>
                      </div>
                      <div class="about-block-three mt-20">
                          <div class="row g-0">
@@ -100,19 +100,19 @@
          <div class="sec-title pb-50 mb-50">
              <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Our Purpose</h6>
              <div class="flex-content">
-                 <h2 class="title text-white wow splt-txt" data-splitting>Vision, Mission & Goals</h2>
+                 <h3 class="title text-white wow splt-txt" data-splitting>Vision, Mission & Goals</h3>
              </div>
          </div>
          <div class="row g-5">
              <div class="col-md-4">
                  <div class="growth-block1">
-                     <h3 class="title">Vision</h3>
+                     <h4 class="title">Vision</h4>
                      <p class="text">To be the most preferred vendor within our service range, delivering value-added solutions through commitment, integrity, and innovation.</p>
                  </div>
              </div>
              <div class="col-md-4">
                  <div class="growth-block1">
-                     <h3 class="title">Mission</h3>
+                     <h4 class="title">Mission</h4>
                      <p class="text">
                      <ul>
                          <li>Excellence and innovation in every project</li>
@@ -125,7 +125,7 @@
              </div>
              <div class="col-md-4">
                  <div class="growth-block1">
-                     <h3 class="title">Goals</h3>
+                     <h4 class="title">Goals</h4>
                      <p class="text">
                      <ul>
                          <li>On-time project delivery</li>
@@ -149,7 +149,7 @@
          <div class="outer-box">
              <div class="sec-title center mb-50">
                  <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Our Journey</h6>
-                 <h2 class="title wow splt-txt" data-splitting>{!!$widgets['PROCESS']['title']!!}</h2>
+                 <h3 class="title wow splt-txt" data-splitting>{!!$widgets['PROCESS']['title']!!}</h3>
              </div>
              <div class="timeline">
 
@@ -180,8 +180,7 @@
      <div class="container">
          <div class="sec-title center mb-50">
              <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Our Partners</h6>
-             <h2 class="title wow splt-txt" data-splitting>Trusted by industry leaders
-             </h2>
+             <h3 class="title wow splt-txt" data-splitting>Trusted by industry leaders</h3>
          </div>
 
          <p class="section-body">Registered vendors with the Kingdom's most prestigious organizations — proof of our quality and technical capability.</p>
@@ -240,18 +239,18 @@
          <div class="outer-box">
              <div class="sec-title center mb-50">
                  <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Safety & Quality</h6>
-                 <h2 class="title wow splt-txt" data-splitting>HSE and Quality commitment</h2>
+                 <h3 class="title wow splt-txt" data-splitting>HSE and Quality commitment</h3>
              </div>
              <div class="row">
                  <div class="col-md-6">
                      <div class="saftey">
-                         <h3>Health, Safety & Environment</h3>
+                         <h4>Health, Safety & Environment</h4>
                          <p>Safety is our top priority. Our HSE programs cover Hazard Identification, Risk Assessment, Emergency Response, and Incident Investigation — driven from management down to every site worker. We foster an accident-free culture through continuous training and robust safety protocols.</p>
                      </div>
                  </div>
                  <div class="col-md-6">
                      <div class="saftey">
-                         <h3>Quality Policy</h3>
+                         <h4>Quality Policy</h4>
                          <p>Fully compliant with ISO 9001:2015, we deliver defect-free work on time and within budget. Our Quality Control Program ensures every activity conforms to approved drawings and international standards, with complete as-built documentation and material certificates for every project.</p>
                      </div>
                  </div>

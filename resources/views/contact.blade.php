@@ -85,7 +85,7 @@
                  <div class="col-lg-6 content-column">
                      <div class="inner-column">
                          <div class="sec-title mb-30">
-                             <h2 class="title wow splt-txt" data-splitting>{{$widgets['GET_IN_TOUCH']['title']}}</h2>
+                             <h3 class="title wow splt-txt" data-splitting>{{$widgets['GET_IN_TOUCH']['title']}}</h3>
                              <p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{!!$widgets['GET_IN_TOUCH']['description']!!}</p>
                          </div>
                          <div class="google-map">
@@ -96,7 +96,7 @@
                  <div class="col-lg-6 content-column">
                      <div class="inner-column right-column">
                          <div class="sec-title mb-30">
-                             <h2 class="title wow splt-txt" data-splitting>{{$widgets['CONTACT_FILL_UP_FORM']['title']}}</h2>
+                             <h3 class="title wow splt-txt" data-splitting>{{$widgets['CONTACT_FILL_UP_FORM']['title']}}</h3>
                              <p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{!!$widgets['CONTACT_FILL_UP_FORM']['description']!!}</p>
                          </div>
                          <form id="contact_form" name="contact_form" action="{{ route('contact.submit') }}" method="post">
