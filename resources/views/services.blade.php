@@ -188,7 +188,7 @@
      }
 
      .service-title {
-         font-size: 42px;
+         /* font-size: 42px; */
          font-weight: 800;
          color: #111827;
          margin-bottom: 20px;
