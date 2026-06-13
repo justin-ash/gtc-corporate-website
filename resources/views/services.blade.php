@@ -383,7 +383,7 @@
 
                      <div class="service-content">
 
-                         <div class="service-number">0{{$key+1}}</div>
+                         <!-- <div class="service-number">0{{$key+1}}</div> -->
 
                          <h4 class="service-title">
                              {{ $service->title }}

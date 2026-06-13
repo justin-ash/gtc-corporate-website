@@ -27283,6 +27283,16 @@ $grid-breakpoints: (
     object-fit: cover;
 }
 
+.project-details {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-info {
+    margin-top: auto;
+}
+
 .project-content {
     padding: 20px;
     display: flex;
@@ -27399,6 +27409,8 @@ $grid-breakpoints: (
     height: 100%;
     background: #fff;
     transition: .3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .solution-card:hover {
@@ -27441,6 +27453,7 @@ $grid-breakpoints: (
     color: #0b8c4b;
     font-size: 30px;
     text-decoration: none;
+    margin-top: auto;
 }
 
 .card-arrow:hover {

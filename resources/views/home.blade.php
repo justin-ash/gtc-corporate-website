@@ -137,7 +137,7 @@
           <i class="fa-solid fa-briefcase"></i>
           <div>
             <h3>100+</h3>
-            <p>Completed Projects</p>
+            <p>Happy Clients</p>
           </div>
         </div>
       </div>
@@ -369,7 +369,7 @@
 
       <div>
         <div class="section-tag">
-          FEATURED PROJECTS
+          FEATURED PORTFOLIO
         </div>
 
         <h3 class="section-title">
@@ -378,7 +378,7 @@
       </div>
 
       <a href="{{ route('portfolio') }}" class="view-projects">
-        View All Projects
+        View All Portfolio
         <i class="fa-solid fa-arrow-right"></i>
       </a>
 
@@ -398,9 +398,9 @@
               <i class="fa-solid {{$project->icon}}"></i>
             </div>
 
-            <div>
+            <div class="project-details">
               <h5>{{ $project->project_name }}</h5>
-              <span>{{ $project->project_type }}</span>
+              <div class="project-info">{{ $project->project_type }}</div>
             </div>
 
           </div>
@@ -478,7 +478,7 @@
 
               <div>
                 <h3>100+</h3>
-                <p>Completed Projects</p>
+                <p>Happy Clients</p>
               </div>
             </div>
 

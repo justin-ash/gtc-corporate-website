@@ -171,7 +171,7 @@
                  </div>
              </div>
          </div>
-         <div class="row mb-5 mb-lg-0">
+         <!-- <div class="row mb-5 mb-lg-0">
              <div class="col-lg-4 col-md-6">
                  <div class="project-details__top mt-5">
                      <div class="project-details__img"> <img class="rounded-0" src="{{ asset($project->gallery[0]) }}" alt="" style="max-height: 400px;"> </div>
@@ -182,7 +182,8 @@
                      <div class="project-details__img"> <img class="rounded-0" src="{{ asset($project->gallery[1]) }}" alt="" style="max-height: 400px;"> </div>
                  </div>
              </div>
-         </div>
+         </div> -->
+         <hr class="mt-4 mb-5 mb-lg-0">
          {!! $project->detail_text !!}
 
 
