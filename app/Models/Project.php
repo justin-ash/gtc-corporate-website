@@ -17,7 +17,8 @@ class Project extends Model
         'gallery',
         'is_active',
         'slug',
-        'thumbnail'
+        'thumbnail',
+        'banner'
     ];
 
     // 🔥 Important: cast JSON to array

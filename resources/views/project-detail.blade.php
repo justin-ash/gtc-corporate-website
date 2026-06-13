@@ -113,7 +113,7 @@
      }
  </style>
  <!-- Start main-content -->
- <section class="page-title" style="background-image: url( {{asset('images/background/page-title-bg.jpg')}});">
+ <section class="page-title" style="background-image: url({{asset($project->banner)}});">
      <div class="auto-container">
          <div class="title-outer">
              <h1 class="title">{{ $project->project_name }}</h1>
