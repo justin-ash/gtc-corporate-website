@@ -65,10 +65,10 @@
                  </h3>
              </div>
 
-             <a href="{{ route('portfolio') }}" class="view-projects">
+             <!-- <a href="{{ route('portfolio') }}" class="view-projects">
                  View All Projects
                  <i class="fa-solid fa-arrow-right"></i>
-             </a>
+             </a> -->
 
          </div>
 
