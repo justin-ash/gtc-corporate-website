@@ -50,7 +50,8 @@
 </section> -->
 <section class="hero-section position-relative">
 
-  <div id="heroBannerSlider" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <!-- <div id="heroBannerSlider" class="carousel slide carousel-fade" data-bs-ride="carousel"> -->
+  <div id="heroBannerSlider" class="carousel slide" data-bs-ride="carousel">
 
     <!-- Indicators -->
     <div class="carousel-indicators">
@@ -585,7 +586,7 @@
   const heroSlider = document.querySelector('#heroBannerSlider');
 
   new bootstrap.Carousel(heroSlider, {
-    interval: 3000,
+    interval: 5000,
     ride: 'carousel',
     pause: false,
     wrap: true

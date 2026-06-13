@@ -27653,3 +27653,26 @@ $grid-breakpoints: (
 .process-block .inner-box {
     margin-top: 50px;
 }
+
+#heroBannerSlider .carousel-item {
+    transition: transform 0.8s ease-in-out;
+}
+
+.hero-image {
+    transition: transform 6s ease;
+}
+
+.carousel-item.active .hero-image {
+    transform: scale(1.05);
+}
+
+.hero-content {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.carousel-item.active .hero-content {
+    opacity: 1;
+    transform: translateY(0);
+}
