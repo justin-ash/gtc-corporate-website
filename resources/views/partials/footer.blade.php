@@ -10,7 +10,7 @@
               <a href="{{ route('home') }}"><img src="{{ asset(config('settings.logo')) }}" alt="Logo"></a>
 
               <div class="widget-content">
-                <p class="footer-text">Delivering innovative and sustainable solutions since 1977</p>
+                <p class="footer-text">Delivering innovative and sustainable solutions since 1951</p>
                 <ul class="footer-nav">
                   <li><a href="{{config('settings.facebook')}}" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
                   <li><a href="{{config('settings.instagram')}}" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>

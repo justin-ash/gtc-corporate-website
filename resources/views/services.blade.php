@@ -298,8 +298,8 @@
                  <div class="sec-title">
                      <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">COMPANY OVERVIEW</h6>
                  </div>
-                 <h3>Trusted Excellence Since 1977</h3>
-                 <p class="hero-lead">Established in 1977 ,Green Top Global (GTG) Group is a leading multi-disciplinary contractor
+                 <h3>Trusted Excellence Since 1951</h3>
+                 <p class="hero-lead">Established in 1951 ,Green Top Global (GTG) Group is a leading multi-disciplinary contractor
                      in the Kingdom of Saudi Arabia. We deliver high-performance solutions for the Kingdom's most
                      demanding industries by combining decades of local expertise with international technical
                      standards.</p>

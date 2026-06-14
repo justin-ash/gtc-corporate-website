@@ -137,8 +137,9 @@
                      <h2 class="title mb-30 wow splt-txt" data-splitting> {{ $project->project_name }}</h2>
                      <p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{{ $project->short_description }}</p>
                  </div>
-                 <a class="btn-two" href="{{ $project->website }}">Visit Website <i class="fas fa-angle-right"></i></a>
+                 <a class="btn-two" target="_blank" href="{{ asset($project->website) }}">Download Profile <i class="fas fa-angle-right"></i></a>
              </div>
+             @if(Request::segment(2) == 'green-top-pest-control-cleaning')
              <div class="col-xl-3 offset-xl-1 col-lg-4">
                  <div class="project-details__content-right mt-0">
                      <div class="project-details__details-box rounded-0">
@@ -147,7 +148,7 @@
                          <img src="{{ asset('images/service/npma.jpeg') }}" alt="Project Image" class="mb-4 rounded-0" style="max-width: 100%; height: auto;">
 
                          @else
-                         <ul class="list-unstyled project-details__details-list">
+                         <!-- <ul class="list-unstyled project-details__details-list">
                              <li>
                                  <h4 class="project-details__name mb-2">Clients</h4>
                                  <p class="project-details__client">{{ $project->project_location }}</p>
@@ -164,12 +165,13 @@
                                  <h4 class="project-details__name mb-2">Website</h4>
                                  <p class="project-details__client"><a href="{{ $project->website }}" target="_blank">{{ $project->website }}</a></p>
                              </li>
-                         </ul>
+                         </ul> -->
                          @endif
 
                      </div>
                  </div>
              </div>
+             @endif
          </div>
          <!-- <div class="row mb-5 mb-lg-0">
              <div class="col-lg-4 col-md-6">
