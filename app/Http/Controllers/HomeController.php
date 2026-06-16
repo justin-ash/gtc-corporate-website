@@ -115,4 +115,12 @@ class HomeController extends Controller
             'message' => 'Subscribed successfully!'
         ]);
     }
+
+    public function gallery()
+    {
+        $widgets = Widget::formatWidgets(['gallery', 'header', 'footer', 'sidebar']);
+        $seo = SeoPage::seoByPage('gallery');
+        $projects = Project::where('is_active', 1)->get();
+        return view('gallery', compact('widgets', 'seo', 'projects'));
+    }
 }

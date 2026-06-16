@@ -357,7 +357,7 @@
      <div class="container">
          <div class="section-heading mb-5">
              <div class="sec-title">
-                 <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">OUR DIVISIONS</h6>
+                 <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">OUR COMPANIES</h6>
              </div>
              <h3>Five Disciplines. One Group.</h3>
 

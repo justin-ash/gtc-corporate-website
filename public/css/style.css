@@ -22766,7 +22766,7 @@ CONTACT Details
 .category-block {
     position: relative;
     margin-bottom: 30px;
-    z-index: 9;
+    /* z-index: 9; */
 }
 
 .category-block .inner-box {
@@ -22852,7 +22852,7 @@ CONTACT Details
 }
 
 .category-block p {
-    font-size: 14px;
+    /* font-size: 14px; */
     color: #797f7d;
     line-height: 26px;
     margin-bottom: 0px;
