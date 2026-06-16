@@ -266,13 +266,13 @@
 
                       <div class="row g-3">
                           <div class="gallery">
-                              <img src="./uploads/gallery/C1.png"
+                              <img src="./uploads/gallery/c1.png"
                                   class="gallery-image gallery-slider-item">
-                              <img src="./uploads/gallery/C2.png"
+                              <img src="./uploads/gallery/c2.png"
                                   class="gallery-image gallery-slider-item">
-                              <img src="./uploads/gallery/C3.png"
+                              <img src="./uploads/gallery/c3.png"
                                   class="gallery-image gallery-slider-item">
-                              <img src="./uploads/gallery/C4.png"
+                              <img src="./uploads/gallery/c4.png"
                                   class="gallery-image gallery-slider-item">
 
                           </div>
