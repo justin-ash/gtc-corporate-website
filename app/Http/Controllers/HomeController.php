@@ -65,6 +65,7 @@ class HomeController extends Controller
 
     public function about()
     {
+        dd("ttt")
         $widgets = Widget::formatWidgets(['about', 'header', 'footer', 'sidebar']);
         $seo = SeoPage::seoByPage('about');
         return view('about', compact('widgets', 'seo'));
