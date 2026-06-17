@@ -9,7 +9,7 @@
                  <li><a href="{{ route('home') }}">Home</a></li>
                  <li>About Us</li>
              </ul>
-             <h1 class="title">About Us1</h1>
+             <h1 class="title">About Us</h1>
          </div>
      </div>
  </section>
