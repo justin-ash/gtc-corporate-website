@@ -253,7 +253,8 @@
             </div>
 
             <div class="project-details">
-              <h5>{{ $project->project_name }}</h5>
+              <!-- <h5>{{ $project->project_name }}</h5> -->
+                <h5 class="title"><a href="{{ route('projects.show', $project->slug) }}">{{ $project->project_name }}</a></h5>
               <div class="project-info">{{ $project->project_type }}</div>
             </div>
 
