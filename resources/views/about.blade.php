@@ -19,28 +19,11 @@
          <div class="row g-5 g-xxl-0">
              <div class="container" style="position:relative;z-index:2;">
                  <p class="hero-eyebrow">Green Top Contracting Co. Ltd. — Al Khobar, KSA</p>
-                 <h3>Building the <em>backbone</em> of the Kingdom since 1981</h3>
+                 <h3>Building the <em>backbone</em> of the Kingdom since 1951</h3>
                  <p class="hero-lead">ISO-certified industrial contractors delivering civil, electrical, mechanical, piping, cathodic protection, and IT services across Saudi Arabia and the GCC.</p>
-                 <div class="hero-stats">
-                     <div class="stat">
-                         <div class="stat-num">47+</div>
-                         <div class="stat-label">Years Operating</div>
-                     </div>
-                     <div class="stat">
-                         <div class="stat-num">170+</div>
-                         <div class="stat-label">Projects Done</div>
-                     </div>
-                     <div class="stat">
-                         <div class="stat-num">20+</div>
-                         <div class="stat-label">Major Clients</div>
-                     </div>
-                     <div class="stat">
-                         <div class="stat-num">3</div>
-                         <div class="stat-label">ISO Certifications</div>
-                     </div>
-                 </div>
+                 
              </div>
-             <div class="since-badge"><span>Since</span><span>1981</span></div>
+             <div class="since-badge"><span>Since</span><span>1951</span></div>
          </div>
      </div>
  </section>
