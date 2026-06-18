@@ -265,14 +265,6 @@
 
      }
 
-     /* .service-content .service-number,
-     .service-content .service-title,
-     .service-content .service-line,
-     .service-content .service-description,
-     .service-content .service-btn {
-         padding-left: 10em;
-
-     } */
      .service-content {
          padding: 50px
      }
@@ -298,13 +290,8 @@
                  <div class="sec-title">
                      <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">COMPANY OVERVIEW</h6>
                  </div>
-                 <h3>Trusted Excellence Since 1951</h3>
-                 <p class="hero-lead">Established in 1951 ,Green Top Global (GTG) Group is a leading multi-disciplinary contractor
-                     in the Kingdom of Saudi Arabia. We deliver high-performance solutions for the Kingdom's most
-                     demanding industries by combining decades of local expertise with international technical
-                     standards.</p>
-                 <p class="hero-lead">Every project we undertake is executed with precision, safety, and a commitment to long-term value
-                     — on time and within scope, from concept through to handover.</p>
+                 <h3>{!!$widgets['COMPANIES_OVERVIEW']['title']!!}</h3>
+                 {!!$widgets['COMPANIES_OVERVIEW']['description']!!}
              </div>
          </div>
      </div>
@@ -359,12 +346,10 @@
              <div class="sec-title">
                  <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">OUR COMPANIES</h6>
              </div>
-             <h3>Five Disciplines. One Group.</h3>
+             <h3>{!!$widgets['COMPANIES_TITLE']['title']!!}</h3>
 
              <p>
-                 Each GTC division operates with dedicated expertise,
-                 specialized equipment, and fully qualified teams —
-                 delivering end-to-end project excellence across every sector.
+                 {!!$widgets['COMPANIES_TITLE']['description']!!}
              </p>
          </div>
          @foreach($services as $key=> $service)
@@ -419,47 +404,5 @@
      </div>
 
  </section>
- <!-- <section class="division-section py-5">
-     <div class="container">
 
-         <div class="section-heading mb-5">
-             <div class="sec-title">
-                 <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">OUR DIVISIONS</h6>
-             </div>
-             <h2>Five Disciplines. One Group.</h2>
-
-             <p>
-                 Each GTC division operates with dedicated expertise,
-                 specialized equipment, and fully qualified teams —
-                 delivering end-to-end project excellence across every sector.
-             </p>
-         </div>
-
- @foreach($services as $key=> $service)
- <div class="division-card mb-4">
-
-     <div class="division-title">
-         {{$key+1}}. {{ $service->title }}
-     </div>
-
-     <div class="division-body">
-
-         <p>
-             {!! $service->description !!}
-         </p>
-
-         <div class="key-areas">
-             <strong>Key Areas:</strong>
-             {{ $service->icon }}
-         </div>
-         <a href="{{ $service->link }}" target="_blank">
-             {{ $service->link }}
-         </a>
-     </div>
-
-
- </div>
- @endforeach
- </div>
- </section> -->
  @endsection

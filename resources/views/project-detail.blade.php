@@ -128,7 +128,7 @@
  <!-- End main-content -->
 
  <!--Project Details Start-->
- <section class="project-details pt-120 pb-70">
+ <section class="project-details pt-120 pb-30">
      <div class="container">
          <div class="row">
              <div class="col-xl-7 col-lg-8 mb-5 mb-lg-0">

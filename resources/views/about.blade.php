@@ -19,9 +19,8 @@
          <div class="row g-5 g-xxl-0">
              <div class="container" style="position:relative;z-index:2;">
                  <p class="hero-eyebrow">Green Top Contracting Co. Ltd. — Al Khobar, KSA</p>
-                 <h3>Building the <em>backbone</em> of the Kingdom since 1951</h3>
-                 <p class="hero-lead">ISO-certified industrial contractors delivering civil, electrical, mechanical, piping, cathodic protection, and IT services across Saudi Arabia and the GCC.</p>
-                 
+                 <h3>{!!$widgets['ABOUT_START']['title']!!}</h3>
+                 <p class="hero-lead">{!!$widgets['ABOUT_START']['description']!!}</p>
              </div>
              <div class="since-badge"><span>Since</span><span>1951</span></div>
          </div>
@@ -56,8 +55,8 @@
                      <div class="row g-0">
                          <div class="col-md-12">
                              <div class="comment">
-                                 <p class="comment-text">"We value commitment, integrity, employee morale, and loyalty — embracing the spirit of innovation that transforms our vision into reality."</p>
-                                 <p class="panel-author">— Green Top Vision Statement</p>
+                                 <p class="comment-text">{!!$widgets['ABOUT_VISION_STATEMENT']['description']!!}</p>
+                                 <p class="panel-author">{!!$widgets['ABOUT_VISION_STATEMENT']['title']!!}</p>
                                  </p>
                              </div>
                          </div>
@@ -89,33 +88,23 @@
          <div class="row g-5">
              <div class="col-md-4">
                  <div class="growth-block1">
-                     <h4 class="title">Vision</h4>
-                     <p class="text">To be the most preferred vendor within our service range, delivering value-added solutions through commitment, integrity, and innovation.</p>
+                     <h4 class="title">{!!$widgets['ABOUT_VISION']['title']!!}</h4>
+                     <p class="text">{!!$widgets['ABOUT_VISION']['description']!!}</p>
                  </div>
              </div>
              <div class="col-md-4">
                  <div class="growth-block1">
-                     <h4 class="title">Mission</h4>
+                     <h4 class="title">{!!$widgets['ABOUT_MISSION']['title']!!}</h4>
                      <p class="text">
-                     <ul>
-                         <li>Excellence and innovation in every project</li>
-                         <li>Safety and environmental responsibility</li>
-                         <li>Sustainable, profitable growth</li>
-                         <li>Attract and reward top talent</li>
-                     </ul>
+                         {!!$widgets['ABOUT_MISSION']['description']!!}
                      </p>
                  </div>
              </div>
              <div class="col-md-4">
                  <div class="growth-block1">
-                     <h4 class="title">Goals</h4>
+                     <h4 class="title">{!!$widgets['ABOUT_GOALS']['title']!!}</h4>
                      <p class="text">
-                     <ul>
-                         <li>On-time project delivery</li>
-                         <li>100% client satisfaction</li>
-                         <li>Professional approach always</li>
-                         <li>Continuous improvement</li>
-                     </ul>
+                         {!!$widgets['ABOUT_GOALS']['description']!!}
                      </p>
                  </div>
              </div>
@@ -163,10 +152,10 @@
      <div class="container">
          <div class="sec-title center mb-50">
              <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Our Partners</h6>
-             <h3 class="title wow splt-txt" data-splitting>Trusted by industry leaders</h3>
+             <h3 class="title wow splt-txt" data-splitting>{!!$widgets['ABOUT_PARTNERS']['title']!!}</h3>
          </div>
 
-         <p class="section-body">Registered vendors with the Kingdom's most prestigious organizations — proof of our quality and technical capability.</p>
+         <p class="section-body">{!!$widgets['ABOUT_PARTNERS']['description']!!}</p>
          <div class="clients-wrapper">
              <p class="clients-label" style="margin-top:28px;">Vendor Registrations</p>
              <div class="row">
@@ -227,14 +216,14 @@
              <div class="row">
                  <div class="col-md-6">
                      <div class="saftey">
-                         <h4>Health, Safety & Environment</h4>
-                         <p>Safety is our top priority. Our HSE programs cover Hazard Identification, Risk Assessment, Emergency Response, and Incident Investigation — driven from management down to every site worker. We foster an accident-free culture through continuous training and robust safety protocols.</p>
+                         <h4>{!!$widgets['ABOUT_SAFETY']['title']!!}</h4>
+                         <p>{!!$widgets['ABOUT_SAFETY']['description']!!}</p>
                      </div>
                  </div>
                  <div class="col-md-6">
                      <div class="saftey">
-                         <h4>Quality Policy</h4>
-                         <p>Fully compliant with ISO 9001:2015, we deliver defect-free work on time and within budget. Our Quality Control Program ensures every activity conforms to approved drawings and international standards, with complete as-built documentation and material certificates for every project.</p>
+                         <h4>{!!$widgets['ABOUT_QUALITY']['title']!!}</h4>
+                         <p>{!!$widgets['ABOUT_QUALITY']['description']!!}</p>
                      </div>
                  </div>
              </div>
