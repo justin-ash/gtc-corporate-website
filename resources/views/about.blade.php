@@ -13,53 +13,60 @@
          </div>
      </div>
  </section>
+
+ <section class="about-section-three pt-120 pb-120 history-section">
+     <div class="container">
+         <div class="row g-5 g-xxl-0">
+             <div class="container" style="position:relative;z-index:2;">
+                 <p class="hero-eyebrow">Green Top Contracting Co. Ltd. — Al Khobar, KSA</p>
+                 <h3>Building the <em>backbone</em> of the Kingdom since 1951</h3>
+                 <p class="hero-lead">ISO-certified industrial contractors delivering civil, electrical, mechanical, piping, cathodic protection, and IT services across Saudi Arabia and the GCC.</p>
+                 
+             </div>
+             <div class="since-badge"><span>Since</span><span>1951</span></div>
+         </div>
+     </div>
+ </section>
  <!-- end main-content -->
 
  <!-- About area start here -->
  <section class="about-section-three pt-120 pb-120">
      <div class="container">
          <div class="row g-5 g-xxl-0">
-             <div class="col-xl-6 image-column">
+             <div class="col-xl-6 content-column">
                  <div class="inner-column">
-                     <div class="shape">
-                         <img class="animation__rotate" src="{{ asset('images/about/about-three-info.png') }}" alt="Image">
+                     <div class="sec-title">
+                         <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Who we are</h6>
+                         <h3 class="title wow splt-txt" data-splitting>{!!$widgets['ABOUT_AREA']['title']!!}</h3>
                      </div>
-                     <figure class="image">
-                         <img src="{{ asset('images/about/about-three-image.jpg') }}" alt="Image">
-                     </figure>
-                     <p class="text mt-30 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{!!$widgets['ABOUT_AREA']['description']!!}</p>
-                     <div class="info mt-50 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
-                         <div class="user">
-                             <ul>
-                                 <li><img src="{{ asset('images/about/about-two-user1.png') }}" alt="Image"></li>
-                                 <li><img src="{{ asset('images/about/about-two-user2.png') }}" alt="Image"></li>
-                                 <li><img src="{{ asset('images/about/about-two-user3.png') }}" alt="Image"></li>
-                                 <li><img src="{{ asset('images/about/about-two-user4.png') }}" alt="Image"></li>
-                             </ul>
+                     <div class="about-block-three mt-20">
+                         <div class="row g-0">
+                             <div class="col-sm-12 wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                 <div class="content-bo">
+                                     <p class="text mt-30 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{!!$widgets['ABOUT_AREA']['description']!!}</p>
+
+                                 </div>
+                             </div>
                          </div>
                      </div>
                  </div>
              </div>
-
-             <div class="col-xl-6 content-column">
+             <div class="col-xl-6 image-column">
                  <div class="inner-column">
-                     <div class="sec-title">
-                         <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">ABOUT US</h6>
-                         <h2 class="title wow splt-txt" data-splitting>{!!$widgets['ABOUT_AREA']['title']!!}</h2>
-                     </div>
-                     <div class="about-block-three mt-50">
-                         <div class="row g-0">
-                             <div class="col-sm-6 wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-                                 <div class="content-box">
-                                     <div class="count-box"><span class="count-text" data-stop="15" data-speed="2000"></span>+</div>
-                                     <p class="text">Experience Team Help you</p>
-                                 </div>
+                     <div class="row g-0">
+                         <div class="col-md-12">
+                             <div class="comment">
+                                 <p class="comment-text">"We value commitment, integrity, employee morale, and loyalty — embracing the spirit of innovation that transforms our vision into reality."</p>
+                                 <p class="panel-author">— Green Top Vision Statement</p>
+                                 </p>
                              </div>
-                             <div class="col-sm-6 wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
-                                 <div class="content-box margin-minus">
-                                     <div class="count-box"><span class="count-text" data-stop="18" data-speed="2000"></span>M</div>
-                                     <p class="text">We helped to get companies</p>
-                                 </div>
+                         </div>
+                     </div>
+
+                     <div class="row g-0 mt-50">
+                         <div class="col-md-12">
+                             <div class="labels">
+                                 <label>ISO 9001 : 2015</label><label>ISO 14001 : 2015 </label><label>ISO 45001 : 2018</label><label>Aramco Approved</label>
                              </div>
                          </div>
                      </div>
@@ -74,32 +81,164 @@
  <section class="growth-section pt-120 pb-120" data-background="images/bg/growth-bg.jpg">
      <div class="container">
          <div class="sec-title pb-50 mb-50">
-             <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Growth Rate</h6>
+             <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Our Purpose</h6>
              <div class="flex-content">
-                 <h2 class="title text-white wow splt-txt" data-splitting>{!!$widgets['GROWTH_RATE']['title']!!}</h2>
+                 <h3 class="title text-white wow splt-txt" data-splitting>Vision, Mission & Goals</h3>
              </div>
          </div>
          <div class="row g-5">
-             {!!$widgets['GROWTH_RATE']['description']!!}
+             <div class="col-md-4">
+                 <div class="growth-block1">
+                     <h4 class="title">Vision</h4>
+                     <p class="text">To be the most preferred vendor within our service range, delivering value-added solutions through commitment, integrity, and innovation.</p>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="growth-block1">
+                     <h4 class="title">Mission</h4>
+                     <p class="text">
+                     <ul>
+                         <li>Excellence and innovation in every project</li>
+                         <li>Safety and environmental responsibility</li>
+                         <li>Sustainable, profitable growth</li>
+                         <li>Attract and reward top talent</li>
+                     </ul>
+                     </p>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="growth-block1">
+                     <h4 class="title">Goals</h4>
+                     <p class="text">
+                     <ul>
+                         <li>On-time project delivery</li>
+                         <li>100% client satisfaction</li>
+                         <li>Professional approach always</li>
+                         <li>Continuous improvement</li>
+                     </ul>
+                     </p>
+                 </div>
+             </div>
          </div>
      </div>
  </section>
  <!-- Growth area end here -->
 
  <!-- Process area end here -->
- <section class="process-section-four pt-120 pb-120">
+ <section class="process-section-four pt-120 pb-120 timeline-section">
      <div class="container">
 
 
          <div class="outer-box">
              <div class="sec-title center mb-50">
-                 <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Process</h6>
-                 <h2 class="title wow splt-txt" data-splitting>{!!$widgets['PROCESS']['title']!!}</h2>
+                 <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Our Journey</h6>
+                 <h3 class="title wow splt-txt" data-splitting>{!!$widgets['PROCESS']['title']!!}</h3>
              </div>
-             {!!$widgets['PROCESS']['description']!!}
+             <div class="timeline">
+
+                 <!-- Item -->
+                 @foreach($milestones as $key => $milestone)
+                 <div class="timeline-item {{ $key %2 == 0 ? 'right' : 'left' }}">
+                     <div class="timeline-dot"></div>
+
+                     <div class="timeline-content">
+                         <div class="year">{{ $milestone->year }}</div>
+                         <h3 class="milestone-title">{{ $milestone->title }}</h3>
+                         <p class="milestone-desc">
+                             {{ $milestone->description }}
+                         </p>
+                     </div>
+                 </div>
+                 @endforeach
+
+             </div>
 
          </div>
 
+     </div>
+ </section>
+
+ <section class="processing-section pt-70 pb-70">
+
+     <div class="container">
+         <div class="sec-title center mb-50">
+             <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Our Partners</h6>
+             <h3 class="title wow splt-txt" data-splitting>Trusted by industry leaders</h3>
+         </div>
+
+         <p class="section-body">Registered vendors with the Kingdom's most prestigious organizations — proof of our quality and technical capability.</p>
+         <div class="clients-wrapper">
+             <p class="clients-label" style="margin-top:28px;">Vendor Registrations</p>
+             <div class="row">
+                 <div class="col-md-3">
+                     <div class="clients-grid">
+                         <span class="client-pill">Saudi Aramco</span>
+                         <span class="client-pill">Saudi Electricity Company</span>
+                         <span class="client-pill">SABIC</span>
+                         <span class="client-pill">Petrokemya</span>
+                         <span class="client-pill">MAADEN</span>
+                     </div>
+                 </div>
+                 <div class="col-md-3">
+                     <div class="clients-grid">
+
+                         <span class="client-pill">NESMA</span>
+                         <span class="client-pill">El-Seif</span>
+                         <span class="client-pill">KBR</span>
+                         <span class="client-pill">L&amp;T Energy Hydrocarbon</span>
+                         <span class="client-pill">DANWAY</span>
+                     </div>
+                 </div>
+                 <div class="col-md-3">
+                     <div class="clients-grid">
+                         <span class="client-pill">LINXON</span>
+                         <span class="client-pill">SOGEC</span>
+                         <span class="client-pill">SICIM</span>
+                         <span class="client-pill">NSH</span>
+                         <span class="client-pill">SISCO</span>
+                     </div>
+                 </div>
+                 <div class="col-md-3">
+                     <div class="clients-grid">
+                         <span class="client-pill">Royal Commission Jubail &amp; Yanbu</span>
+                         <span class="client-pill">National Water Company</span>
+                         <span class="client-pill">SIPCHEM</span>
+                         <span class="client-pill">MARAFIQ</span>
+                         <span class="client-pill">Gulf Chemicals</span>
+                     </div>
+                 </div>
+                 <div class="clients-grid">
+
+
+
+                 </div>
+             </div>
+         </div>
+ </section>
+ <section class="process-section-four pt-120 pb-120 timeline-section">
+     <div class="container">
+
+
+         <div class="outer-box">
+             <div class="sec-title center mb-50">
+                 <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Safety & Quality</h6>
+                 <h3 class="title wow splt-txt" data-splitting>HSE and Quality commitment</h3>
+             </div>
+             <div class="row">
+                 <div class="col-md-6">
+                     <div class="saftey">
+                         <h4>Health, Safety & Environment</h4>
+                         <p>Safety is our top priority. Our HSE programs cover Hazard Identification, Risk Assessment, Emergency Response, and Incident Investigation — driven from management down to every site worker. We foster an accident-free culture through continuous training and robust safety protocols.</p>
+                     </div>
+                 </div>
+                 <div class="col-md-6">
+                     <div class="saftey">
+                         <h4>Quality Policy</h4>
+                         <p>Fully compliant with ISO 9001:2015, we deliver defect-free work on time and within budget. Our Quality Control Program ensures every activity conforms to approved drawings and international standards, with complete as-built documentation and material certificates for every project.</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
      </div>
  </section>
  <!-- Process area end here -->

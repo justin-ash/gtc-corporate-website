@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\ContactsController;
+use App\Http\Controllers\Admin\MilestoneController;
 use App\Http\Controllers\Admin\ProjectsController;
 use App\Http\Controllers\Admin\SeoPageController;
 use App\Http\Controllers\Admin\ServicesController;
@@ -15,10 +16,11 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
-Route::get('/services', [HomeController::class, 'services'])->name('services');
-Route::get('/projects', [HomeController::class, 'projects'])->name('projects');
+Route::get('/services', [HomeController::class, 'services1'])->name('services');
+Route::get('/portfolio', [HomeController::class, 'projects'])->name('portfolio');
+Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
 Route::get('/project/{slug}', [HomeController::class, 'projectBySlug'])->name('projects.show');
-Route::get('/divisions', [HomeController::class, 'divisions'])->name('divisions');
+Route::get('/companies', [HomeController::class, 'services'])->name('companies');
 Route::post('/contact', [HomeController::class, 'submitContact'])->name('contact.submit');
 Route::post('/newsletter-subscribe', [HomeController::class, 'subscribe'])
     ->name('newsletter.subscribe');
@@ -41,6 +43,7 @@ Route::prefix('admin')->group(function () {
         // Route::get('/projects', [ProjectsController::class, 'index']);
         Route::resource('projects', ProjectsController::class);
         Route::post('/upload-gallery', [ProjectsController::class, 'uploadGallery']);
+        Route::post('/upload-image', [ProjectsController::class, 'uploadImage']);
         Route::post('/delete-image', [ProjectsController::class, 'deleteImage']);
         // Route::get('/widgets', [WidgetsController::class, 'index'])->name('widgets');
         Route::resource('widgets', WidgetsController::class);
@@ -57,5 +60,6 @@ Route::prefix('admin')->group(function () {
         Route::resource('banners', BannerController::class);
         Route::post('/upload-banner-image', [BannerController::class, 'uploadGallery']);
         Route::post('/delete-banner-image', [BannerController::class, 'deleteImage']);
+        Route::resource('milestones', MilestoneController::class);
     });
 });

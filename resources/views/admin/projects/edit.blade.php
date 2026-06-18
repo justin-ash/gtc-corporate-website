@@ -44,11 +44,11 @@
             <div class="col-md-6 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Project Detail</h4>
-                        <p class="card-description"> Enter project details </p>
+                        <h4 class="card-title">Portfolio Detail</h4>
+                        <p class="card-description"> Enter portfolio details </p>
                         <div class="form-group">
-                            <label for="exampleInputUsername1">Project Name</label>
-                            <input type="text" class="form-control" id="project_name" placeholder="Project Name" name="project_name" value="{{$project->project_name}}">
+                            <label for="exampleInputUsername1">Portfolio Name</label>
+                            <input type="text" class="form-control" id="project_name" placeholder="Portfolio Name" name="project_name" value="{{$project->project_name}}">
                             <span class="error-text project_name_error"></span>
                         </div>
                         <div class="form-group">
@@ -79,16 +79,16 @@
                         <h4 class="card-title">Company Formation</h4>
                         <p class="card-description"> Company formation details </p>
                         <div class="form-group row">
-                            <label for="project_location" class="col-sm-3 col-form-label">Project Location</label>
+                            <label for="project_location" class="col-sm-3 col-form-label">Portfolio Location</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="project_location" placeholder="Project Location" name="project_location" value="{{$project->project_location}}">
+                                <input type="text" class="form-control" id="project_location" placeholder="Portfolio Location" name="project_location" value="{{$project->project_location}}">
                                 <span class="error-text project_location_error"></span>
                             </div>
                         </div>
                         <div class=" form-group row">
-                            <label for="project_type" class="col-sm-3 col-form-label">Project Type</label>
+                            <label for="project_type" class="col-sm-3 col-form-label">Portfolio Type</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="project_type" placeholder="Project Type" name="project_type" value="{{$project->project_type}}">
+                                <input type="text" class="form-control" id="project_type" placeholder="Portfolio Type" name="project_type" value="{{$project->project_type}}">
                                 <span class="error-text project_type_error"></span>
                             </div>
                         </div>
@@ -112,24 +112,30 @@
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Project Description</h4>
-                        <p class="card-description"> Project description details </p>
+                        <h4 class="card-title">Portfolio Description</h4>
+                        <p class="card-description"> Portfolio description details </p>
                         <div class="form-group">
-                            <label for="details">Project Details</label>
+                            <label for="details">Portfolio Details</label>
                             <textarea type="text" class="form-control" id="details" placeholder="Details" name="detail_text">{{$project->detail_text}}</textarea>
                             <span class="error-text detail_text_error"></span>
                         </div>
-
-                        <!-- <div class="form-group">
-                        <label>File upload</label>
-                        <input type="file" name="img[]" class="file-upload-default" accept=".jpg,.jpeg,.png">
-                        <div class="input-group col-xs-12 d-flex align-items-center">
-                            <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
-                            <span class="input-group-append ms-2">
-                                <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                            </span>
+                        <div class="form-group">
+                            <label>Thumbnail</label>
+                            <input type="file" name="thumbnail" id="thumbnail-img" class="file-upload-default">
+                            <input type="hidden" name="thumbnail_path" id="thumbnail_path" value="{{$project->thumbnail}}">
+                            <div class="input-group col-xs-12 d-flex align-items-center">
+                                <input type="text" name="thumbnail" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                                <span class="input-group-append ms-2">
+                                    <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                                </span>
+                            </div>
                         </div>
-                    </div> -->
+                        <div class="form-group">
+                            <label>Thumbnail Preview</label>
+                            <div class="input-group col-xs-12 d-flex align-items-center">
+                                <img id="thumbnail_preview" src="{{ asset($project->thumbnail) }}" width="80" style="display: {{ $project->thumbnail ? 'block' : 'none' }};">
+                            </div>
+                        </div>
                         @php
                         $gallery = $project->gallery;
                         @endphp
@@ -165,6 +171,46 @@
 </div>
 @push('scripts')
 <script>
+    $('#thumbnail-img').on('change', function(e) {
+        let file = this.files[0];
+        if (!file) {
+            return;
+        }
+        // preview image
+        let reader = new FileReader();
+
+        reader.onload = function(e) {
+            $("#preview")
+                .attr("src", e.target.result)
+                .show();
+        };
+
+        reader.readAsDataURL(file);
+
+        // upload image
+        let formData = new FormData();
+        formData.append("thumbnail", file);
+        formData.append("path", "/uploads/projects/thumbnails");
+
+        $.ajax({
+            url: "/admin/upload-image",
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function(response) {
+                console.log(response);
+                // returned uploaded file path
+                $("#thumbnail_path").val(response.path);
+            },
+            error: function(xhr) {
+                console.log(xhr.responseText);
+            }
+        });
+    });
     $(document).ready(function() {
         $('#details').summernote({
             height: 200,
@@ -209,8 +255,6 @@
             };
 
             reader.readAsDataURL(file);
-
-            // 🔥 Upload immediately
             uploadFile(file, index);
         }
         updateButtons();
@@ -239,7 +283,6 @@
     function uploadFile(file, index) {
         let formData = new FormData();
         formData.append('image', file);
-
         $.ajax({
             url: "/admin/upload-gallery",
             type: "POST",
@@ -315,6 +358,7 @@
         } else {
             formData += `&image[]=${encodeURIComponent('')}`;
         }
+
         $('.error-text').text('');
         $('.success-message').text('');
         $.ajax({

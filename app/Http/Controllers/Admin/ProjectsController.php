@@ -12,7 +12,7 @@ class ProjectsController extends Controller
 {
     public function index()
     {
-        $projects = Project::latest()->paginate(10);
+        $projects = Project::paginate(10);
         return view('admin.projects.index', compact('projects'));
     }
 
@@ -33,9 +33,11 @@ class ProjectsController extends Controller
             'established_date' => 'required|date',
             'website' => 'required|url',
             'gallery.*' => 'required',
+            'thumbnail_path' => 'required',
             'is_active' => 'required|boolean',
             'slug' => 'required|unique:projects,slug'
         ]);
+        $validated['thumbnail'] = $validated['thumbnail_path'];
         Project::create($validated);
 
         return response()->json([
@@ -63,14 +65,14 @@ class ProjectsController extends Controller
             'project_type' => 'required|max:255',
             'established_date' => 'required|date',
             'website' => 'required|url',
-            'gallery.*' => 'required',
+            'image.*' => 'required',
+            'thumbnail_path' => 'required',
             'is_active' => 'required|boolean',
             'slug' => 'required|unique:projects,slug,' . $project->id
         ]);
-
-        // Handle gallery update
-        $gallery = $validated['gallery'] ?? $project->gallery;
-
+        $validated['thumbnail'] = $validated['thumbnail_path'];
+        // Handle gallery update    
+        $gallery = $validated['image'] ?? $project->gallery;
         $project->update([
             ...$validated,
             'gallery' => $gallery
@@ -148,5 +150,46 @@ class ProjectsController extends Controller
         return response()->json([
             'paths' => $value
         ]);
+    }
+
+    public function uploadImage(Request $request)
+    {
+        $validated = $request->validate([
+            'thumbnail' => 'required|image|max:2048',
+            'path' => 'required|string'
+        ]);
+
+        if ($request->hasFile("thumbnail")) {
+            $file = $request->file("thumbnail");
+
+            $manager = new ImageManager(['driver' => 'gd']);
+
+            $image = $manager->make($file->getRealPath());
+
+            $image->resize(1000, null, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+
+            $image->encode('webp', 80);
+
+            $folderPath = public_path($validated['path']);
+
+            if (!file_exists($folderPath)) {
+                mkdir($folderPath, 0777, true);
+            }
+
+            $filename = uniqid() . '.webp';
+
+            $image->save($folderPath . '/' . $filename);
+            $value = $validated['path'] . '/' . $filename;
+            return response()->json([
+                'status' => true,
+                'path' => $value
+            ]);
+        }
+        return response()->json([
+            'error' => 'No file uploaded'
+        ], 400);
     }
 }

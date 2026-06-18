@@ -22,11 +22,7 @@
 
                         <h4 class="card-title">Services</h4>
                         <p class="card-description"> Service details </p>
-                        <div class="form-group">
-                            <label for="icon">Icon</label>
-                            <input type="text" name="icon" class="form-control" placeholder="Icon class (fa-solid fa-star)"><br>
-                            <span class="error-text icon_error"></span>
-                        </div>
+
                         <div class="form-group">
                             <label for="title">Title</label>
                             <input type="text" class="form-control" name="title" placeholder="Title"><br>
@@ -37,6 +33,27 @@
                             <label for="description">Description</label>
                             <textarea class="form-control" id="description" placeholder="Description" name="description"></textarea>
                             <span class="error-text description_error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="icon">Key Areas</label>
+                            <input type="text" name="icon" class="form-control" placeholder="Key areas"><br>
+                            <span class="error-text icon_error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="link">Link</label>
+                            <input type="text" name="link" class="form-control" placeholder="http://domain.com/link"><br>
+                            <span class="error-text link_error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Thumbnail</label>
+                            <input type="file" name="thumbnail" class="file-upload-default">
+                            <div class="input-group col-xs-12 d-flex align-items-center">
+                                <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                                <span class="input-group-append ms-2">
+                                    <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                                </span>
+                            </div>
+                            <span class="error-text upload_error"></span>
                         </div>
                         <div class="form-group">
                             <label for="is_active">Status</label>
@@ -58,6 +75,59 @@
 </div>
 @push('scripts')
 <script>
+    $('#thumbnail-img').on('change', function(e) {
+        let file = this.files[0];
+        if (!file) {
+            return;
+        }
+        // preview image
+        let reader = new FileReader();
+
+        reader.onload = function(e) {
+            $("#preview")
+                .attr("src", e.target.result)
+                .show();
+        };
+
+        reader.readAsDataURL(file);
+
+        // upload image
+        let formData = new FormData();
+        formData.append("thumbnail", file);
+        formData.append("path", "/uploads/services");
+
+        $.ajax({
+                url: "/admin/upload-image",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    console.log(response);
+                    // returned uploaded file path
+                    $("#thumbnail_path").val(response.path);
+                },
+                error: function(xhr) {
+
+                    console.log(xhr);
+
+                    let upload_error = 'Something went wrong';
+
+                    if (xhr.responseJSON &&
+                        xhr.responseJSON.errors &&
+                        xhr.responseJSON.errors.thumbnail) {
+
+                        upload_error = xhr.responseJSON.errors.thumbnail[0];
+                    }
+
+                    $('.upload_error').html(upload_error);
+                }
+            }
+        });
+    });
     $(document).ready(function() {
         $('#message').summernote({
             height: 200,
