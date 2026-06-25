@@ -2,7 +2,7 @@
 
  @section('content')
  <!-- Start main-content -->
- <section class="page-title" style="background-image: url(images/bg/page-title-bg.jpg);">
+ <section class="page-title" style="background-image: url(images/background/banner-image3.jpg);">
      <div class="auto-container">
          <div class="title-outer">
              <ul class="page-breadcrumb">
@@ -85,7 +85,7 @@
                  <div class="col-lg-6 content-column">
                      <div class="inner-column">
                          <div class="sec-title mb-30">
-                             <h2 class="title wow splt-txt" data-splitting>{{$widgets['GET_IN_TOUCH']['title']}}</h2>
+                             <h3 class="title wow splt-txt" data-splitting>{{$widgets['GET_IN_TOUCH']['title']}}</h3>
                              <p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{!!$widgets['GET_IN_TOUCH']['description']!!}</p>
                          </div>
                          <div class="google-map">
@@ -96,7 +96,7 @@
                  <div class="col-lg-6 content-column">
                      <div class="inner-column right-column">
                          <div class="sec-title mb-30">
-                             <h2 class="title wow splt-txt" data-splitting>{{$widgets['CONTACT_FILL_UP_FORM']['title']}}</h2>
+                             <h3 class="title wow splt-txt" data-splitting>{{$widgets['CONTACT_FILL_UP_FORM']['title']}}</h3>
                              <p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{!!$widgets['CONTACT_FILL_UP_FORM']['description']!!}</p>
                          </div>
                          <form id="contact_form" name="contact_form" action="{{ route('contact.submit') }}" method="post">
@@ -138,6 +138,9 @@
          let formData = form.serialize();
          $('.error-text').text('');
          $('.success-message').text('');
+         $('#contact_submit')
+             .prop('disabled', true)
+             .text('Sending...');
          $.ajax({
              url: $("#contact_form").attr('action'),
              type: "POST",
@@ -145,7 +148,9 @@
              success: function(response) {
                  if (response.status) {
                      $('.success-message').text(response.message);
-
+                     if (response.csrf_token) {
+                         $('meta[name="csrf-token"]').attr('content', response.csrf_token);
+                     }
                      // Clear form
                      form.trigger("reset");
                  }
@@ -156,6 +161,13 @@
                  $.each(errors, function(key, value) {
                      $('.' + key + '_error').text(value[0]);
                  });
+             },
+             complete: function() {
+
+                 // enable button again
+                 $('#contact_submit')
+                     .prop('disabled', false)
+                     .html('<i class="fa-light fa-paper-plane"></i> Get In Touch');
              }
          });
      });

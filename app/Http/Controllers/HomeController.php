@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Banner;
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Models\Milestone;
 use App\Models\NewsletterSubscriber;
 use App\Models\Project;
 use App\Models\Testimonial;
@@ -20,9 +21,10 @@ class HomeController extends Controller
         $testimonials = Testimonial::where('is_active', 1)->get();
         $widgets = Widget::formatWidgets(['home', 'about', 'header', 'footer', 'sidebar']);
         $seo = SeoPage::seoByPage('home');
-        $projects = Project::where('is_active', 1)->get();
-        $banners = Banner::where('is_active', 1)->get();
-        return view('home', compact('testimonials', 'widgets', 'seo', 'projects', 'banners'));
+        $projects = Project::where('is_active', 1)->orderBy('id', 'asc')->limit(4)->get();
+        $banners = Banner::where('is_active', 1)->orderBy('id', 'asc')->get();
+        $services = Service::where('is_active', 1)->get();
+        return view('home', compact('testimonials', 'widgets', 'seo', 'projects', 'banners', 'services'));
     }
 
     public function contact()
@@ -53,13 +55,14 @@ class HomeController extends Controller
 
         // Send Mail
         Mail::send('emails.contact', ['data' => $contact], function ($message) {
-            $message->to('justinjoseph287@gmail.com') // change this
+            $message->to('rohithraj@greentopindia.com') // change this
                 ->subject('New Contact Form Submission');
         });
 
         return response()->json([
             'status' => true,
-            'message' => 'Message sent successfully!'
+            'message' => 'Message sent successfully!',
+            'csrf_token' => csrf_token()
         ]);
     }
 
@@ -67,7 +70,8 @@ class HomeController extends Controller
     {
         $widgets = Widget::formatWidgets(['about', 'header', 'footer', 'sidebar']);
         $seo = SeoPage::seoByPage('about');
-        return view('about', compact('widgets', 'seo'));
+        $milestones = Milestone::orderBy('year', 'asc')->get();
+        return view('about', compact('widgets', 'seo', 'milestones'));
     }
 
     public function services()
@@ -75,13 +79,14 @@ class HomeController extends Controller
         $widgets = Widget::formatWidgets(['services', 'header', 'footer', 'sidebar']);
         $seo = SeoPage::seoByPage('services');
         $services = Service::where('is_active', 1)->get();
+
         return view('services', compact('widgets', 'seo', 'services'));
     }
 
     public function projects()
     {
         $widgets = Widget::formatWidgets(['projects', 'header', 'footer', 'sidebar']);
-        $seo = SeoPage::seoByPage('projects');
+        $seo = SeoPage::seoByPage('portfolio');
         $projects = Project::where('is_active', 1)->get();
         return view('projects', compact('widgets', 'seo', 'projects'));
     }
@@ -109,5 +114,13 @@ class HomeController extends Controller
             'status' => true,
             'message' => 'Subscribed successfully!'
         ]);
+    }
+
+    public function gallery()
+    {
+        $widgets = Widget::formatWidgets(['gallery', 'header', 'footer', 'sidebar']);
+        $seo = SeoPage::seoByPage('gallery');
+        $projects = Project::where('is_active', 1)->get();
+        return view('gallery', compact('widgets', 'seo', 'projects'));
     }
 }

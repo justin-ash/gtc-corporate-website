@@ -34,7 +34,7 @@
   <script data-cfasync="false" src="{{ asset('js/email-decode.min.js') }}"></script>
   <script src="{{ asset('js/jquery.js') }}"></script>
   <script src="{{ asset('js/popper.min.js') }}"></script>
-  <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="{{ asset('js/slick.min.js') }}"></script>
   <script src="{{ asset('js/slick-animation.min.js') }}"></script>
   <script src="{{ asset('js/jquery.fancybox.js') }}"></script>
