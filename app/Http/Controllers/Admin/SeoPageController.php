@@ -18,7 +18,7 @@ class SeoPageController extends Controller
     public function create()
     {
         $dbSlugs = Project::pluck('slug')->toArray();
-        $pageList = ['home', 'about', 'services', 'portfolio', 'contact'];
+        $pageList = ['home', 'about', 'companies', 'gallery', 'contact'];
         $allPages = array_unique(array_merge($pageList, $dbSlugs));
         return view('admin.seo.create', compact('allPages'));
     }

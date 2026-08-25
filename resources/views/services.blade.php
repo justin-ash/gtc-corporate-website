@@ -1,302 +1,76 @@
  @extends('layout.app')
 
  @section('content')
- <style>
-     .section-heading .sub-title {
-         display: block;
-         font-size: 14px;
-         font-weight: 600;
-         margin-bottom: 10px;
-         text-transform: uppercase;
-         padding-top: 10px;
-         width: fit-content;
-     }
-
-     .section-heading h2 {
-         font-size: 52px;
-         font-weight: 700;
-         margin-bottom: 20px;
-     }
-
-     .section-heading p {
-         max-width: 900px;
-         line-height: 1.5;
-     }
-
-     .division-card {
-         border-left: 1px solid #b17a00;
-         background: #fff;
-     }
-
-     .division-title {
-         background: #01874a;
-         color: #fff;
-         font-size: 22px;
-         font-weight: 700;
-         padding: 18px 28px;
-     }
-
-     .division-body {
-         padding: 25px 28px;
-     }
-
-     .division-body p {
-         font-size: 18px;
-         line-height: 1.6;
-         margin-bottom: 15px;
-     }
-
-     .key-areas {
-         color: #b17a00;
-         font-size: 17px;
-         margin-bottom: 10px;
-         line-height: 1.7;
-     }
-
-     .key-areas strong {
-         color: #8a5f00;
-     }
-
-     .key-areas span {
-         margin: 0 10px;
-     }
-
-     .division-body a {
-         color: #8a5f00;
-         text-decoration: none;
-         font-style: italic;
-         font-size: 16px;
-     }
-
-     .division-body a:hover {
-         text-decoration: underline;
-     }
-
-
-     /* Responsive */
-
-     @media(max-width:991px) {
-
-         .section-heading h2 {
-             font-size: 40px;
-         }
-
-         .section-heading p {
-             font-size: 20px;
-         }
-
-     }
-
-     @media(max-width:767px) {
-
-         .section-heading h2 {
-             font-size: 32px;
-         }
-
-         .section-heading p {
-             font-size: 17px;
-         }
-
-         .division-title {
-             font-size: 20px;
-             padding: 15px 20px;
-         }
-
-         .division-body {
-             padding: 20px;
-         }
-
-         .division-body p {
-             font-size: 16px;
-         }
-
-         .key-areas {
-             font-size: 15px;
-         }
-
-     }
-
-     .growth-block1 td {
-         background: rgba(0, 0, 0, 0.5);
-         color: #fff;
-         border: none;
-     }
-
-     .growth-block1 tr {
-         border: none;
-     }
-
-     .services-section {
-         padding: 80px 0;
-     }
-
-     .section-subtitle {
-         color: #01874a;
-         font-weight: 700;
-         text-transform: uppercase;
-         letter-spacing: 1px;
-         margin-bottom: 10px;
-     }
-
-     .section-title {
-         font-size: 52px;
-         font-weight: 800;
-         color: #111827;
-         margin-bottom: 20px;
-     }
-
-     .section-description {
-         color: #6b7280;
-         max-width: 700px;
-         margin: auto;
-         line-height: 1.8;
-         font-size: 18px;
-     }
-
-     .service-card {
-         background: #fff;
-         border-radius: 18px;
-         overflow: hidden;
-         margin-top: 40px;
-         transition: 0.3s;
-         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
-     }
-
-     .service-card:hover {
-         transform: translateY(-5px);
-     }
-
-     .service-image {
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
-         max-height: 350px;
-         min-height: 350px;
-         overflow: hidden;
-     }
-     }
-
-     .service-content {
-         padding: 60px;
-     }
-
-     .service-number {
-         color: #01874a;
-         font-size: 32px;
-         font-weight: 800;
-         margin-bottom: 15px;
-     }
-
-     .service-title {
-         /* font-size: 42px; */
-         font-weight: 800;
-         color: #111827;
-         margin-bottom: 20px;
-     }
-
-     .service-line {
-         width: 70px;
-         height: 4px;
-         background: #01874a;
-         border-radius: 10px;
-         margin-bottom: 25px;
-     }
-
-     .service-description {
-         color: #6b7280;
-         line-height: 1.9;
-         font-size: 18px;
-         margin-bottom: 30px;
-     }
-
-     .service-btn {
-         background: #01874a;
-         color: #fff;
-         border: none;
-         padding: 14px 28px;
-         border-radius: 10px;
-         text-decoration: none;
-         display: inline-flex;
-         align-items: center;
-         gap: 10px;
-         font-weight: 600;
-         transition: 0.3s;
-     }
-
-     .service-btn:hover {
-         background: #01874a;
-         color: #fff;
-         transform: translateY(-2px);
-     }
-
-     @media(max-width:991px) {
-
-         .service-content {
-             padding: 35px;
-         }
-
-         .service-title {
-             font-size: 32px;
-         }
-
-         .section-title {
-             font-size: 38px;
-         }
-
-     }
-
-     @media(max-width:767px) {
-
-         .service-image {
-             min-height: 250px;
-         }
-
-         .service-content {
-             padding: 30px 25px;
-         }
-
-         .service-title {
-             font-size: 28px;
-         }
-
-         .section-title {
-             font-size: 32px;
-         }
-
-     }
-
-     /* .service-content .service-number,
-     .service-content .service-title,
-     .service-content .service-line,
-     .service-content .service-description,
-     .service-content .service-btn {
-         padding-left: 10em;
-
-     } */
-     .service-content {
-         padding: 50px
-     }
- </style>
  <!-- Start main-content -->
- <section class="page-title" style="background-image: url(images/background/service-details.jpg);">
+ <section class="page-title" style="background-image: url({{ asset('images/bg/page-title-bg.jpg') }});">
      <div class="auto-container">
          <div class="title-outer">
-             <h1 class="title">Service</h1>
              <ul class="page-breadcrumb">
                  <li><a href="{{ route('home') }}">Home</a></li>
-                 <li>Service </li>
+                 <li>About Us</li>
              </ul>
+             <h1 class="title">About Us</h1>
          </div>
      </div>
  </section>
 
- <!-- end main-content -->
- <section class="about-section-three pt-120 pb-120 ">
+ <section class="about-section-three pt-120 pb-120 history-section">
      <div class="container">
          <div class="row g-5 g-xxl-0">
              <div class="container" style="position:relative;z-index:2;">
-                 <div class="sec-title">
-                     <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">COMPANY OVERVIEW</h6>
+                 <!-- <p class="hero-eyebrow">Green Top Contracting Co. Ltd. — Al Khobar, KSA</p> -->
+                 <h3>Green Top Contracting Company</h3>
+                 <p class="hero-lead">Green Top Contracting Company is a leading industrial contractor delivering comprehensive engineering and construction solutions. Our expertise spans civil, electrical, mechanical, piping, instrumentation, cathodic protection, IT solutions, pest control, and industrial cleaning services, enabling us to support complex projects across the oil & gas, utilities, petrochemicals, and infrastructure sectors.</p>
+                 <p class="hero-lead">With over seven decades of industry experience, Green Top Contracting Company provides one of the region's most comprehensive integrated service portfolios, delivering end-to-end solutions with an unwavering commitment to quality, safety, innovation, and customer satisfaction.</p>
+
+             </div>
+             <div class="since-badge"><span>Since</span><span>1951</span></div>
+         </div>
+     </div>
+ </section>
+ <!-- end main-content -->
+
+ <!-- About area start here -->
+ <section class="about-section-three pt-120 pb-120">
+     <div class="container">
+         <div class="row g-5 g-xxl-0">
+             <div class="col-xl-6 content-column">
+                 <div class="inner-column">
+                     <div class="sec-title">
+                         <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Who we are</h6>
+                         <h3 class="title wow splt-txt" data-splitting>{!!$widgets['ABOUT_AREA']['title']!!}</h3>
+                     </div>
+                     <div class="about-block-three mt-20">
+                         <div class="row g-0">
+                             <div class="col-sm-12 wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                 <div class="content-bo">
+                                     <p class="text mt-30 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{!!$widgets['ABOUT_AREA']['description']!!}</p>
+
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-xl-6 image-column">
+                 <div class="inner-column">
+                     <div class="row g-0">
+                         <div class="col-md-12">
+                             <div class="comment">
+                                 <p class="comment-text">{!!$widgets['ABOUT_VISION_STATEMENT']['description']!!}</p>
+                                 <p class="panel-author">{!!$widgets['ABOUT_VISION_STATEMENT']['title']!!}</p>
+                                 </p>
+                             </div>
+                         </div>
+                     </div>
+
+                     <div class="row g-0 mt-50">
+                         <div class="col-md-12">
+                             <div class="labels">
+                                 <label>ISO 9001 : 2015</label><label>ISO 14001 : 2015 </label><label>ISO 45001 : 2018</label><label>Aramco Approved</label>
+                             </div>
+                         </div>
+                     </div>
                  </div>
                  <h3>Trusted Excellence. Proven Performance.</h3>
                  <p class="hero-lead"><b>Green Top</b> is a leading multi-disciplinary contractor in the Kingdom of Saudi Arabia, delivering high-performance engineering, construction, and industrial solutions across a wide range of sectors. Backed by extensive industry expertise and a commitment to international quality standards, we provide reliable and innovative solutions tailored to our clients' needs.</p>
@@ -305,157 +79,161 @@
          </div>
      </div>
  </section>
+ <!-- About area end here -->
+
  <!-- Growth area start here -->
  <section class="growth-section pt-120 pb-120" data-background="images/bg/growth-bg.jpg">
      <div class="container">
          <div class="sec-title pb-50 mb-50">
-             <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Accreditations and Approvals</h6>
+             <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Our Purpose</h6>
              <div class="flex-content">
-                 <h3 class="title text-white wow splt-txt" data-splitting>Certifications</h3>
+                 <h3 class="title text-white wow splt-txt" data-splitting>Vision, Mission & Goals</h3>
              </div>
          </div>
          <div class="row g-5">
-             <div class="col-md-2">
-
-             </div>
-             <div class="col-md-8">
-                 <div class="">
-                     <table class="table growth-block1 table-bordered">
-                         <tbody>
-                             <tr>
-                                 <td>ISO 9001 : 2015</td>
-                                 <td>Quality Management System</td>
-                             </tr>
-                             <tr>
-                                 <td>ISO 14001 : 2015 </td>
-                                 <td>Environmental Management System</td>
-                             </tr>
-                             <tr>
-                                 <td>ISO 45001 : 2018</td>
-                                 <td>Occupational Health and Safety Management System</td>
-                             </tr>
-                             <tr>
-                                 <td>Aramco Approved</td>
-                                 <td>Saudi Aramco Vendor Qualification</td>
-                             </tr>
-                         </tbody>
-                     </table>
+             <div class="col-md-4">
+                 <div class="growth-block1">
+                     <h4 class="title">{!!$widgets['ABOUT_VISION']['title']!!}</h4>
+                     <p class="text">{!!$widgets['ABOUT_VISION']['description']!!}</p>
                  </div>
              </div>
-             <div class="col-md-2">
-
+             <div class="col-md-4">
+                 <div class="growth-block1">
+                     <h4 class="title">{!!$widgets['ABOUT_MISSION']['title']!!}</h4>
+                     <p class="text">
+                         {!!$widgets['ABOUT_MISSION']['description']!!}
+                     </p>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="growth-block1">
+                     <h4 class="title">{!!$widgets['ABOUT_GOALS']['title']!!}</h4>
+                     <p class="text">
+                         {!!$widgets['ABOUT_GOALS']['description']!!}
+                     </p>
+                 </div>
              </div>
          </div>
      </div>
  </section>
- <section class="services-section">
+ <!-- Growth area end here -->
 
+ <!-- Process area end here -->
+ <section class="process-section-four pt-120 pb-120 timeline-section">
      <div class="container">
-         <div class="section-heading mb-5">
-             <div class="sec-title">
-                 <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">OUR COMPANIES</h6>
+
+
+         <div class="outer-box">
+             <div class="sec-title center mb-50">
+                 <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Our Journey</h6>
+                 <h3 class="title wow splt-txt" data-splitting>{!!$widgets['PROCESS']['title']!!}</h3>
              </div>
-             <h3>Five Disciplines. One Group.</h3>
+             <div class="timeline">
 
-             <p>
-                 Each GTC division operates with dedicated expertise,
-                 specialized equipment, and fully qualified teams —
-                 delivering end-to-end project excellence across every sector.
-             </p>
-         </div>
-         @foreach($services as $key=> $service)
+                 <!-- Item -->
+                 @foreach($milestones as $key => $milestone)
+                 <div class="timeline-item {{ $key %2 == 0 ? 'right' : 'left' }}">
+                     <div class="timeline-dot"></div>
 
-         <div class="service-card">
-
-             <div class="row g-0 align-items-center flex-lg-row-reverse">
-                 @if($key % 2 == 0)
-                 <div class="col-lg-4">
-                     <img src="{{ asset($service->thumbnail_path) }}" alt="Service Image"
-                         class="service-image">
-                 </div>
-                 @endif
-
-                 <div class="col-lg-8">
-
-                     <div class="service-content">
-
-                         <!-- <div class="service-number">0{{$key+1}}</div> -->
-
-                         <h4 class="service-title">
-                             {{ $service->title }}
-                         </h4>
-
-                         <div class="service-line"></div>
-
-                         <p class="service-description">
-                             {!! $service->description !!}
+                     <div class="timeline-content">
+                         <div class="year">{{ $milestone->year }}</div>
+                         <h3 class="milestone-title">{{ $milestone->title }}</h3>
+                         <p class="milestone-desc">
+                             {{ $milestone->description }}
                          </p>
-
-                         <a href="{{ $service->link }}" class="service-btn">
-                             Learn More
-                             <i class="bi bi-arrow-right"></i>
-                         </a>
-
                      </div>
-
-
                  </div>
-                 @if($key % 2 == 1)
-                 <div class="col-lg-4">
-                     <img src="{{ asset($service->thumbnail_path) }}" alt="Service Image"
-                         class="service-image">
-                 </div>
-                 @endif
+                 @endforeach
 
              </div>
 
          </div>
 
-         @endforeach
      </div>
-
  </section>
- <!-- <section class="division-section py-5">
+
+ <section class="processing-section pt-70 pb-70">
+
+     <div class="container">
+         <div class="sec-title center mb-50">
+             <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Our Partners</h6>
+             <h3 class="title wow splt-txt" data-splitting>{!!$widgets['ABOUT_PARTNERS']['title']!!}</h3>
+         </div>
+
+         <p class="section-body">{!!$widgets['ABOUT_PARTNERS']['description']!!}</p>
+         <div class="clients-wrapper">
+             <p class="clients-label" style="margin-top:28px;">Vendor Registrations</p>
+             <div class="row">
+                 <div class="col-md-3">
+                     <div class="clients-grid">
+                         <span class="client-pill">Saudi Aramco</span>
+                         <span class="client-pill">Saudi Electricity Company</span>
+                         <span class="client-pill">SABIC</span>
+                         <span class="client-pill">Petrokemya</span>
+                         <span class="client-pill">MAADEN</span>
+                     </div>
+                 </div>
+                 <div class="col-md-3">
+                     <div class="clients-grid">
+
+                         <span class="client-pill">NESMA</span>
+                         <span class="client-pill">El-Seif</span>
+                         <span class="client-pill">KBR</span>
+                         <span class="client-pill">L&amp;T Energy Hydrocarbon</span>
+                         <span class="client-pill">DANWAY</span>
+                     </div>
+                 </div>
+                 <div class="col-md-3">
+                     <div class="clients-grid">
+                         <span class="client-pill">LINXON</span>
+                         <span class="client-pill">SOGEC</span>
+                         <span class="client-pill">SICIM</span>
+                         <span class="client-pill">NSH</span>
+                         <span class="client-pill">SISCO</span>
+                     </div>
+                 </div>
+                 <div class="col-md-3">
+                     <div class="clients-grid">
+                         <span class="client-pill">Royal Commission Jubail &amp; Yanbu</span>
+                         <span class="client-pill">National Water Company</span>
+                         <span class="client-pill">SIPCHEM</span>
+                         <span class="client-pill">MARAFIQ</span>
+                         <span class="client-pill">Gulf Chemicals</span>
+                     </div>
+                 </div>
+                 <div class="clients-grid">
+
+
+
+                 </div>
+             </div>
+         </div>
+ </section>
+ <section class="process-section-four pt-120 pb-120 timeline-section">
      <div class="container">
 
-         <div class="section-heading mb-5">
-             <div class="sec-title">
-                 <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">OUR DIVISIONS</h6>
+
+         <div class="outer-box">
+             <div class="sec-title center mb-50">
+                 <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Safety & Quality</h6>
+                 <h3 class="title wow splt-txt" data-splitting>HSE and Quality commitment</h3>
              </div>
-             <h2>Five Disciplines. One Group.</h2>
-
-             <p>
-                 Each GTC division operates with dedicated expertise,
-                 specialized equipment, and fully qualified teams —
-                 delivering end-to-end project excellence across every sector.
-             </p>
+             <div class="row">
+                 <div class="col-md-6">
+                     <div class="saftey">
+                         <h4>{!!$widgets['ABOUT_SAFETY']['title']!!}</h4>
+                         <p>{!!$widgets['ABOUT_SAFETY']['description']!!}</p>
+                     </div>
+                 </div>
+                 <div class="col-md-6">
+                     <div class="saftey">
+                         <h4>{!!$widgets['ABOUT_QUALITY']['title']!!}</h4>
+                         <p>{!!$widgets['ABOUT_QUALITY']['description']!!}</p>
+                     </div>
+                 </div>
+             </div>
          </div>
-
- @foreach($services as $key=> $service)
- <div class="division-card mb-4">
-
-     <div class="division-title">
-         {{$key+1}}. {{ $service->title }}
      </div>
-
-     <div class="division-body">
-
-         <p>
-             {!! $service->description !!}
-         </p>
-
-         <div class="key-areas">
-             <strong>Key Areas:</strong>
-             {{ $service->icon }}
-         </div>
-         <a href="{{ $service->link }}" target="_blank">
-             {{ $service->link }}
-         </a>
-     </div>
-
-
- </div>
- @endforeach
- </div>
- </section> -->
+ </section>
+ <!-- Process area end here -->
  @endsection
