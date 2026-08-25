@@ -77,7 +77,7 @@ class HomeController extends Controller
     public function services()
     {
         $widgets = Widget::formatWidgets(['companies', 'header', 'footer', 'sidebar']);
-        $seo = SeoPage::seoByPage('companies');
+        $seo = SeoPage::seoByPage('our-expertise');
         $services = Service::where('is_active', 1)->get();
 
         return view('companies', compact('widgets', 'seo', 'services'));
