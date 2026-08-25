@@ -43,7 +43,7 @@
         <ul class="navigation">
           <li><a href="{{ route('home')}}">Home</a></li>
           <li><a href="{{ route('about')}}">About Us</a></li>
-          <li><a href="{{ route('companies')}}">Companies</a></li>
+          <li><a href="{{ route('our-expertise')}}">Our Expertise</a></li>
           <li><a href="{{ route('gallery')}}">Gallery</a></li>
           <li><a href="{{ route('contact')}}">Contact</a></li>
         </ul>

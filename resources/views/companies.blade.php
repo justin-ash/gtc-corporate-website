@@ -290,8 +290,9 @@
                  <div class="sec-title">
                      <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">COMPANY OVERVIEW</h6>
                  </div>
-                 <h3>{!!$widgets['COMPANIES_OVERVIEW']['title']!!}</h3>
-                 {!!$widgets['COMPANIES_OVERVIEW']['description']!!}
+                 <h3>Trusted Excellence. Proven Performance.</h3>
+                 <p class="hero-lead"><b>Green Top</b> is a leading multi-disciplinary contractor in the Kingdom of Saudi Arabia, delivering high-performance engineering, construction, and industrial solutions across a wide range of sectors. Backed by extensive industry expertise and a commitment to international quality standards, we provide reliable and innovative solutions tailored to our clients' needs.</p>
+                 <p class="hero-lead">Every project is executed with precision, safety, and efficiency, ensuring exceptional quality and long-term value from concept through to successful completion.</p>
              </div>
          </div>
      </div>

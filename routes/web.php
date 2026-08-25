@@ -20,7 +20,7 @@ Route::get('/services', [HomeController::class, 'services1'])->name('services');
 Route::get('/portfolio', [HomeController::class, 'projects'])->name('portfolio');
 Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
 Route::get('/project/{slug}', [HomeController::class, 'projectBySlug'])->name('projects.show');
-Route::get('/companies', [HomeController::class, 'services'])->name('companies');
+Route::get('/our-expertise', [HomeController::class, 'services'])->name('our-expertise');
 Route::post('/contact', [HomeController::class, 'submitContact'])->name('contact.submit');
 Route::post('/newsletter-subscribe', [HomeController::class, 'subscribe'])
     ->name('newsletter.subscribe');
