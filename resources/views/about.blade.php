@@ -18,10 +18,11 @@
      <div class="container">
          <div class="row g-5 g-xxl-0">
              <div class="container" style="position:relative;z-index:2;">
-                 <p class="hero-eyebrow">Green Top Contracting Co. Ltd. — Al Khobar, KSA</p>
-                 <h3>Building the <em>backbone</em> of the Kingdom since 1951</h3>
-                 <p class="hero-lead">ISO-certified industrial contractors delivering civil, electrical, mechanical, piping, cathodic protection, and IT services across Saudi Arabia and the GCC.</p>
-                 
+                 <!-- <p class="hero-eyebrow">Green Top Contracting Co. Ltd. — Al Khobar, KSA</p> -->
+                 <h3>Green Top Contracting Company</h3>
+                 <p class="hero-lead">Green Top Contracting Company is a leading industrial contractor delivering comprehensive engineering and construction solutions. Our expertise spans civil, electrical, mechanical, piping, instrumentation, cathodic protection, IT solutions, pest control, and industrial cleaning services, enabling us to support complex projects across the oil & gas, utilities, petrochemicals, and infrastructure sectors.</p>
+                 <p class="hero-lead">With over seven decades of industry experience, Green Top Contracting Company provides one of the region's most comprehensive integrated service portfolios, delivering end-to-end solutions with an unwavering commitment to quality, safety, innovation, and customer satisfaction.</p>
+
              </div>
              <div class="since-badge"><span>Since</span><span>1951</span></div>
          </div>

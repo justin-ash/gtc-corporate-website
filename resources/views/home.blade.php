@@ -77,7 +77,7 @@
   <div class="stats-card shadow-lg">
     <div class="row g-0">
 
-      <div class="col-md-3 col-6">
+      <div class="col-md-4 col-6">
         <div class="stat-item">
           <i class="fa-solid fa-shield-halved"></i>
           <div>
@@ -87,7 +87,7 @@
         </div>
       </div>
 
-      <div class="col-md-3 col-6">
+      <div class="col-md-4 col-6">
         <div class="stat-item">
           <i class="fa-solid fa-briefcase"></i>
           <div>
@@ -97,7 +97,7 @@
         </div>
       </div>
 
-      <div class="col-md-3 col-6">
+      <!-- <div class="col-md-3 col-6">
         <div class="stat-item">
           <i class="fa-solid fa-globe"></i>
           <div>
@@ -105,9 +105,9 @@
             <p>Countries Served</p>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div class="col-md-3 col-6">
+      <div class="col-md-4 col-6">
         <div class="stat-item border-end-0">
           <i class="fa-solid fa-users"></i>
           <div>
@@ -134,7 +134,7 @@
                 ABOUT US
               </div>
               <h3 class="title wow splt-txt" data-splitting> {{$widgets['HOME_ABOUT_US_TITLE']['title']}}</h3>
-              <p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{{$widgets['HOME_ABOUT_US_TITLE']['description']}}</p>
+              <p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{!! $widgets['HOME_ABOUT_US_TITLE']['description'] !!}</p>
               <div class="pt-20">
                 <a class="btn-common" data-animation="fadeInUp" data-delay=".8s" href="{{ route('about') }}">Learn More about Us<i class="fa-solid fa-arrow-right"></i></a>
               </div>
@@ -254,7 +254,7 @@
 
             <div class="project-details">
               <!-- <h5>{{ $project->project_name }}</h5> -->
-                <h5 class="title"><a href="{{ route('projects.show', $project->slug) }}">{{ $project->project_name }}</a></h5>
+              <h5 class="title"><a href="{{ route('projects.show', $project->slug) }}">{{ $project->project_name }}</a></h5>
               <div class="project-info">{{ $project->project_type }}</div>
             </div>
 
