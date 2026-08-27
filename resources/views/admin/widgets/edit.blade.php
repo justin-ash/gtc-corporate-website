@@ -50,7 +50,9 @@
                         <div class="success-message"></div>
                         <br>
                         <button id="save_details" type="button" class="btn btn-primary me-2">Submit</button>
-                        <button class="btn btn-light">Cancel</button>
+                        <a href="{{ route('admin.widgets.index') }}" class="btn btn-light">
+                            Cancel
+                        </a>
                     </div>
                 </div>
             </div>
