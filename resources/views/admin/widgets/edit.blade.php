@@ -15,6 +15,7 @@
 <div class="content-wrapper">
     <form method="PUT" id="save_widget" action="{{ route('admin.widgets.update', $widget->id) }}">
         @csrf
+        @method('PUT')
         <div class="row">
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">

@@ -15,6 +15,7 @@
 <div class="content-wrapper">
     <form method="PUT" id="save_seo" action="{{ route('admin.seo.update', $seo->id) }}">
         @csrf
+        @method('PUT')
         <div class="row">
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">

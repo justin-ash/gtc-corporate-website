@@ -54,10 +54,12 @@ class HomeController extends Controller
         ]);
 
         // Send Mail
-        Mail::send('emails.contact', ['data' => $contact], function ($message) {
+        $mail = Mail::send('emails.contact', ['data' => $contact], function ($message) {
             $message->to('rohithraj@greentopindia.com') // change this
                 ->subject('New Contact Form Submission');
         });
+
+        dd($mail);
 
         return response()->json([
             'status' => true,
