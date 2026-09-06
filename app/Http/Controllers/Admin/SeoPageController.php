@@ -68,6 +68,7 @@ class SeoPageController extends Controller
         ]);
     }
 
+
     public function destroy($id)
     {
         SeoPage::findOrFail($id)->delete();

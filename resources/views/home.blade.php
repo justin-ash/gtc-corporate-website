@@ -420,11 +420,18 @@
               <div class="logo-slide"><img src="{{asset('images/logos/d.jpeg')}}"></div>
               <div class="logo-slide"><img src="{{asset('images/logos/e.jpeg')}}"></div>
 
-              <div class="logo-slide"><img src="{{asset('images/logos/a.jpeg')}}"></div>
-              <div class="logo-slide"><img src="{{asset('images/logos/b.jpeg')}}"></div>
-              <div class="logo-slide"><img src="{{asset('images/logos/c.jpeg')}}"></div>
-              <div class="logo-slide"><img src="{{asset('images/logos/d.jpeg')}}"></div>
-              <div class="logo-slide"><img src="{{asset('images/logos/e.jpeg')}}"></div>
+              <div class="logo-slide"><img src="{{asset('images/logos/f.png')}}"></div>
+              <div class="logo-slide"><img src="{{asset('images/logos/g.png')}}"></div>
+              <div class="logo-slide"><img src="{{asset('images/logos/h.png')}}"></div>
+              <div class="logo-slide"><img src="{{asset('images/logos/i.png')}}"></div>
+              <div class="logo-slide"><img src="{{asset('images/logos/j.png')}}"></div>
+
+              <div class="logo-slide"><img src="{{asset('images/logos/k.png')}}"></div>
+              <div class="logo-slide"><img src="{{asset('images/logos/l.png')}}"></div>
+              <div class="logo-slide"><img src="{{asset('images/logos/m.png')}}"></div>
+              <div class="logo-slide"><img src="{{asset('images/logos/n.png')}}"></div>
+              <div class="logo-slide"><img src="{{asset('images/logos/o.png')}}"></div>
+              <div class="logo-slide"><img src="{{asset('images/logos/p.png')}}"></div>
 
 
             </div>

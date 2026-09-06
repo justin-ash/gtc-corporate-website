@@ -13,7 +13,7 @@
     }
 </style>
 <div class="content-wrapper">
-    <form method="PUT" id="save_seo" action="{{ route('admin.seo.update', $seo->id) }}">
+    <form method="POST" id="save_seo" action="{{ route('admin.seo.update', $seo->id) }}">
         @csrf
         @method('PUT')
         <div class="row">
