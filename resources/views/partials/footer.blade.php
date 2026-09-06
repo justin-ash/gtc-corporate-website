@@ -26,7 +26,7 @@
               <div class="widget-content">
                 <ul class="user-links">
                   <li><a href="{{ route('home') }}">Home</a></li>
-                  <li><a href="{{ route('about') }}">About GTG</a></li>
+                  <li><a href="{{ route('about') }}">About Us</a></li>
                   <li><a href="{{ route('services') }}">Services</a></li>
                   <li><a href="{{ route('contact') }}">Contact</a></li>
 
@@ -69,7 +69,7 @@
               <div class="widget-content">
                 <div class="info-item">
                   <ul>
-                    <li><i class="fa-sharp fa-solid fa-location-dot"></i><span> {{config('settings.address')}}</span></li>
+                    <li><i class="fa-sharp fa-solid fa-location-dot"></i><span> {!! config('settings.address') !!}</span></li>
                     <li><i class="fa-sharp fa-solid fa-phone"></i><span> {{config('settings.phone')}}</span></li>
                     <li><i class="fa-sharp fa-solid fa-envelope"></i><span> {{config('settings.email')}}</span></li>
                   </ul>
@@ -82,7 +82,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="copyright-text">© 2026 Green Top Contracting Co. Ltd. All Rights Reserved</p>
+        <p class="copyright-text">© 2026 Green Top Information & Technology. All Rights Reserved</p>
         <p class="copyright-text"><a href="">Privacy Policy</a> | <a href="">Terms & Conditions</a></p>
       </div>
 

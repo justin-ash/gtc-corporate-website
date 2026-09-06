@@ -96,14 +96,14 @@
             <div class="contact-info-box">
               <span class="icon lnr-icon-envelope1"></span>
               <span class="title">Send Email</span>
-              <a href="/cdn-cgi/l/email-protection#a5cdc0c9d5e5c6cac8d5c4cbdc8bc6cac8"><span class="__cf_email__">{{config('settings.email')}}</span></a>
+              <a href="mailto:{{config('settings.email')}}"><span class="__cf_email__">{{config('settings.email')}}</span></a>
             </div>
           </li>
           <li>
             <!-- Contact Info Box -->
             <div class="contact-info-box">
               <span class="icon lnr-icon-clock"></span>
-              <span class="title">Send Email</span>
+              <span class="title">Working Time</span>
               {!!$widgets['CONTACT_TIMING']['description'] !!}
             </div>
           </li>
