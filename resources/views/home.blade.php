@@ -37,7 +37,7 @@
                 </p>
 
                 <div class="d-flex flex-wrap gap-3">
-                  <a href="{{ route('services') }}" class="btn btn-success btn-lg px-4">
+                  <a href="{{ route('our-expertise') }}" class="btn btn-success btn-lg px-4">
                     {{ $banner->button_link }}
                   </a>
 
