@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use App\Models\Setting;
+use App\Models\Service;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,6 +30,8 @@ class AppServiceProvider extends ServiceProvider
         foreach ($settings as $key => $value) {
             config(["settings.$key" => $value]);
         }
+        $services = Service::select('title', 'link')->where('is_active', 1)->get();
+        View::share('services', $services);
         Paginator::useBootstrapFive();
     }
 }

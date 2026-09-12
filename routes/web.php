@@ -16,7 +16,6 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
-Route::get('/services', [HomeController::class, 'services1'])->name('services');
 Route::get('/portfolio', [HomeController::class, 'projects'])->name('portfolio');
 Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
 Route::get('/project/{slug}', [HomeController::class, 'projectBySlug'])->name('projects.show');

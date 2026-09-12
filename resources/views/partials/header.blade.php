@@ -41,9 +41,17 @@
     <div class="nav-outer">
       <nav class="nav main-menu">
         <ul class="navigation">
+
           <li><a href="{{ route('home')}}">Home</a></li>
           <li><a href="{{ route('about')}}">About Us</a></li>
-          <li><a href="{{ route('our-expertise')}}">Our Expertise</a></li>
+
+          <li class="dropdown"><a href="{{ route('our-expertise')}}">Our Expertise</a>
+            <ul>
+              @foreach($services as $service)
+              <li><a href="{{ $service->link }}">{{ $service->title }}</a></li>
+              @endforeach
+            </ul>
+          </li>
           <li><a href="{{ route('gallery')}}">Gallery</a></li>
           <li><a href="{{ route('contact')}}">Contact</a></li>
         </ul>
